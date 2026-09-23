@@ -1,0 +1,353 @@
+/* ==========================================================================
+   SCHOLAR LIBRARY (مكتبة سكولار الأكاديمية) — MOTION DESIGN & ANIMATIONS
+   Principles: Tactile Physics, Fluid Academic Transitions, Fast Responsive Loading
+   Color Grade: Royal Academic Navy & Sapphire Blue
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. FAST ELEMENT LOADING & ENTRANCE KEYFRAMES
+   -------------------------------------------------------------------------- */
+@keyframes scholarFastReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(14px) scale(0.985);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes scholarStaggerUp {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scholarScalePop {
+  0% {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  65% {
+    transform: scale(1.025);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes scholarShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes scholarFloatSlow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes scholarPulseBlue {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(37, 99, 235, 0);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. HIGH-CRAFT SKELETON VIEW SHIMMER & LOADING SCREEN
+   -------------------------------------------------------------------------- */
+@keyframes scholarSkeletonShimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.scholar-skeleton-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(100% 120% at 50% 0%, #162746 0%, #0B1528 65%, #070E1A 100%);
+  z-index: 999999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1.25rem 1.5rem 3rem 1.5rem;
+  overflow: hidden;
+  pointer-events: auto;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.42s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.42s ease;
+}
+
+.scholar-skeleton-overlay.is-loaded {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.scholar-sk-shimmer {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.04) 20%, rgba(37, 99, 235, 0.22) 50%, rgba(255, 255, 255, 0.04) 80%);
+  background-size: 200% 100%;
+  animation: scholarSkeletonShimmer 1.5s infinite linear;
+  border-radius: 9999px;
+}
+
+.scholar-sk-header {
+  width: min(96%, 1380px);
+  height: 58px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 1.6rem;
+  margin-bottom: clamp(3.5rem, 7vw, 6rem);
+}
+
+.scholar-sk-brand {
+  width: 120px;
+  height: 32px;
+}
+
+.scholar-sk-links-row {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.scholar-sk-link-pill {
+  width: 68px;
+  height: 18px;
+  border-radius: 8px;
+}
+
+.scholar-sk-nav-btn {
+  width: 140px;
+  height: 36px;
+}
+
+.scholar-sk-hero-wrap {
+  max-width: 820px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.scholar-sk-badge {
+  width: 240px;
+  height: 24px;
+}
+
+.scholar-sk-title-line-1 {
+  width: min(90%, 540px);
+  height: clamp(34px, 4.5vw, 56px);
+  border-radius: 16px;
+}
+
+.scholar-sk-title-line-2 {
+  width: min(75%, 380px);
+  height: clamp(24px, 3.2vw, 36px);
+  border-radius: 12px;
+}
+
+.scholar-sk-hero-desc {
+  width: min(85%, 620px);
+  height: 48px;
+  border-radius: 12px;
+  margin-top: 0.5rem;
+}
+
+.scholar-sk-btn-row {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.scholar-sk-action-btn {
+  width: 190px;
+  height: 48px;
+  border-radius: 9999px;
+}
+
+.scholar-sk-marquee-preview {
+  margin-top: auto;
+  width: 100%;
+  max-width: 1020px;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.scholar-sk-service-card {
+  flex: 1;
+  max-width: 300px;
+  height: 64px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 768px) {
+  .scholar-sk-links-row {
+    display: none;
+  }
+  .scholar-sk-header {
+    height: 48px;
+    padding: 0.5rem 1rem;
+  }
+  .scholar-sk-marquee-preview {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. INFINITE MARQUEE SLIDER KEYFRAMES & TACTILE PHYSICS
+   RTL: Natural Right-to-Left translation
+   LTR: Natural Left-to-Right translation
+   Hover / Touch slows down gracefully with physics
+   -------------------------------------------------------------------------- */
+@keyframes marqueeScrollRTL {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(50%, 0, 0);
+  }
+}
+
+@keyframes marqueeScrollLTR {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* Default / Arabic Track */
+html[dir="rtl"] .scholar-marquee-track,
+html[dir="rtl"] .ink-marquee-track {
+  animation: marqueeScrollRTL var(--scholar-marquee-speed, 26s) linear infinite;
+}
+
+/* English Track */
+html[dir="ltr"] .scholar-marquee-track,
+html[dir="ltr"] .ink-marquee-track {
+  animation: marqueeScrollLTR var(--scholar-marquee-speed, 26s) linear infinite;
+}
+
+/* Smoothly Slow Down on Mouse Hover or Finger Touch */
+.scholar-marquee-wrapper:hover .scholar-marquee-track,
+.scholar-marquee-wrapper:focus-within .scholar-marquee-track,
+.scholar-marquee-wrapper.is-slowed .scholar-marquee-track,
+.scholar-marquee-track:hover,
+.scholar-marquee-track:active,
+.scholar-marquee-track.is-slowed {
+  animation-play-state: paused;
+}
+
+/* --------------------------------------------------------------------------
+   4. ANIMATED PLANET / GLOBE LANGUAGE SWITCHER KEYFRAMES
+   -------------------------------------------------------------------------- */
+@keyframes planetOrbitSpin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(110deg) scale(1.18);
+  }
+  65% {
+    transform: rotate(260deg) scale(0.95);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes planetAtmosphereGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 4px rgba(59, 130, 246, 0.45));
+  }
+  50% {
+    filter: drop-shadow(0 0 14px rgba(37, 99, 235, 0.85)) drop-shadow(0 0 22px rgba(96, 165, 250, 0.5));
+  }
+}
+
+/* Class triggered on click of the Globe Language Button */
+.ink-globe-spinning .ink-globe-svg {
+  animation: planetOrbitSpin 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+             planetAtmosphereGlow 0.65s ease-in-out forwards;
+}
+
+/* --------------------------------------------------------------------------
+   4. AUTOMATIC ELEMENT ENTRANCE STAGGER UTILITIES
+   -------------------------------------------------------------------------- */
+.scholar-reveal-fast {
+  animation: scholarFastReveal 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.scholar-stagger-item {
+  opacity: 0;
+  animation: scholarStaggerUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.scholar-stagger-item:nth-child(1) { animation-delay: 0.04s; }
+.scholar-stagger-item:nth-child(2) { animation-delay: 0.08s; }
+.scholar-stagger-item:nth-child(3) { animation-delay: 0.12s; }
+.scholar-stagger-item:nth-child(4) { animation-delay: 0.16s; }
+.scholar-stagger-item:nth-child(5) { animation-delay: 0.20s; }
+.scholar-stagger-item:nth-child(6) { animation-delay: 0.24s; }
+.scholar-stagger-item:nth-child(7) { animation-delay: 0.28s; }
+.scholar-stagger-item:nth-child(8) { animation-delay: 0.32s; }
+
+/* Micro Card Hover Physics */
+.scholar-card-spring {
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.32s ease,
+              border-color 0.2s ease;
+}
+
+.scholar-card-spring:hover {
+  transform: translateY(-6px);
+}
+
+/* Reduced Motion Parity (WCAG AAA) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  html[dir="rtl"] .ink-marquee-track,
+  html[dir="ltr"] .ink-marquee-track {
+    animation: none !important;
+  }
+}

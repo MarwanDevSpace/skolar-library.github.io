@@ -1,0 +1,159 @@
+/* ==========================================================================
+   SCHOLAR LIBRARY (مكتبة سكولار الأكاديمية) — DESIGN TOKENS
+   Royal Academic Navy & Sapphire Blue Luxury Color Architecture
+   Matched with the Brand Identity & Logo Gradient Tone
+   ========================================================================== */
+
+:root {
+  /* --------------------------------------------------------------------------
+     1. PALETTE: ROYAL ACADEMIC NAVY & SAPPHIRE BLUE (SOLID & GLOW)
+     -------------------------------------------------------------------------- */
+  --scholar-navy-solid-base: #0B1528; /* Pure Solid Executive Blue Background */
+  --scholar-navy-midnight: #070E1A;   /* Deepest midnight vignette */
+  --scholar-navy-deep: #0F1E36;       /* Primary deep header/hero navy */
+  --scholar-navy-dark: #162746;       /* Architectural dark surface */
+  --scholar-navy-main: #1D3B73;       /* Royal academic blue (dominant logo tone) */
+  --scholar-royal-blue: #1D4486;      /* Classic university royal blue */
+  --scholar-sapphire-bright: #2563EB; /* Luminous active sapphire accent */
+  --scholar-sapphire-light: #3B82F6;  /* Soft glow sapphire */
+  --scholar-sapphire-glow: rgba(37, 99, 235, 0.28);
+  --scholar-navy-glow: rgba(22, 39, 70, 0.35);
+
+  /* Document Standards: Word & PDF Branded Tones */
+  --scholar-word-blue: #2B579A;
+  --scholar-word-blue-light: #4172B8;
+  --scholar-word-blue-glow: rgba(43, 87, 154, 0.25);
+  --scholar-pdf-red: #D92525;
+  --scholar-pdf-red-light: #EF4444;
+  --scholar-pdf-red-glow: rgba(217, 37, 37, 0.25);
+
+  /* Clean Luxury Porcelain & Ice-Blue Surfaces */
+  --scholar-cream-bg: #F8FAFD;        /* Ultra-clean tinted porcelain page background */
+  --scholar-cream-surface: #EFF4FB;   /* Soft ice-blue tinted card background */
+  --scholar-cream-card: #FFFFFF;      /* Crisp pure card surface */
+  --scholar-cream-border: #D8E2F0;    /* Subtle academic border */
+  --scholar-cream-border-subtle: rgba(22, 39, 70, 0.08);
+
+  /* Academic Gold & Warm Scholarly Accents */
+  --scholar-accent-gold: #C5A059;     /* Warm academic bookbinding gold */
+  --scholar-accent-gold-glow: rgba(197, 160, 89, 0.22);
+  --scholar-accent-amber: #D97706;
+
+  /* Typographic Ink Charcoal & High Contrast Values (WCAG AAA) */
+  --scholar-text-charcoal: #0B132B;   /* Deepest ink for headings */
+  --scholar-text-body: #334155;       /* Slate navy for high legibility paragraphs */
+  --scholar-text-muted: #64748B;      /* Sophisticated secondary captions */
+  --scholar-text-ivory: #F8FAFC;      /* Pure crisp text on dark blue backgrounds */
+  --scholar-text-gold: #C5A059;
+
+  /* --------------------------------------------------------------------------
+     2. TYPOGRAPHY STACKS & BOLD/THIN WEIGHT CONTRAST
+     -------------------------------------------------------------------------- */
+  --scholar-font-serif-display: 'Cormorant Garamond', 'Amiri', Georgia, serif;
+  --scholar-font-serif-arabic: 'Amiri', 'Cairo', serif;
+  --scholar-font-editorial-heading: 'Playfair Display', 'Cairo', serif;
+  --scholar-font-sans-clean: 'Outfit', 'IBM Plex Sans Arabic', -apple-system, sans-serif;
+  --scholar-font-arabic-body: 'IBM Plex Sans Arabic', 'Cairo', sans-serif;
+
+  /* Editorial Contrast Weights */
+  --scholar-weight-thin: 300;
+  --scholar-weight-regular: 400;
+  --scholar-weight-medium: 500;
+  --scholar-weight-semibold: 600;
+  --scholar-weight-bold: 700;
+  --scholar-weight-black: 900;
+
+  /* Fluid Typography Steps */
+  --scholar-text-hero: clamp(2.4rem, 2.0rem + 3.2vw, 4.8rem);
+  --scholar-text-section-title: clamp(2.0rem, 1.6rem + 2.2vw, 3.4rem);
+  --scholar-text-card-title: clamp(1.15rem, 1.0rem + 0.5vw, 1.45rem);
+  --scholar-text-body-lg: clamp(1.05rem, 0.98rem + 0.25vw, 1.25rem);
+  --scholar-text-body: clamp(0.92rem, 0.88rem + 0.14vw, 1.05rem);
+  --scholar-text-caption: clamp(0.75rem, 0.72rem + 0.08vw, 0.86rem);
+
+  /* Optical Line Heights */
+  --scholar-leading-display: 1.15;
+  --scholar-leading-heading: 1.25;
+  --scholar-leading-body: 1.8;
+
+  /* Pill & Arch Geometry */
+  --scholar-radius-pill: 9999px;
+  --scholar-radius-card: 28px;
+  --scholar-radius-arch: clamp(40px, 7vw, 72px);
+  --scholar-radius-sm: 12px;
+  --scholar-radius-md: 18px;
+
+  /* Physical Multi-Layered Shadows */
+  --scholar-shadow-pill: 0 10px 30px -5px rgba(10, 19, 37, 0.12), 0 4px 10px -2px rgba(10, 19, 37, 0.06);
+  --scholar-shadow-card: 0 16px 36px -8px rgba(15, 30, 54, 0.09), 0 4px 12px -2px rgba(15, 30, 54, 0.04);
+  --scholar-shadow-card-hover: 0 24px 50px -10px rgba(15, 30, 54, 0.18), 0 8px 20px -4px rgba(37, 99, 235, 0.15);
+  --scholar-shadow-arch: 0 -20px 40px -10px rgba(10, 19, 37, 0.20);
+  --scholar-shadow-glow-blue: 0 0 28px rgba(37, 99, 235, 0.35);
+
+  /* Infinite Marquee Configuration */
+  --scholar-marquee-speed: 26s;
+  --scholar-marquee-slow: 90s;
+
+  /* Tactile Springs & Physics Timing */
+  --scholar-ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --scholar-duration-fast: 180ms;
+  --scholar-duration-normal: 300ms;
+  --scholar-duration-slow: 550ms;
+
+  /* --------------------------------------------------------------------------
+     3. BACKWARD COMPATIBILITY MAPPINGS
+     -------------------------------------------------------------------------- */
+  --ink-cream-bg: var(--scholar-cream-bg);
+  --ink-cream-surface: var(--scholar-cream-surface);
+  --ink-cream-card: var(--scholar-cream-card);
+  --ink-cream-border: var(--scholar-cream-border);
+  --ink-cream-border-subtle: var(--scholar-cream-border-subtle);
+
+  --ink-heritage-green: var(--scholar-royal-blue);
+  --ink-heritage-dark: var(--scholar-navy-deep);
+  --ink-heritage-light: var(--scholar-sapphire-bright);
+  --ink-heritage-glow: var(--scholar-sapphire-glow);
+
+  --ink-sapphire-main: var(--scholar-navy-main);
+  --ink-sapphire-deep: var(--scholar-navy-deep);
+  --ink-sapphire-bright: var(--scholar-sapphire-bright);
+
+  --ink-text-charcoal: var(--scholar-text-charcoal);
+  --ink-text-body: var(--scholar-text-body);
+  --ink-text-muted: var(--scholar-text-muted);
+  --ink-text-ivory: var(--scholar-text-ivory);
+  --ink-text-gold: var(--scholar-text-gold);
+
+  --ink-font-serif-display: var(--scholar-font-serif-display);
+  --ink-font-serif-arabic: var(--scholar-font-serif-arabic);
+  --ink-font-editorial-heading: var(--scholar-font-editorial-heading);
+  --ink-font-sans-clean: var(--scholar-font-sans-clean);
+  --ink-font-arabic-body: var(--scholar-font-arabic-body);
+
+  --ink-text-hero: var(--scholar-text-hero);
+  --ink-text-section-title: var(--scholar-text-section-title);
+  --ink-text-card-title: var(--scholar-text-card-title);
+  --ink-text-body-lg: var(--scholar-text-body-lg);
+  --ink-text-body: var(--scholar-text-body);
+  --ink-text-caption: var(--scholar-text-caption);
+
+  --ink-leading-display: var(--scholar-leading-display);
+  --ink-leading-heading: var(--scholar-leading-heading);
+  --ink-leading-body: var(--scholar-leading-body);
+
+  --ink-radius-pill: var(--scholar-radius-pill);
+  --ink-radius-card: var(--scholar-radius-card);
+  --ink-radius-arch: var(--scholar-radius-arch);
+  --ink-radius-sm: var(--scholar-radius-sm);
+  --ink-radius-md: var(--scholar-radius-md);
+
+  --ink-shadow-pill: var(--scholar-shadow-pill);
+  --ink-shadow-card: var(--scholar-shadow-card);
+  --ink-shadow-card-hover: var(--scholar-shadow-card-hover);
+  --ink-shadow-arch: var(--scholar-shadow-arch);
+
+  --ink-ease-spring: var(--scholar-ease-spring);
+  --ink-duration-fast: var(--scholar-duration-fast);
+  --ink-duration-normal: var(--scholar-duration-normal);
+  --ink-duration-slow: var(--scholar-duration-slow);
+}

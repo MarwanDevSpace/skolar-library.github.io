@@ -1,0 +1,1144 @@
+/* ==========================================================================
+   SCHOLAR LIBRARY (مكتبة سكولار الأكاديمية) — EDITORIAL LUXURY ARCHITECTURE & LAYOUT
+   Extreme Precision Matching the Luxury Reserve / Country Club Reference
+   ========================================================================== */
+
+/* Modern Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  text-size-adjust: 100%;
+}
+
+body.ink-editorial-body {
+  background-color: var(--scholar-cream-bg, var(--ink-cream-bg));
+  color: var(--scholar-text-charcoal, var(--ink-text-charcoal));
+  font-family: var(--scholar-font-arabic-body, var(--ink-font-arabic-body));
+  font-size: var(--scholar-text-body, var(--ink-text-body));
+  line-height: var(--scholar-leading-body, var(--ink-leading-body));
+  direction: inherit;
+  text-align: start;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Direction is driven by html[dir], which the language switcher updates.
+   Declared explicitly (rather than relying on silent inheritance) so the
+   header and every section mirror correctly and predictably per language. */
+html[dir="rtl"] body.ink-editorial-body {
+  direction: rtl;
+}
+
+html[dir="ltr"] body.ink-editorial-body {
+  direction: ltr;
+}
+
+/* SVG System Utilities */
+.ink-svg {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  vertical-align: middle;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  flex-shrink: 0;
+  transition: transform var(--ink-duration-fast) ease, stroke var(--ink-duration-fast) ease;
+}
+
+.ink-svg-lg {
+  width: 28px;
+  height: 28px;
+}
+
+.ink-svg-xl {
+  width: 32px;
+  height: 32px;
+}
+
+.ink-svg-sm {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2;
+}
+
+/* --------------------------------------------------------------------------
+   1. FIXED FLOATING PILL NAVBAR
+   -------------------------------------------------------------------------- */
+.ink-pill-header {
+  position: fixed;
+  top: 1.15rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  width: min(96%, 1380px);
+  pointer-events: none;
+}
+
+.ink-pill-nav {
+  pointer-events: auto;
+  background: rgba(248, 250, 253, 0.94);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1.5px solid rgba(29, 68, 134, 0.14);
+  border-radius: var(--ink-radius-pill);
+  padding: 0.55rem 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(0.75rem, 1.8vw, 2.2rem);
+  box-shadow: 0 14px 40px -6px rgba(10, 19, 37, 0.12), 0 4px 14px rgba(10, 19, 37, 0.05);
+  transition: all var(--ink-duration-fast) ease;
+}
+
+.ink-pill-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--ink-text-charcoal);
+  flex-shrink: 0;
+}
+
+.ink-pill-brand img, .ink-logo-img {
+  height: 38px;
+  width: auto;
+  max-width: 130px;
+  object-fit: contain;
+  transition: transform var(--ink-duration-fast) var(--ink-ease-spring);
+}
+
+.ink-pill-brand:hover img, .ink-pill-brand:hover .ink-logo-img {
+  transform: scale(1.04);
+}
+
+.ink-brand-divider {
+  width: 1px;
+  height: 24px;
+  background: var(--ink-cream-border);
+}
+
+.ink-pill-brand-text {
+  font-family: var(--scholar-font-serif-arabic, var(--ink-font-serif-display));
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--ink-text-charcoal);
+}
+
+/* Footer Brand Container */
+.ink-footer-brand-box {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.ink-footer-logo-wrap {
+  background: #ffffff;
+  padding: 0.45rem 1.15rem;
+  border-radius: var(--ink-radius-pill);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  transition: transform 0.25s var(--ink-ease-spring);
+}
+
+.ink-footer-logo-wrap:hover {
+  transform: translateY(-2px) scale(1.03);
+}
+
+.ink-footer-logo-img {
+  height: 44px;
+  width: auto;
+  max-width: 150px;
+  object-fit: contain;
+}
+
+.ink-pill-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.55rem, 1.2vw, 1.45rem);
+  list-style: none;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.ink-pill-link {
+  color: var(--scholar-text-charcoal);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  padding: 0.35rem 0.55rem;
+  border-radius: var(--ink-radius-pill);
+  transition: color var(--ink-duration-fast) ease, transform var(--ink-duration-fast) ease, background-color var(--ink-duration-fast) ease;
+  display: inline-block;
+}
+
+.ink-pill-link:hover {
+  color: var(--scholar-sapphire-bright);
+  background: rgba(37, 99, 235, 0.07);
+  transform: translateY(-1px);
+}
+
+.ink-pill-cta {
+  background: var(--ink-heritage-green);
+  color: #ffffff;
+  padding: 0.48rem 1.35rem;
+  border-radius: var(--ink-radius-pill);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: 0 4px 12px rgba(29, 68, 134, 0.25);
+  transition: all var(--ink-duration-fast) var(--ink-ease-spring);
+  flex-shrink: 0;
+}
+
+.ink-pill-cta:hover {
+  background: var(--scholar-sapphire-bright);
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 8px 22px rgba(37, 99, 235, 0.38);
+}
+
+/* --------------------------------------------------------------------------
+   2. CINEMATIC HERO SECTION
+   -------------------------------------------------------------------------- */
+.ink-editorial-hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: radial-gradient(100% 120% at 50% 0%, #162746 0%, #0B1528 65%, #070E1A 100%);
+  color: var(--scholar-text-ivory);
+  padding: 8.5rem 1.5rem 5rem 1.5rem;
+  overflow: hidden;
+}
+
+.ink-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 25%, rgba(37, 99, 235, 0.12) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.ink-hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ink-hero-est {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-family: var(--ink-font-serif-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(253, 251, 247, 0.85);
+  margin-bottom: 1.4rem;
+}
+
+.ink-hero-est-line {
+  width: 42px;
+  height: 1px;
+  background: rgba(253, 251, 247, 0.45);
+}
+
+.ink-hero-editorial-title {
+  font-family: var(--scholar-font-serif-arabic, var(--ink-font-serif-display));
+  font-size: var(--ink-text-hero);
+  font-weight: 700;
+  line-height: var(--ink-leading-display);
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  text-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
+}
+
+.ink-hero-editorial-title em {
+  font-style: italic;
+  font-weight: 400;
+  color: #EBD6A7;
+}
+
+.ink-hero-editorial-sub {
+  font-size: var(--ink-text-body-lg);
+  font-weight: 400;
+  color: rgba(253, 251, 247, 0.88);
+  max-width: 680px;
+  line-height: 1.85;
+  margin-bottom: 2.5rem;
+}
+
+.ink-hero-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #ffffff;
+  color: var(--ink-heritage-dark);
+  padding: 1.05rem 2.8rem;
+  border-radius: var(--ink-radius-pill);
+  font-family: var(--ink-font-sans-clean);
+  font-size: 1.02rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  transition: transform var(--ink-duration-fast) var(--ink-ease-spring), box-shadow var(--ink-duration-fast) ease, background-color var(--ink-duration-fast) ease;
+}
+
+.ink-hero-pill-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  background: #FAF7F0;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
+}
+
+.ink-hero-tagline {
+  margin-top: 3.5rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(253, 251, 247, 0.65);
+}
+
+/* --------------------------------------------------------------------------
+   3. SECTION: "عن المكتبة" (ABOUT US) & 3 TALL CARDS
+   -------------------------------------------------------------------------- */
+.ink-section-about {
+  background: var(--ink-cream-bg);
+  padding-block: clamp(4.5rem, 8vw, 7.5rem);
+  position: relative;
+}
+
+.ink-editorial-container {
+  width: 100%;
+  max-width: 1160px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+.ink-editorial-header {
+  text-align: center;
+  max-width: 740px;
+  margin-inline: auto;
+  margin-bottom: clamp(2.5rem, 5vw, 4.2rem);
+}
+
+.ink-editorial-title {
+  font-family: var(--scholar-font-serif-arabic, var(--ink-font-serif-display));
+  font-size: var(--ink-text-section-title);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-text-charcoal);
+  margin-bottom: 1.2rem;
+}
+
+.ink-editorial-desc {
+  font-size: var(--ink-text-body-lg);
+  color: var(--ink-text-body);
+  line-height: var(--ink-leading-body);
+}
+
+/* --------------------------------------------------------------------------
+   3. INFINITE MARQUEE SERVICES SLIDER (سلايد انيميشن لا نهائي)
+   Flows infinitely, slows down on touch/hover, fully responsive & LTR/RTL aware
+   -------------------------------------------------------------------------- */
+.scholar-marquee-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-block: 1.5rem 2.2rem;
+  mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+}
+
+.scholar-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  width: max-content;
+  animation: marqueeScrollRTL var(--scholar-marquee-speed, 26s) linear infinite;
+  will-change: transform;
+  cursor: grab;
+}
+
+html[dir="ltr"] .scholar-marquee-track {
+  animation-name: marqueeScrollLTR;
+}
+
+.scholar-marquee-wrapper:hover .scholar-marquee-track,
+.scholar-marquee-wrapper:active .scholar-marquee-track,
+.scholar-marquee-wrapper.is-slowed .scholar-marquee-track,
+.scholar-marquee-track:hover,
+.scholar-marquee-track:active,
+.scholar-marquee-track.is-slowed {
+  animation-play-state: paused;
+}
+
+.scholar-marquee-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.15rem;
+  background: #ffffff;
+  border: 1.5px solid rgba(29, 68, 134, 0.12);
+  border-radius: var(--ink-radius-pill);
+  padding: 0.95rem 2.2rem;
+  box-shadow: 0 10px 30px -4px rgba(10, 19, 37, 0.08), 0 4px 12px rgba(10, 19, 37, 0.04);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+  flex-shrink: 0;
+  text-decoration: none;
+  color: var(--scholar-text-charcoal);
+}
+
+.scholar-marquee-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  border-color: var(--scholar-sapphire-bright);
+  box-shadow: 0 16px 40px -4px rgba(37, 99, 235, 0.22);
+}
+
+.scholar-marquee-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--scholar-cream-surface);
+  color: var(--scholar-royal-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.scholar-marquee-card:hover .scholar-marquee-icon-wrap {
+  background: var(--scholar-royal-blue);
+  color: #ffffff;
+  transform: rotate(-10deg) scale(1.08);
+}
+
+.scholar-marquee-text {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  font-family: var(--scholar-font-arabic-body);
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+
+.scholar-marquee-separator {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--scholar-gold-accent);
+  opacity: 0.8;
+  margin-inline: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   4. ARCHED ROYAL ACADEMIC NAVY SECTION ("ما الذي يميزنا؟")
+   -------------------------------------------------------------------------- */
+.ink-arch-section {
+  background: linear-gradient(180deg, var(--scholar-navy-deep) 0%, var(--scholar-navy-midnight) 100%);
+  border-radius: clamp(52px, 8vw, 96px) clamp(52px, 8vw, 96px) 0 0;
+  padding-block: clamp(5rem, 8vw, 8.5rem);
+  color: var(--scholar-text-ivory);
+  position: relative;
+  margin-top: 1rem;
+}
+
+.ink-arch-header {
+  text-align: center;
+  max-width: 720px;
+  margin-inline: auto;
+  margin-bottom: clamp(3rem, 6vw, 5.2rem);
+}
+
+.ink-arch-title {
+  font-family: var(--scholar-font-serif-arabic, var(--ink-font-serif-display));
+  font-size: var(--ink-text-section-title);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  margin-bottom: 1.1rem;
+}
+
+.ink-arch-subtitle {
+  font-size: var(--ink-text-body);
+  color: rgba(253, 251, 247, 0.85);
+  line-height: 1.8;
+}
+
+/* --------------------------------------------------------------------------
+   4. ARCHED ROYAL ACADEMIC NAVY SECTION ("ضمانات الجودة والإنجاز")
+   3 Executive Architectural Guarantee Cards with Royal Sapphire Glow
+   -------------------------------------------------------------------------- */
+.scholar-guarantees-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 2.5vw, 2.5rem);
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.scholar-guarantee-card {
+  position: relative;
+  background: rgba(22, 39, 70, 0.58);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 28px;
+  padding: clamp(2.2rem, 3.5vw, 3.2rem) clamp(1.5rem, 2.2vw, 2.2rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease,
+              background 0.3s ease;
+  overflow: hidden;
+}
+
+.scholar-guarantee-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--scholar-sapphire-bright), transparent);
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.scholar-guarantee-card:hover {
+  transform: translateY(-8px);
+  background: rgba(22, 39, 70, 0.88);
+  border-color: rgba(37, 99, 235, 0.6);
+}
+
+.scholar-guarantee-card:hover::before {
+  opacity: 1;
+}
+
+.scholar-guarantee-icon-wrap {
+  width: 76px;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.22) 0%, rgba(29, 68, 134, 0.15) 100%);
+  border: 1.5px solid rgba(59, 130, 246, 0.45);
+  color: #ffffff;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.3s ease,
+              border-color 0.3s ease;
+}
+
+.scholar-guarantee-card:hover .scholar-guarantee-icon-wrap {
+  transform: scale(1.1) rotate(-6deg);
+  background: var(--scholar-sapphire-bright);
+  border-color: #ffffff;
+}
+
+.scholar-guarantee-title {
+  font-family: var(--scholar-font-serif-arabic, var(--ink-font-editorial-heading));
+  font-size: clamp(1.2rem, 1.5vw, 1.45rem);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.35;
+  margin-top: 0.25rem;
+}
+
+.scholar-guarantee-desc {
+  font-size: clamp(0.92rem, 1.1vw, 1.02rem);
+  font-weight: 400;
+  color: rgba(253, 251, 247, 0.82);
+  line-height: 1.75;
+  max-width: 320px;
+}
+
+/* Backward compatibility for icon-grid if referenced */
+.ink-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* --------------------------------------------------------------------------
+   5. BESPOKE "من نحن" (ABOUT US) & UNIFIED WORD / PDF BADGES SHOWCASE
+   Exact mission text & executive Word (.docx) + PDF (.pdf) delivery badges
+   -------------------------------------------------------------------------- */
+.scholar-about-section {
+  background: var(--scholar-cream-bg, var(--ink-cream-bg));
+  padding-block: clamp(4.5rem, 7vw, 7.5rem);
+  border-bottom: 1.5px solid var(--scholar-cream-border);
+  position: relative;
+}
+
+.scholar-about-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.95fr;
+  align-items: center;
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.scholar-about-statement-card {
+  background: #ffffff;
+  border: 1.5px solid rgba(29, 68, 134, 0.12);
+  border-radius: clamp(24px, 3vw, 36px);
+  padding: clamp(2rem, 4vw, 3.2rem);
+  box-shadow: 0 16px 45px -8px rgba(10, 19, 37, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.scholar-about-statement-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  inset-inline-start: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--scholar-royal-blue) 0%, var(--scholar-gold-accent) 100%);
+}
+
+.scholar-about-quote-mark {
+  font-family: var(--scholar-font-serif-display);
+  font-size: 3.5rem;
+  line-height: 1;
+  color: var(--scholar-gold-accent);
+  opacity: 0.35;
+  margin-bottom: 0.25rem;
+}
+
+.scholar-about-exact-text {
+  font-family: var(--scholar-font-arabic-body);
+  font-size: clamp(1.12rem, 1.8vw, 1.35rem);
+  font-weight: 500;
+  color: var(--scholar-text-charcoal);
+  line-height: 1.95;
+  margin-bottom: 1.75rem;
+}
+
+.scholar-about-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.scholar-about-pill-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--scholar-cream-surface);
+  border: 1px solid var(--scholar-cream-border);
+  padding: 0.45rem 1rem;
+  border-radius: var(--ink-radius-pill);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--scholar-royal-blue);
+}
+
+/* Word & PDF Unified Showcase Box */
+.scholar-docs-showcase-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.scholar-doc-badge {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.35rem 1.65rem;
+  border-radius: 20px;
+  background: #ffffff;
+  border: 1.5px solid transparent;
+  box-shadow: 0 10px 28px -4px rgba(10, 19, 37, 0.08);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.scholar-doc-badge:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 16px 36px -4px rgba(10, 19, 37, 0.14);
+}
+
+.scholar-doc-badge-word {
+  border-color: rgba(43, 87, 154, 0.22);
+}
+
+.scholar-doc-badge-word:hover {
+  border-color: var(--scholar-word-blue, #2B579A);
+}
+
+.scholar-doc-badge-pdf {
+  border-color: rgba(217, 37, 37, 0.22);
+}
+
+.scholar-doc-badge-pdf:hover {
+  border-color: var(--scholar-pdf-red, #D92525);
+}
+
+.scholar-doc-badge-icon {
+  width: 54px;
+  height: 54px;
+  min-width: 54px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  font-size: 1.2rem;
+  font-weight: 900;
+  font-family: var(--scholar-font-sans-clean);
+}
+
+.scholar-doc-badge-word .scholar-doc-badge-icon {
+  background: linear-gradient(135deg, #185ABD 0%, #2B579A 100%);
+}
+
+.scholar-doc-badge-pdf .scholar-doc-badge-icon {
+  background: linear-gradient(135deg, #E5252A 0%, #B30B00 100%);
+}
+
+.scholar-doc-badge-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.scholar-doc-badge-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--scholar-text-charcoal);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.scholar-doc-badge-sub {
+  font-size: 0.85rem;
+  color: var(--scholar-text-body);
+  line-height: 1.5;
+}
+
+.scholar-doc-badge-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  letter-spacing: 0.03em;
+}
+
+.scholar-doc-badge-word .scholar-doc-badge-tag {
+  background: rgba(43, 87, 154, 0.1);
+  color: #2B579A;
+}
+
+.scholar-doc-badge-pdf .scholar-doc-badge-tag {
+  background: rgba(217, 37, 37, 0.1);
+  color: #D92525;
+}
+
+.scholar-doc-seal {
+  background: linear-gradient(135deg, rgba(29, 68, 134, 0.06) 0%, rgba(197, 160, 89, 0.12) 100%);
+  border: 1.5px dashed rgba(197, 160, 89, 0.6);
+  border-radius: 16px;
+  padding: 1rem 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--scholar-text-charcoal);
+}
+
+/* Footer Editorial */
+.ink-editorial-footer {
+  background: var(--ink-heritage-dark);
+  color: rgba(253, 251, 247, 0.75);
+  padding-block: 5.5rem 3rem;
+}
+
+/* --------------------------------------------------------------------------
+   NAV ACTIONS, LANGUAGE TOGGLE & MOBILE DRAWER
+   -------------------------------------------------------------------------- */
+.ink-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-shrink: 0;
+}
+
+/* Animated Planet / Globe Language Switcher */
+.ink-globe-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #ffffff;
+  border: 1.5px solid var(--scholar-cream-border);
+  border-radius: var(--ink-radius-pill);
+  padding: 0.42rem 0.95rem;
+  font-family: var(--scholar-font-sans-clean);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--scholar-text-charcoal);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(15, 30, 54, 0.06);
+  transition: all var(--ink-duration-fast) var(--ink-ease-spring);
+  user-select: none;
+  position: relative;
+}
+
+.ink-globe-btn:hover {
+  border-color: var(--scholar-sapphire-bright);
+  color: var(--scholar-sapphire-bright);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.2);
+  background: #F8FAFD;
+}
+
+.ink-globe-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.ink-globe-svg {
+  width: 20px;
+  height: 20px;
+  color: var(--scholar-royal-blue);
+  transition: transform 0.5s var(--ink-ease-spring);
+  display: block;
+}
+
+.ink-globe-btn:hover .ink-globe-svg {
+  color: var(--scholar-sapphire-bright);
+  transform: scale(1.12);
+}
+
+.ink-globe-code {
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: inherit;
+}
+
+/* Backward compatibility for toggle button */
+.ink-lang-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #ffffff;
+  border: 1px solid var(--ink-cream-border);
+  border-radius: var(--ink-radius-pill);
+  padding: 0.38rem 0.85rem;
+  font-family: var(--ink-font-sans-clean);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--ink-text-charcoal);
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: all var(--ink-duration-fast) ease;
+  user-select: none;
+}
+
+.ink-lang-toggle-btn:hover {
+  border-color: var(--scholar-sapphire-bright);
+  color: var(--scholar-sapphire-bright);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+}
+
+.ink-mobile-menu-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid var(--ink-cream-border);
+  color: var(--ink-text-charcoal);
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: all var(--ink-duration-fast) ease;
+}
+
+.ink-mobile-menu-btn:hover {
+  background: var(--ink-cream-surface);
+  color: var(--ink-heritage-green);
+  border-color: var(--ink-heritage-green);
+}
+
+/* Mobile Drawer Dropdown */
+.ink-mobile-drawer {
+  position: absolute;
+  top: calc(100% + 0.6rem);
+  left: 0;
+  right: 0;
+  background: rgba(253, 251, 247, 0.96);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(28, 27, 24, 0.12);
+  border-radius: 24px;
+  padding: 1.15rem 1.25rem;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
+  pointer-events: auto;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-12px) scale(0.98);
+  transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.ink-mobile-drawer.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.ink-mobile-drawer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.ink-mobile-drawer-link {
+  display: flex;
+  align-items: center;
+  padding: 0.65rem 0.95rem;
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--ink-text-charcoal);
+  font-size: 0.92rem;
+  font-weight: 700;
+  transition: all var(--ink-duration-fast) ease;
+}
+
+.ink-mobile-drawer-link:hover,
+.ink-mobile-drawer-link:active {
+  background: rgba(37, 99, 235, 0.08);
+  color: var(--scholar-sapphire-bright);
+  transform: translateX(-4px);
+}
+
+html[dir="ltr"] .ink-mobile-drawer-link:hover,
+html[dir="ltr"] .ink-mobile-drawer-link:active {
+  transform: translateX(4px);
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVENESS & MULTI-VIEWPORT EXCELLENCE
+   -------------------------------------------------------------------------- */
+@media (max-width: 1080px) and (min-width: 769px) {
+  .ink-pill-links {
+    gap: 0.85rem;
+  }
+  .ink-pill-link {
+    font-size: 0.74rem;
+  }
+  .ink-pill-nav {
+    padding: 0.45rem 1.15rem;
+    gap: 0.8rem;
+  }
+  .ink-logo-img {
+    height: 32px;
+  }
+  .ink-pill-cta {
+    padding: 0.4rem 0.95rem;
+    font-size: 0.75rem;
+  }
+  .ink-mobile-menu-btn {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .ink-pill-links {
+    display: none;
+  }
+  .ink-mobile-menu-btn {
+    display: flex;
+  }
+  .ink-pill-header {
+    top: 0.65rem;
+    width: calc(100% - 1.25rem);
+  }
+  .ink-pill-nav {
+    padding: 0.45rem 0.95rem;
+    gap: 0.6rem;
+  }
+  .ink-logo-img {
+    height: 28px;
+  }
+  .ink-pill-cta {
+    padding: 0.4rem 0.85rem;
+    font-size: 0.74rem;
+  }
+  .ink-trio-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .ink-tall-card {
+    min-height: 380px;
+  }
+  .ink-arch-section {
+    border-radius: 36px 36px 0 0;
+    padding-block: 4rem;
+  }
+  .ink-icon-grid,
+  .scholar-guarantees-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .scholar-about-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .scholar-marquee-card {
+    padding: 0.75rem 1.6rem;
+    gap: 0.85rem;
+  }
+  .scholar-marquee-text {
+    font-size: 1.05rem;
+  }
+  .ink-editorial-hero {
+    min-height: 85vh;
+    padding: 7rem 1.25rem 3.5rem 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ink-pill-nav {
+    padding: 0.38rem 0.75rem;
+  }
+  .ink-lang-toggle-btn {
+    padding: 0.32rem 0.65rem;
+    font-size: 0.74rem;
+  }
+  .ink-pill-cta span {
+    display: none;
+  }
+  .ink-pill-cta {
+    padding: 0.45rem 0.65rem;
+    border-radius: 50%;
+  }
+  .ink-icon-grid,
+  .scholar-guarantees-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* Responsive Form Row */
+.ink-form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .ink-form-grid-2 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   LANGUAGE & VIEWPORT NORMALIZATION (ZERO SIZE DISCREPANCY AR/EN)
+   -------------------------------------------------------------------------- */
+html[lang="en"] {
+  font-family: var(--scholar-font-sans-clean);
+}
+
+html[lang="ar"] {
+  font-family: var(--scholar-font-arabic-body);
+}
+
+html[dir="ltr"] .ink-svg-flip {
+  transform: scaleX(-1);
+}
+
+html[dir="rtl"] .ink-svg-flip {
+  transform: scaleX(1);
+}
+
+/* Header Mirroring & Actions in LTR */
+html[dir="ltr"] .ink-pill-nav {
+  flex-direction: row;
+}
+
+html[dir="ltr"] .ink-nav-actions {
+  flex-direction: row;
+}
+
+/* Normalized Pill & Button Heights across Languages */
+.ink-btn-pill,
+.ink-pill-cta,
+.ink-hero-pill-btn,
+.ink-globe-btn,
+.ink-quick-chip {
+  min-height: 44px;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.35;
+}
+
+.ink-pill-nav {
+  min-height: 56px;
+  box-sizing: border-box;
+}
+
+/* Optical symmetry for cards across languages */
+html[lang="en"] .ink-hero-editorial-title {
+  font-family: var(--scholar-font-editorial-heading), var(--scholar-font-sans-clean);
+  letter-spacing: -0.01em;
+}
+
+html[lang="en"] .ink-editorial-title,
+html[lang="en"] .ink-arch-title,
+html[lang="en"] .scholar-guarantee-title {
+  font-family: var(--scholar-font-editorial-heading), var(--scholar-font-sans-clean);
+}

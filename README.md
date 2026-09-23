@@ -1,0 +1,144 @@
+<div align="center">
+
+# 🏛️ مكتبة سكولار الأكاديمية | Scholar Academic Library
+### *المنصة الرقمية المتخصصة لإنشاء وتنسيق البحوث، رسائل الماجستير، والتقارير الجامعية*
+### *High-Craft Academic Research, Thesis & Report Services Platform*
+
+[![GitHub Pages](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-2563EB?style=for-the-badge&logo=github&logoColor=white)](https://marwandevspace.github.io/skolar-library.github.io/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-0B1528?style=for-the-badge)](LICENSE)
+[![Bilingual](https://img.shields.io/badge/Language-Arabic%20%7C%20English-1D3B73?style=for-the-badge)](https://marwandevspace.github.io/skolar-library.github.io/)
+[![Zero Dependency](https://img.shields.io/badge/Dependencies-Zero%20(Vanilla)-success?style=for-the-badge)](https://marwandevspace.github.io/skolar-library.github.io/)
+[![WCAG](https://img.shields.io/badge/Accessibility-WCAG%20AAA-gold?style=for-the-badge)](https://marwandevspace.github.io/skolar-library.github.io/)
+
+<br />
+
+[🌐 **زيارة الموقع المباشر (Live Site)**](https://marwandevspace.github.io/skolar-library.github.io/) • [📋 **المميزات (Features)**](#-المميزات-الرئيسية--key-features) • [🎨 **نظام التصميم (Design System)**](#-الهوية-البصرية-ونظام-التصميم--design-system) • [📁 **هيكل المشروع (Structure)**](#-هيكل-المشروع--project-structure) • [🚀 **التشغيل (Quick Start)**](#-التشغيل-المحلي--local-development)
+
+<br />
+
+<img src="logo-ar.png" alt="Scholar Academic Library" width="480" style="max-width: 90%; height: auto;" />
+
+</div>
+
+---
+
+## 📖 نبذة عن المشروع (About The Project)
+
+**مكتبة سكولار الأكاديمية** هي منصة متكاملة مخصصة لتقديم الخدمات الأكاديمية والاستشارية لطلبة الجامعات والمعاهد والدراسات العليا. يتميز العمل بالدقة العلمية العالية، السرعة الفائقة في التسليم، والمتابعة المستمرة لكافة ملاحظات المشرفين ولجان المناقشة.
+
+صُممت المنصة وفق **فلسفة مدرسة INK للتصميم الرقمي فائق الحرفية (Bespoke Craftsmanship)** بعيداً عن القوالب الجاهزة أو التصاميم المبتذلة، مع هندسة بصرية وصوتية وحركية مدروسة تضمن أرقى تجربة استخدام تفاعلية ثنائية اللغة (عربي / English).
+
+> **Scholar Academic Library** is a premier digital platform tailored for university, college, and postgraduate students. It provides specialized academic consulting, research formulation, master’s thesis drafting, and scholarly report formatting according to accredited academic guidelines. Built with bespoke craftsmanship, fluid typography, and zero third-party framework overhead.
+
+---
+
+## ✨ المميزات الرئيسية (Key Features)
+
+### 1. 🌐 محرك ثنائي اللغة حقيقي (Dynamic Bilingual & Bidi Engine)
+- تبديل فوري وسلس بين العربية (RTL) والإنجليزية (LTR) بنقرة زر واحدة عبر أيقونة الكرة الأرضية التفاعلية.
+- **تبديل تلقائي للأصول البصرية**: استبدال الشعار المعتمد تلقائياً بين النسخة العربية (`logo-ar.png`) والنسخة الإنجليزية (`logo-en.png`).
+- استخدام صارم للخصائص المنطقية الحديثة (`margin-inline`, `padding-inline`, `inset-inline`) مع تعويض الارتفاع البصري للأسطر العربية ومنع تداخل التشكيل والامتدادات.
+
+### 2. ⚡ استوديو تحويل الطلبات الفوري (Direct Referral Studio)
+- نموذج تفاعلي ذكي لاختيار المرحلة الأكاديمية (رسائل ماجستير، بحوث تخرج بكالوريوس، تقارير دورية).
+- توليد نص مهيأ بدقة ومخصص بصيغة موحدة لمعاينة الطلب.
+- تحويل فوري للطلب بنقرة واحدة إلى **واتساب (WhatsApp)** أو **تليغرام (Telegram)** مباشرة مع المستشار الأكاديمي، بالإضافة لزر نسخ سريع بنقرة واحدة.
+
+### 3. 🛡️ ضمان التسليم المزدوج (Dual Delivery Standard)
+- تسليم كل دراسة وبحث بصيغتي **Microsoft Word** (مفتوحة المصدر وقابلة للتعديل بضوابط الجامعة) و **PDF** (موثقة وجاهزة للطباعة والمناقشة الفورية).
+
+### 4. 💫 تجربة حركية فيزيائية ناعمة (Micro-Interactions & Physics)
+- **شريط تنقل ممدود عائم (Floating Pill Navbar)** بانعكاس زجاجي ناعم وثبات متجاوب.
+- **شريط متحرك لا نهائي (Infinite Velocity Marquee)** يعرض الخدمات مع إيقاف مؤقت سلس عند التمرير بالماوس أو اللمس.
+- **شاشة تحميل هيكلية (Skeleton Screen)** تمنح انطباعاً فورياً بالسرعة وتمنع الوميض البصري أثناء التحميل الأولي.
+- أكورديون تفاعلي منسق لقسم الأسئلة الشائعة (FAQ) مع مسارات SVG متحركة.
+
+### 5. 🚀 خفة فائقة وأداء صاروخي (Zero-Dependency Architecture)
+- مبني بلغة JavaScript نقية (Vanilla JS) و CSS حديث بدون أي مكتبات أو أطر عمل ثقيلة (No React, No Tailwind, No jQuery).
+- حجم إجمالي خفيف جداً يتيح سرعة تحميل تقل عن نصف ثانية عبر شبكات الهاتف المحمول وشبكات الويب العالمية.
+
+---
+
+## 🎨 الهوية البصرية ونظام التصميم (Design System)
+
+تم بناء الموقع بالاعتماد على لوحة ألوان ملكية مستوحاة من رصانة الصروح الأكاديمية العالمية:
+
+| المتغير اللوني | القيمة اللونية | الوصف والاستخدام |
+| :--- | :---: | :--- |
+| `--scholar-navy-solid-base` | `#0B1528` | الكحلي الملكي العميق (خلفية فاخرة غير باهتة) |
+| `--scholar-navy-deep` | `#0F1E36` | درجات العمق المعماري للأشرطة والحاويات العلوية |
+| `--scholar-navy-main` | `#1D3B73` | الأزرق الأكاديمي الملكي المتناغم مع شعار المنصة |
+| `--scholar-sapphire-bright` | `#2563EB` | الأزرق الياقوتي المتوهج للعناصر التفاعلية والأزرار |
+| `--scholar-accent-gold` | `#C5A059` | الذهبي الأكاديمي العتيق للشارات والمحاور التخصصية |
+| `--scholar-word-blue` | `#2B579A` | الأزرق الرسمي المخصص لملفات Microsoft Word |
+| `--scholar-pdf-red` | `#D92525` | الأحمر المعتمد لملفات Adobe PDF الرسمية |
+| `--scholar-cream-bg` | `#F8FAFD` | أسطح البورسلان النقي للقراءة المريحة (Light Surfaces) |
+
+### 🖋️ مصفوفة الخطوط المتوازنة (Curated Typography)
+- **العناوين الرئيسية اللاتينية**: *Cormorant Garamond* & *Playfair Display* لتقديم طابع كلاسيكي فاخر.
+- **العناوين الرئيسية العربية**: *Amiri* مع تشكيلات الخطوط التقليدية الرصينة.
+- **النصوص وقوائم القراءة**: *IBM Plex Sans Arabic* و *Outfit* لضمان أعلى نسب القراءة والوضوح على شاشات الجوال والحواسب.
+
+---
+
+## 📁 هيكل المشروع (Project Structure)
+
+```text
+scholar-library/
+├── index.html                   # الهيكل الدلالي للمنصة (Semantic HTML5 Bidi Architecture)
+├── logo-ar.png                  # الشعار الرسمي باللغة العربية
+├── logo-en.png                  # الشعار الرسمي باللغة الإنجليزية
+├── css/
+│   ├── scholar-tokens.css       # توكنز الألوان، الخطوط السائلة، والظلال متعددة الطبقات
+│   ├── scholar-layout.css       # هندسة التخطيط، الشبكات المرنة، والحاويات المتجاوبة
+│   ├── scholar-components.css   # بطاقات الخدمات، حقول الإدخال، وأزرار التواصل
+│   └── scholar-animations.css   # الحركات الفيزيائية، الماركي، وانتقالات الأكورديون
+├── js/
+│   └── scholar-bundle.js        # منطق الـ i18n، تبديل الشعارات، وتوليد روابط المحادثات
+└── README.md                    # التوثيق الشامل للمشروع
+```
+
+---
+
+## 🚀 التشغيل المحلي (Local Development)
+
+المشروع مبني ليعمل مباشرة بدون الحاجة إلى بيئة تثبيت حزم أو أدوات بناء معقدة:
+
+### 1. استنساخ المستودع (Clone)
+```bash
+git clone https://github.com/MarwanDevSpace/skolar-library.github.io.git
+cd skolar-library.github.io
+```
+
+### 2. التشغيل الفوري (Run Directly)
+يمكنك فتح ملف `index.html` مباشرة في أي متصفح ويب حديث:
+```bash
+# على نظام Windows (PowerShell)
+start index.html
+
+# أو استخدام خادم محلي سريع (Live Server / Python)
+python -m http.server 3000
+```
+افتح المتصفح على: `http://localhost:3000`
+
+---
+
+## 🌐 الاستضافة والنشر على GitHub Pages
+
+الموقع مستضاف ومُفعل بصورة كاملة ومباشرة على نطاق:
+🔗 **[https://marwandevspace.github.io/skolar-library.github.io/](https://marwandevspace.github.io/skolar-library.github.io/)**
+
+- يتم النشر تلقائياً من الفرع الرئيسي `main` عبر الجذر `/`.
+- يدعم التشفير الآمن التلقائي **HTTPS Enforced**.
+
+---
+
+## 📄 الترخيص (License)
+
+هذا المشروع منشور تحت رخصة **MIT License** — تفاصيل الترخيص متاحة في ملف المستودع.
+
+---
+
+<div align="center">
+  <sub>صُنع بإتقان وحرفية عالية بواسطة <a href="https://github.com/MarwanDevSpace">MarwanDevSpace</a> © 2026</sub>
+</div>
