@@ -16,7 +16,9 @@
 
 <br />
 
-<img src="logo-ar.png" alt="Scholar Academic Library" width="480" style="max-width: 90%; height: auto;" />
+<p align="center">
+  <img src="logo-ar.png" alt="Scholar Academic Library Official Logo" width="280" style="max-width: 80%; height: auto; filter: drop-shadow(0 12px 30px rgba(22, 39, 70, 0.22));" />
+</p>
 
 </div>
 

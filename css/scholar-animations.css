@@ -128,8 +128,9 @@
 }
 
 .scholar-sk-brand {
-  width: 120px;
-  height: 32px;
+  width: 82px;
+  height: 52px;
+  border-radius: 14px;
 }
 
 .scholar-sk-links-row {

@@ -109,15 +109,17 @@ html[dir="ltr"] body.ink-editorial-body {
 }
 
 .ink-pill-brand img, .ink-logo-img {
-  height: 38px;
+  height: clamp(48px, 4vw, 56px);
   width: auto;
-  max-width: 130px;
+  max-width: none;
   object-fit: contain;
-  transition: transform var(--ink-duration-fast) var(--ink-ease-spring);
+  filter: drop-shadow(0 2px 8px rgba(22, 39, 70, 0.15));
+  transition: transform var(--ink-duration-fast) var(--ink-ease-spring), filter var(--ink-duration-fast) ease;
 }
 
 .ink-pill-brand:hover img, .ink-pill-brand:hover .ink-logo-img {
-  transform: scale(1.04);
+  transform: scale(1.06);
+  filter: drop-shadow(0 4px 14px rgba(37, 99, 235, 0.28));
 }
 
 .ink-brand-divider {
@@ -144,25 +146,26 @@ html[dir="ltr"] body.ink-editorial-body {
 
 .ink-footer-logo-wrap {
   background: #ffffff;
-  padding: 0.45rem 1.15rem;
+  padding: 0.65rem 1.4rem;
   border-radius: var(--ink-radius-pill);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
   transition: transform 0.25s var(--ink-ease-spring);
 }
 
 .ink-footer-logo-wrap:hover {
-  transform: translateY(-2px) scale(1.03);
+  transform: translateY(-2px) scale(1.04);
 }
 
 .ink-footer-logo-img {
-  height: 44px;
+  height: clamp(56px, 5.5vw, 70px);
   width: auto;
-  max-width: 150px;
+  max-width: none;
   object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(10, 19, 37, 0.18));
 }
 
 .ink-pill-links {
@@ -982,7 +985,7 @@ html[dir="ltr"] .ink-mobile-drawer-link:active {
     gap: 0.8rem;
   }
   .ink-logo-img {
-    height: 32px;
+    height: 44px;
   }
   .ink-pill-cta {
     padding: 0.4rem 0.95rem;
@@ -1009,7 +1012,7 @@ html[dir="ltr"] .ink-mobile-drawer-link:active {
     gap: 0.6rem;
   }
   .ink-logo-img {
-    height: 28px;
+    height: 40px;
   }
   .ink-pill-cta {
     padding: 0.4rem 0.85rem;
@@ -1127,7 +1130,7 @@ html[dir="ltr"] .ink-nav-actions {
 }
 
 .ink-pill-nav {
-  min-height: 56px;
+  min-height: 64px;
   box-sizing: border-box;
 }
 
