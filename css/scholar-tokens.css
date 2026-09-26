@@ -6,26 +6,27 @@
 
 :root {
   /* --------------------------------------------------------------------------
-     1. PALETTE: ROYAL ACADEMIC NAVY & SAPPHIRE BLUE (SOLID & GLOW)
+     1. PALETTE: PRESTIGIOUS ACADEMIC NAVY & NOBLE CHAMPAGNE GOLD ACCENT
+     Cohesive architectural grading without exaggerated neon glows
      -------------------------------------------------------------------------- */
-  --scholar-navy-solid-base: #0B1528; /* Pure Solid Executive Blue Background */
-  --scholar-navy-midnight: #070E1A;   /* Deepest midnight vignette */
-  --scholar-navy-deep: #0F1E36;       /* Primary deep header/hero navy */
-  --scholar-navy-dark: #162746;       /* Architectural dark surface */
-  --scholar-navy-main: #1D3B73;       /* Royal academic blue (dominant logo tone) */
-  --scholar-royal-blue: #1D4486;      /* Classic university royal blue */
-  --scholar-sapphire-bright: #2563EB; /* Luminous active sapphire accent */
-  --scholar-sapphire-light: #3B82F6;  /* Soft glow sapphire */
-  --scholar-sapphire-glow: rgba(37, 99, 235, 0.28);
-  --scholar-navy-glow: rgba(22, 39, 70, 0.35);
+  --scholar-navy-solid-base: #0A1322; /* Executive midnight navy background */
+  --scholar-navy-midnight: #060B14;   /* Deepest midnight vignette */
+  --scholar-navy-deep: #0B1629;       /* Deep header/hero navy base */
+  --scholar-navy-dark: #101E36;       /* Architectural dark surface */
+  --scholar-navy-main: #182C52;       /* Royal academic blue */
+  --scholar-royal-blue: #1D3664;      /* Classic university royal blue */
+  --scholar-sapphire-bright: #2B66CC; /* Restrained sapphire accent */
+  --scholar-sapphire-light: #4A82DC;
+  --scholar-sapphire-glow: transparent;
+  --scholar-navy-glow: rgba(11, 22, 41, 0.15);
 
   /* Document Standards: Word & PDF Branded Tones */
   --scholar-word-blue: #2B579A;
   --scholar-word-blue-light: #4172B8;
-  --scholar-word-blue-glow: rgba(43, 87, 154, 0.25);
-  --scholar-pdf-red: #D92525;
-  --scholar-pdf-red-light: #EF4444;
-  --scholar-pdf-red-glow: rgba(217, 37, 37, 0.25);
+  --scholar-word-blue-glow: transparent;
+  --scholar-pdf-red: #C5221F;
+  --scholar-pdf-red-light: #DC2626;
+  --scholar-pdf-red-glow: transparent;
 
   /* Clean Luxury Porcelain & Ice-Blue Surfaces */
   --scholar-cream-bg: #F8FAFD;        /* Ultra-clean tinted porcelain page background */
@@ -34,10 +35,14 @@
   --scholar-cream-border: #D8E2F0;    /* Subtle academic border */
   --scholar-cream-border-subtle: rgba(22, 39, 70, 0.08);
 
-  /* Academic Gold & Warm Scholarly Accents */
+  /* Primary Brand Accent: Noble Champagne Gold */
   --scholar-accent-gold: #C5A059;     /* Warm academic bookbinding gold */
-  --scholar-accent-gold-glow: rgba(197, 160, 89, 0.22);
-  --scholar-accent-amber: #D97706;
+  --scholar-accent-gold-light: #DFBA73;
+  --scholar-accent-gold-dark: #A07F37;
+  --scholar-accent-gold-surface: rgba(197, 160, 89, 0.12);
+  --scholar-accent-gold-border: rgba(197, 160, 89, 0.35);
+  --scholar-accent-gold-glow: transparent;
+  --scholar-accent-amber: #B45309;
 
   /* Typographic Ink Charcoal & High Contrast Values (WCAG AAA) */
   --scholar-text-charcoal: #0B132B;   /* Deepest ink for headings */
@@ -56,11 +61,11 @@
   --scholar-font-arabic-body: 'IBM Plex Sans Arabic', 'Cairo', sans-serif;
   --scholar-font-display-modern: 'Alexandria', 'Cairo', sans-serif;
 
-  /* Atmospheric Hero Tokens */
-  --scholar-hero-bg-deep: #060B17;
-  --scholar-hero-bg-surface: #0B172E;
-  --scholar-hero-glow-sapphire: rgba(37, 99, 235, 0.45);
-  --scholar-hero-glow-gold: rgba(197, 160, 89, 0.35);
+  /* Atmospheric Hero Tokens with Refined Grading */
+  --scholar-hero-bg-deep: #070D18;
+  --scholar-hero-bg-surface: #0C172B;
+  --scholar-hero-glow-sapphire: transparent;
+  --scholar-hero-glow-gold: transparent;
 
   /* Editorial Contrast Weights */
   --scholar-weight-thin: 300;
@@ -93,9 +98,9 @@
   /* Physical Multi-Layered Shadows */
   --scholar-shadow-pill: 0 10px 30px -5px rgba(10, 19, 37, 0.12), 0 4px 10px -2px rgba(10, 19, 37, 0.06);
   --scholar-shadow-card: 0 16px 36px -8px rgba(15, 30, 54, 0.09), 0 4px 12px -2px rgba(15, 30, 54, 0.04);
-  --scholar-shadow-card-hover: 0 24px 50px -10px rgba(15, 30, 54, 0.18), 0 8px 20px -4px rgba(37, 99, 235, 0.15);
+  --scholar-shadow-card-hover: 0 24px 50px -10px rgba(15, 30, 54, 0.18), 0 4px 14px -2px rgba(197, 160, 89, 0.16);
   --scholar-shadow-arch: 0 -20px 40px -10px rgba(10, 19, 37, 0.20);
-  --scholar-shadow-glow-blue: 0 0 28px rgba(37, 99, 235, 0.35);
+  --scholar-shadow-glow-blue: none;
 
   /* Infinite Marquee Configuration */
   --scholar-marquee-speed: 26s;

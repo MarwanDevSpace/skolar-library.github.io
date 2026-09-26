@@ -6,11 +6,11 @@
   <meta name="theme-color" content="#162746">
   <meta name="color-scheme" content="light">
 
-  <title>مكتبة سكولار الأكاديمية | Scholar Academic Library — لإنشاء البحوث والرسائل والتقارير</title>
+  <title>مكتبة سكولار الأكاديمية | Scholar Academic Library</title>
   <meta name="description" content="مكتبة سكولار الأكاديمية لإعداد وتنسيق بحوث تخرج البكالوريوس، رسائل الماجستير، والتقارير الأكاديمية بدقة عالية وسرعة تسليم متميزة وفق دليل الجامعات العراقية.">
 
   <!-- Open Graph Meta -->
-  <meta property="og:title" content="مكتبة سكولار الأكاديمية | Scholar Academic Library — لإنشاء البحوث والرسائل والتقارير">
+  <meta property="og:title" content="مكتبة سكولار الأكاديمية | Scholar Academic Library">
   <meta property="og:description" content="إعداد وتنسيق بحوث التخرج، رسائل الماجستير، والتقارير الأكاديمية بدقة وسرعة تسليم عالية ومراجعة مستمرة.">
   <meta property="og:image" content="logo-ar.png">
   <meta property="og:type" content="website">
@@ -94,12 +94,6 @@
           <span class="ink-globe-code" id="langToggleCode">EN</span>
         </button>
 
-        <!-- Rapid Referral CTA -->
-        <a href="#order" class="ink-pill-cta">
-          <span data-i18n="nav_cta">تحويل طلب سريع</span>
-          <svg class="ink-svg ink-svg-sm ink-svg-flip" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
-        </a>
-
         <!-- Mobile Menu Toggle Button -->
         <button type="button" class="ink-mobile-menu-btn" id="btnMobileMenuToggle" aria-label="القائمة" aria-expanded="false">
           <svg class="ink-svg ink-svg-sm" viewBox="0 0 24 24"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
@@ -130,12 +124,6 @@
          2. HERO SECTION (ATMOSPHERIC DEEP SAPPHIRE WITH 3D IRAQI UNIVERSITIES)
          ==================================================================== -->
     <section class="ink-editorial-hero" id="hero">
-      <!-- Dynamic Atmospheric Background & Aura Lights -->
-      <div class="scholar-hero-bg-lights" aria-hidden="true">
-        <div class="scholar-light-orb scholar-orb-1"></div>
-        <div class="scholar-light-orb scholar-orb-2"></div>
-        <div class="scholar-light-orb scholar-orb-3"></div>
-      </div>
       <div class="scholar-hero-grid-pattern" aria-hidden="true"></div>
       <div class="ink-hero-overlay" aria-hidden="true"></div>
 
@@ -143,12 +131,6 @@
       <div class="scholar-hero-container">
         <!-- 1. RIGHT COLUMN (in RTL): Right-Aligned Majestic Typography & CTAs -->
         <div class="scholar-hero-text-col scholar-reveal-fast">
-          <!-- Borderless Typography Kicker with Sapphire Pulsing Dot -->
-          <div class="scholar-hero-kicker">
-            <span class="scholar-kicker-dot" aria-hidden="true"></span>
-            <span class="scholar-kicker-text" data-i18n="hero_est">خدمات أكاديمية متخصصة • للجامعات والمعاهد والدراسات العليا</span>
-          </div>
-
           <!-- Grand Brand Title (Alexandria Modern Display) -->
           <h1 class="scholar-hero-main-title">
             <span class="scholar-title-line-1" data-i18n="hero_title_1">مكتبة سكولار</span>
@@ -180,9 +162,22 @@
           <div class="scholar-3d-canvas-wrap" id="scholarHeroCanvasWrap">
             <!-- 3D Three.js Canvas -->
             <canvas id="scholarHeroCanvas3D" class="scholar-3d-canvas" aria-label="عرض ثلاثي الأبعاد تفاعلي للجامعات العراقية المعتمدة"></canvas>
-            
-            <!-- Atmospheric Depth Ring -->
-            <div class="scholar-3d-glow-ring" aria-hidden="true"></div>
+          </div>
+
+          <!-- Interactive University Selector Tabs (Slide & Tap-To-View) -->
+          <div class="scholar-3d-selector" role="tablist" aria-label="اختر الجامعة للاستعراض ثلاثي الأبعاد">
+            <button type="button" class="scholar-3d-tab" data-univ-index="0" role="tab" aria-selected="false">
+              <span class="scholar-tab-dot"></span>
+              <span data-i18n="univ_tikrit">جامعة تكريت</span>
+            </button>
+            <button type="button" class="scholar-3d-tab active" data-univ-index="1" role="tab" aria-selected="true">
+              <span class="scholar-tab-dot"></span>
+              <span data-i18n="univ_baghdad">جامعة بغداد</span>
+            </button>
+            <button type="button" class="scholar-3d-tab" data-univ-index="2" role="tab" aria-selected="false">
+              <span class="scholar-tab-dot"></span>
+              <span data-i18n="univ_samarra">جامعة سامراء</span>
+            </button>
           </div>
         </div>
       </div>

@@ -50,7 +50,9 @@
         nav_cta: 'تحويل طلب سريع',
         lang_btn_text: 'English',
         lang_btn_title: 'التبديل إلى English',
-        hero_est: 'خدمات أكاديمية متخصصة • للجامعات والمعاهد والدراسات العليا',
+        univ_tikrit: 'جامعة تكريت',
+        univ_baghdad: 'جامعة بغداد',
+        univ_samarra: 'جامعة سامراء',
         hero_title_1: 'مكتبة سكولار',
         hero_title_2: 'الأكاديمية',
         hero_sub_heading: '<span class="scholar-fw-bold">لإنشاء البحوث والرسائل والتقارير</span>',
@@ -143,7 +145,9 @@
         nav_cta: 'Quick Referral',
         lang_btn_text: 'العربية',
         lang_btn_title: 'Switch to Arabic',
-        hero_est: 'Specialized Academic Services • For Universities & Graduate Studies',
+        univ_tikrit: 'Tikrit University',
+        univ_baghdad: 'Univ. of Baghdad',
+        univ_samarra: 'Univ. of Samarra',
         hero_title_1: 'Scholar',
         hero_title_2: 'Academic Library',
         hero_sub_heading: '<span class="scholar-fw-bold">Researches, Theses & Academic Reports</span>',
@@ -676,6 +680,7 @@
     raycaster: null,
     mouseVec: null,
     hoveredIndex: -1,
+    activeIndex: 1, // Baghdad in Center Stage by default
 
     loadedLogos: {},
 
@@ -692,11 +697,9 @@
         badgeEn: 'Excellence in Research & Scholarly Rigor',
         statsAr: '٢٢ كلية ومراكز بحثية متقدمة',
         statsEn: '22 Colleges & Advanced Research Centers',
-        primary: '#1A2942',
-        secondary: '#F59E0B',
-        accent: '#FDE68A',
-        basePos: { x: -1.78, y: 0.38, z: -0.15 },
-        baseRot: { x: 0.02, y: 0.28, z: 0.02 },
+        primary: '#0C2024',
+        secondary: '#C5A059',
+        accent: '#10B981',
         logoSrc: 'assets/crest-tikrit.png',
         iconType: 'tikrit'
       },
@@ -712,11 +715,9 @@
         badgeEn: 'Pioneering Comprehensive Accreditation',
         statsAr: '٢٤ كلية و٤ معاهد عليا متخصصة',
         statsEn: '24 Colleges & 4 Specialized Institutes',
-        primary: '#132C54',
+        primary: '#0F1D38',
         secondary: '#C5A059',
-        accent: '#93C5FD',
-        basePos: { x: 0.12, y: 0.05, z: 0.55 },
-        baseRot: { x: 0.03, y: -0.14, z: -0.01 },
+        accent: '#F4E2B2',
         logoSrc: 'assets/crest-baghdad.png',
         iconType: 'tower'
       },
@@ -732,11 +733,9 @@
         badgeEn: 'Academic Development & Scientific Research',
         statsAr: 'كليات تخصصية وأبحاث علمية رصينة',
         statsEn: 'Specialized Faculties & Rigorous Theses',
-        primary: '#0D3830',
-        secondary: '#38BDF8',
-        accent: '#7DD3FC',
-        basePos: { x: 1.88, y: -0.36, z: -0.38 },
-        baseRot: { x: -0.03, y: -0.32, z: -0.02 },
+        primary: '#0F1C30',
+        secondary: '#C5A059',
+        accent: '#38BDF8',
         logoSrc: 'assets/crest-samarra.png',
         iconType: 'malwiya'
       }
@@ -787,6 +786,7 @@
       this.createCards();
       this.createParticles();
       this.bindEvents();
+      this.syncSelectorTabs();
       this.animate();
     },
 
@@ -808,24 +808,20 @@
       this.renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
       if (THREE.ACESFilmicToneMapping) {
         this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
-        this.renderer.toneMappingExposure = 1.15;
+        this.renderer.toneMappingExposure = 1.0;
       }
 
-      // Lights
-      const ambient = new THREE.AmbientLight(0xdbeafe, 0.85);
+      // Photographic High-Fidelity Studio Lighting (No harsh washed-out glare)
+      const ambient = new THREE.AmbientLight(0xffffff, 0.92);
       this.scene.add(ambient);
 
-      const dirLight = new THREE.DirectionalLight(0xffffff, 1.4);
-      dirLight.position.set(4, 6, 5);
-      this.scene.add(dirLight);
+      const keyLight = new THREE.DirectionalLight(0xffffff, 0.65);
+      keyLight.position.set(2, 5, 5);
+      this.scene.add(keyLight);
 
-      const sapphireLight = new THREE.PointLight(0x2563eb, 2.4, 18);
-      sapphireLight.position.set(-3.5, -1, 3);
-      this.scene.add(sapphireLight);
-
-      const goldLight = new THREE.PointLight(0xc5a059, 1.8, 16);
-      goldLight.position.set(3, -2, 3);
-      this.scene.add(goldLight);
+      const warmRimLight = new THREE.PointLight(0xd4af37, 0.55, 14);
+      warmRimLight.position.set(3.5, -2, 2.5);
+      this.scene.add(warmRimLight);
 
       this.cardGroup = new THREE.Group();
       this.scene.add(this.cardGroup);
@@ -834,15 +830,15 @@
     updateCameraDistance(width) {
       if (!this.camera) return;
       if (width < 380) {
-        this.camera.position.set(0, 0, 6.6);
+        this.camera.position.set(0, 0, 6.4);
       } else if (width < 480) {
-        this.camera.position.set(0, 0, 6.1);
+        this.camera.position.set(0, 0, 5.9);
       } else if (width < 768) {
-        this.camera.position.set(0, 0, 5.6);
+        this.camera.position.set(0, 0, 5.5);
       } else if (width < 1024) {
-        this.camera.position.set(0, 0, 5.3);
+        this.camera.position.set(0, 0, 5.2);
       } else {
-        this.camera.position.set(0, 0, 5.0);
+        this.camera.position.set(0, 0, 4.9);
       }
     },
 
@@ -861,285 +857,223 @@
     },
 
     createCardTexture(univ, lang) {
-      const w = 768;
-      const h = 1080;
+      const w = 1024;
+      const h = 1440;
       const canvas = document.createElement('canvas');
       canvas.width = w;
       canvas.height = h;
       const ctx = canvas.getContext('2d');
       if (!ctx) return null;
 
-      ctx.clearRect(0, 0, w, h);
-
-      // Card body with luxury glassmorphic gradient
+      // 1. FILL ROOT CANVAS COMPLETELY EDGE-TO-EDGE (ELIMINATES BLACK EDGES)
       const bgGrad = ctx.createLinearGradient(0, 0, w, h);
       bgGrad.addColorStop(0, univ.primary);
-      bgGrad.addColorStop(0.5, '#0B172E');
+      bgGrad.addColorStop(0.48, '#0C1628');
       bgGrad.addColorStop(1, '#050A14');
       ctx.fillStyle = bgGrad;
-      this.drawRoundRectPath(ctx, 24, 24, w - 48, h - 48, 54);
-      ctx.fill();
+      ctx.fillRect(0, 0, w, h);
 
-      // Dual metallic rim
+      // Subtle atmospheric vignette
+      const radialVignette = ctx.createRadialGradient(w / 2, h / 2, 220, w / 2, h / 2, 780);
+      radialVignette.addColorStop(0, 'rgba(255, 255, 255, 0.025)');
+      radialVignette.addColorStop(1, 'rgba(0, 0, 0, 0.52)');
+      ctx.fillStyle = radialVignette;
+      ctx.fillRect(0, 0, w, h);
+
+      // 2. PRESTIGIOUS CHAMPAGNE GOLD DOUBLE FRAME INSET
       ctx.lineWidth = 4;
-      ctx.strokeStyle = univ.secondary;
-      this.drawRoundRectPath(ctx, 24, 24, w - 48, h - 48, 54);
+      ctx.strokeStyle = '#C5A059';
+      this.drawRoundRectPath(ctx, 32, 32, w - 64, h - 64, 46);
       ctx.stroke();
 
       ctx.lineWidth = 1.5;
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.28)';
-      this.drawRoundRectPath(ctx, 36, 36, w - 72, h - 72, 44);
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.22)';
+      this.drawRoundRectPath(ctx, 48, 48, w - 96, h - 96, 36);
       ctx.stroke();
 
-      // Subtle radial inner glow
-      const innerGlow = ctx.createRadialGradient(w / 2, 280, 40, w / 2, 280, 360);
-      innerGlow.addColorStop(0, 'rgba(37, 99, 235, 0.22)');
-      innerGlow.addColorStop(1, 'transparent');
-      ctx.fillStyle = innerGlow;
-      this.drawRoundRectPath(ctx, 38, 38, w - 76, h - 76, 42);
-      ctx.fill();
-
       // Top Republic Ribbon
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.08)';
-      this.drawRoundRectPath(ctx, 80, 60, w - 160, 48, 24);
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.07)';
+      this.drawRoundRectPath(ctx, 110, 80, w - 220, 56, 28);
       ctx.fill();
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.16)';
-      ctx.lineWidth = 1;
-      this.drawRoundRectPath(ctx, 80, 60, w - 160, 48, 24);
+      ctx.strokeStyle = 'rgba(197, 160, 89, 0.35)';
+      ctx.lineWidth = 1.5;
+      this.drawRoundRectPath(ctx, 110, 80, w - 220, 56, 28);
       ctx.stroke();
 
       ctx.fillStyle = '#E2E8F0';
-      ctx.font = '600 20px Alexandria, sans-serif';
+      ctx.font = '600 24px Alexandria, sans-serif';
       ctx.textAlign = 'center';
-      ctx.fillText(lang === 'en' ? 'REPUBLIC OF IRAQ • MINISTRY OF HIGHER EDUCATION' : 'جمهورية العراق • وزارة التعليم العالي والبحث العلمي', w / 2, 92);
+      ctx.fillText(lang === 'en' ? 'REPUBLIC OF IRAQ • MINISTRY OF HIGHER EDUCATION' : 'جمهورية العراق • وزارة التعليم العالي والبحث العلمي', w / 2, 118);
 
-      // Central University Crest / Architectural Medallion
+      // Central University Crest Medallion
       ctx.save();
-      ctx.translate(w / 2, 300);
+      ctx.translate(w / 2, 360);
 
-      // Crest Halo
-      const halo = ctx.createRadialGradient(0, 0, 10, 0, 0, 140);
-      halo.addColorStop(0, 'rgba(197, 160, 89, 0.35)');
-      halo.addColorStop(0.7, 'rgba(37, 99, 235, 0.15)');
-      halo.addColorStop(1, 'transparent');
-      ctx.fillStyle = halo;
+      // Medallion Gold Outer Rim
+      ctx.strokeStyle = '#C5A059';
+      ctx.lineWidth = 4.5;
       ctx.beginPath();
-      ctx.arc(0, 0, 140, 0, Math.PI * 2);
-      ctx.fill();
-
-      // Outer Crest Rim
-      ctx.strokeStyle = univ.secondary;
-      ctx.lineWidth = 3.5;
-      ctx.beginPath();
-      ctx.arc(0, 0, 108, 0, Math.PI * 2);
+      ctx.arc(0, 0, 130, 0, Math.PI * 2);
       ctx.stroke();
 
-      // Inner Metallic Highlight
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
+      // Medallion Inner Rim
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
       ctx.lineWidth = 1.5;
       ctx.beginPath();
-      ctx.arc(0, 0, 98, 0, Math.PI * 2);
+      ctx.arc(0, 0, 120, 0, Math.PI * 2);
       ctx.stroke();
 
-      // Circular clipped medallion disc
-      ctx.save();
-      ctx.beginPath();
-      ctx.arc(0, 0, 96, 0, Math.PI * 2);
-      ctx.clip();
-
-      // Soft luminous disc backdrop
-      const discBg = ctx.createRadialGradient(0, 0, 10, 0, 0, 96);
-      discBg.addColorStop(0, 'rgba(255, 255, 255, 0.14)');
-      discBg.addColorStop(0.8, 'rgba(11, 23, 46, 0.92)');
-      discBg.addColorStop(1, 'rgba(5, 10, 20, 0.98)');
+      // Circular disc backdrop
+      const discBg = ctx.createRadialGradient(0, 0, 15, 0, 0, 118);
+      discBg.addColorStop(0, 'rgba(255, 255, 255, 0.12)');
+      discBg.addColorStop(0.7, '#0E1A30');
+      discBg.addColorStop(1, '#070D18');
       ctx.fillStyle = discBg;
+      ctx.beginPath();
+      ctx.arc(0, 0, 118, 0, Math.PI * 2);
       ctx.fill();
 
+      // Draw Official High-Resolution Crest
       const logoImg = this.loadedLogos && this.loadedLogos[univ.id];
       if (logoImg && logoImg.complete && logoImg.naturalWidth > 0) {
-        // High-Resolution Official University Crest
-        ctx.drawImage(logoImg, -80, -80, 160, 160);
+        ctx.drawImage(logoImg, -95, -95, 190, 190);
       } else {
-        // High-Craft Vector Architectural Insignia Fallback
-        ctx.strokeStyle = '#FFFFFF';
-        ctx.fillStyle = univ.secondary;
+        // High-craft vector fallback insignia
+        ctx.strokeStyle = '#C5A059';
+        ctx.fillStyle = 'rgba(197, 160, 89, 0.2)';
         ctx.lineWidth = 3.5;
         ctx.lineCap = 'round';
         ctx.lineJoin = 'round';
-
         if (univ.iconType === 'tower') {
-          // Baghdad University Iconic Clock Tower & Spire
+          // Baghdad University
           ctx.beginPath();
-          ctx.moveTo(-50, 45);
-          ctx.quadraticCurveTo(0, 55, 50, 45);
-          ctx.lineTo(45, 62);
-          ctx.quadraticCurveTo(0, 72, -45, 62);
+          ctx.moveTo(-45, 55);
+          ctx.quadraticCurveTo(0, 68, 45, 55);
+          ctx.lineTo(40, 72);
+          ctx.quadraticCurveTo(0, 82, -40, 72);
           ctx.closePath();
           ctx.fill();
           ctx.stroke();
-
           ctx.beginPath();
-          ctx.moveTo(-24, 45);
-          ctx.lineTo(-14, -25);
-          ctx.lineTo(14, -25);
-          ctx.lineTo(24, 45);
+          ctx.moveTo(-22, 55);
+          ctx.lineTo(-12, -28);
+          ctx.lineTo(12, -28);
+          ctx.lineTo(22, 55);
           ctx.closePath();
           ctx.stroke();
-
           ctx.beginPath();
-          ctx.arc(0, 0, 10, 0, Math.PI * 2);
-          ctx.stroke();
-
-          ctx.beginPath();
-          ctx.moveTo(-22, -25);
-          ctx.lineTo(-34, -48);
-          ctx.lineTo(34, -48);
-          ctx.lineTo(22, -25);
-          ctx.closePath();
-          ctx.fill();
-          ctx.stroke();
-
-          ctx.beginPath();
-          ctx.moveTo(0, -48);
-          ctx.lineTo(0, -82);
+          ctx.arc(0, 5, 12, 0, Math.PI * 2);
           ctx.stroke();
         } else if (univ.iconType === 'tikrit') {
-          // Tikrit University Historic Citadel & Rivers of Knowledge
+          // Tikrit University Historic Arch & Shield
           ctx.beginPath();
-          ctx.moveTo(-48, 50);
-          ctx.lineTo(-48, -10);
-          ctx.lineTo(-32, -10);
-          ctx.lineTo(-32, 0);
-          ctx.lineTo(-16, 0);
-          ctx.lineTo(-16, -20);
-          ctx.lineTo(16, -20);
-          ctx.lineTo(16, 0);
-          ctx.lineTo(32, 0);
-          ctx.lineTo(32, -10);
-          ctx.lineTo(48, -10);
-          ctx.lineTo(48, 50);
+          ctx.moveTo(-50, -20);
+          ctx.quadraticCurveTo(0, -65, 50, -20);
+          ctx.lineTo(50, 40);
+          ctx.quadraticCurveTo(0, 75, -50, 40);
           ctx.closePath();
           ctx.fill();
           ctx.stroke();
-
-          // Torch & Book
           ctx.beginPath();
-          ctx.arc(0, -38, 14, 0, Math.PI * 2);
-          ctx.fill();
-          ctx.stroke();
-
-          ctx.beginPath();
-          ctx.moveTo(-28, 50);
-          ctx.quadraticCurveTo(0, 68, 28, 50);
+          ctx.arc(0, -10, 16, 0, Math.PI * 2);
           ctx.stroke();
         } else {
-          // Samarra University Iconic Spiral Minaret (Malwiya)
+          // Samarra Malwiya Minaret
           ctx.beginPath();
-          ctx.moveTo(-52, 60);
-          ctx.lineTo(52, 60);
-          ctx.lineTo(44, 38);
-          ctx.lineTo(-44, 38);
+          ctx.moveTo(-55, 65);
+          ctx.lineTo(55, 65);
+          ctx.lineTo(45, 40);
+          ctx.lineTo(-45, 40);
           ctx.closePath();
           ctx.fill();
           ctx.stroke();
-
           ctx.beginPath();
-          ctx.moveTo(-38, 38);
-          ctx.lineTo(38, 38);
-          ctx.lineTo(30, 16);
-          ctx.lineTo(-30, 16);
+          ctx.moveTo(-40, 40);
+          ctx.lineTo(40, 40);
+          ctx.lineTo(30, 15);
+          ctx.lineTo(-30, 15);
           ctx.closePath();
           ctx.stroke();
-
           ctx.beginPath();
-          ctx.moveTo(-24, 16);
-          ctx.lineTo(24, 16);
-          ctx.lineTo(16, -8);
-          ctx.lineTo(-16, -8);
-          ctx.closePath();
-          ctx.fill();
-          ctx.stroke();
-
-          ctx.beginPath();
-          ctx.moveTo(-10, -8);
-          ctx.lineTo(10, -8);
-          ctx.lineTo(6, -32);
-          ctx.lineTo(-6, -32);
+          ctx.moveTo(-25, 15);
+          ctx.lineTo(25, 15);
+          ctx.lineTo(16, -10);
+          ctx.lineTo(-16, -10);
           ctx.closePath();
           ctx.stroke();
-
           ctx.beginPath();
-          ctx.moveTo(0, -32);
-          ctx.lineTo(0, -68);
+          ctx.moveTo(0, -10);
+          ctx.lineTo(0, -55);
           ctx.stroke();
         }
       }
 
-      ctx.restore(); // restore clip
       ctx.restore(); // restore translate
 
       // University Primary Name
       ctx.textAlign = 'center';
       ctx.fillStyle = '#FFFFFF';
-      ctx.font = '800 52px Alexandria, Cairo, sans-serif';
+      ctx.font = '800 62px Alexandria, Cairo, sans-serif';
       const mainName = lang === 'en' ? univ.nameEn : univ.nameAr;
-      ctx.fillText(mainName, w / 2, 540);
+      ctx.fillText(mainName, w / 2, 630);
 
-      // Subtitle
-      ctx.fillStyle = univ.secondary;
-      ctx.font = '600 25px Alexandria, Outfit, sans-serif';
+      // Subtitle in Champagne Gold
+      ctx.fillStyle = '#C5A059';
+      ctx.font = '600 30px Alexandria, Outfit, sans-serif';
       const subName = lang === 'en' ? univ.nameAr : univ.nameEn;
-      ctx.fillText(subName, w / 2, 590);
+      ctx.fillText(subName, w / 2, 690);
 
       // Golden Badge Pill
       ctx.fillStyle = 'rgba(197, 160, 89, 0.16)';
-      this.drawRoundRectPath(ctx, 70, 640, w - 140, 62, 31);
+      this.drawRoundRectPath(ctx, 100, 750, w - 200, 74, 37);
       ctx.fill();
-      ctx.strokeStyle = 'rgba(197, 160, 89, 0.45)';
-      ctx.lineWidth = 1.5;
-      this.drawRoundRectPath(ctx, 70, 640, w - 140, 62, 31);
+      ctx.strokeStyle = 'rgba(197, 160, 89, 0.55)';
+      ctx.lineWidth = 1.8;
+      this.drawRoundRectPath(ctx, 100, 750, w - 200, 74, 37);
       ctx.stroke();
 
       ctx.fillStyle = '#FEF08A';
-      ctx.font = '700 24px Alexandria, Cairo, sans-serif';
-      ctx.fillText(lang === 'en' ? univ.titleEn : univ.titleAr, w / 2, 679);
+      ctx.font = '700 30px Alexandria, Cairo, sans-serif';
+      ctx.fillText(lang === 'en' ? univ.titleEn : univ.titleAr, w / 2, 798);
 
       // Detailed Academic Scope
       ctx.fillStyle = '#CBD5E1';
-      ctx.font = '500 22px Alexandria, IBM Plex Sans Arabic, sans-serif';
-      ctx.fillText(lang === 'en' ? univ.badgeEn : univ.badgeAr, w / 2, 755);
+      ctx.font = '500 26px Alexandria, IBM Plex Sans Arabic, sans-serif';
+      ctx.fillText(lang === 'en' ? univ.badgeEn : univ.badgeAr, w / 2, 885);
 
       // Stats Pill
       ctx.fillStyle = '#94A3B8';
-      ctx.font = '600 21px Alexandria, Outfit, sans-serif';
-      ctx.fillText(lang === 'en' ? univ.statsEn : univ.statsAr, w / 2, 805);
+      ctx.font = '600 24px Alexandria, Outfit, sans-serif';
+      ctx.fillText(lang === 'en' ? univ.statsEn : univ.statsAr, w / 2, 945);
 
-      // Five Star Academic Rigor
-      ctx.fillStyle = univ.secondary;
-      ctx.font = '26px sans-serif';
-      ctx.fillText('★ ★ ★ ★ ★', w / 2, 860);
+      // Five Star Academic Rigor in Pure Gold
+      ctx.fillStyle = '#C5A059';
+      ctx.font = '32px sans-serif';
+      ctx.fillText('★ ★ ★ ★ ★', w / 2, 1010);
 
       // Bottom Accreditation Seal
       ctx.fillStyle = 'rgba(255, 255, 255, 0.06)';
-      this.drawRoundRectPath(ctx, 90, 915, w - 180, 80, 24);
+      this.drawRoundRectPath(ctx, 110, 1080, w - 220, 96, 28);
       ctx.fill();
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.15)';
-      ctx.lineWidth = 1;
-      this.drawRoundRectPath(ctx, 90, 915, w - 180, 80, 24);
+      ctx.strokeStyle = 'rgba(197, 160, 89, 0.28)';
+      ctx.lineWidth = 1.2;
+      this.drawRoundRectPath(ctx, 110, 1080, w - 220, 96, 28);
       ctx.stroke();
 
-      ctx.fillStyle = '#93C5FD';
-      ctx.font = '700 20px Alexandria, sans-serif';
-      ctx.fillText(lang === 'en' ? 'ACCREDITED ACADEMIC THESIS REPOSITORY' : 'رصانة أكاديمية معتمدة وفق دليل الجامعات', w / 2, 950);
+      ctx.fillStyle = '#E2E8F0';
+      ctx.font = '700 24px Alexandria, sans-serif';
+      ctx.fillText(lang === 'en' ? 'ACCREDITED ACADEMIC THESIS REPOSITORY' : 'رصانة أكاديمية معتمدة وفق دليل الجامعات', w / 2, 1124);
 
-      ctx.fillStyle = '#64748B';
-      ctx.font = '500 17px Outfit, sans-serif';
-      ctx.fillText(lang === 'en' ? univ.yearEn : univ.yearAr, w / 2, 978);
+      ctx.fillStyle = '#94A3B8';
+      ctx.font = '500 20px Outfit, sans-serif';
+      ctx.fillText(lang === 'en' ? univ.yearEn : univ.yearAr, w / 2, 1158);
 
       const texture = new THREE.CanvasTexture(canvas);
-      texture.needsUpdate = true;
+      texture.generateMipmaps = true;
+      texture.minFilter = THREE.LinearMipmapLinearFilter;
+      texture.magFilter = THREE.LinearFilter;
       if (this.renderer && this.renderer.capabilities) {
-        texture.anisotropy = Math.min(this.renderer.capabilities.getMaxAnisotropy(), 8);
+        texture.anisotropy = Math.min(this.renderer.capabilities.getMaxAnisotropy(), 16);
       }
       return texture;
     },
@@ -1151,41 +1085,39 @@
       }
       this.cards = [];
 
-      const geom = new THREE.BoxGeometry(2.2, 3.1, 0.07);
+      const geom = new THREE.BoxGeometry(2.2, 3.1, 0.06);
+
+      // Metallic Champagne Gold Edges (Banishes black borders!)
+      const edgeMat = new THREE.MeshStandardMaterial({
+        color: 0xC5A059,
+        metalness: 0.92,
+        roughness: 0.22
+      });
+
+      // Deep Oxford Slate Backing
+      const backMat = new THREE.MeshStandardMaterial({
+        color: 0x0A1322,
+        metalness: 0.55,
+        roughness: 0.38
+      });
 
       this.universities.forEach((univ, idx) => {
         const frontTex = this.createCardTexture(univ, this.currentLang);
 
-        const edgeMat = new THREE.MeshStandardMaterial({
-          color: 0x11233f,
-          metalness: 0.88,
-          roughness: 0.28
-        });
-
-        const backMat = new THREE.MeshStandardMaterial({
-          color: 0x081220,
-          metalness: 0.65,
-          roughness: 0.42
-        });
-
         const frontMat = new THREE.MeshStandardMaterial({
           map: frontTex,
-          metalness: 0.12,
-          roughness: 0.32
+          metalness: 0.05,
+          roughness: 0.55
         });
 
         const materials = [edgeMat, edgeMat, edgeMat, edgeMat, frontMat, backMat];
 
         const cardMesh = new THREE.Mesh(geom, materials);
-        cardMesh.position.set(univ.basePos.x, univ.basePos.y, univ.basePos.z);
-        cardMesh.rotation.set(univ.baseRot.x, univ.baseRot.y, univ.baseRot.z);
         cardMesh.userData = {
           index: idx,
           univId: univ.id,
-          basePos: { ...univ.basePos },
-          baseRot: { ...univ.baseRot },
-          targetZ: univ.basePos.z,
-          targetY: univ.basePos.y,
+          targetPos: { x: 0, y: 0, z: 0 },
+          targetRot: { x: 0, y: 0, z: 0 },
           targetScale: 1.0,
           phase: idx * 2.1
         };
@@ -1193,10 +1125,66 @@
         this.cardGroup.add(cardMesh);
         this.cards.push(cardMesh);
       });
+
+      this.updateCardTargets();
+      // Instantly position initial placement
+      this.cards.forEach(card => {
+        card.position.set(card.userData.targetPos.x, card.userData.targetPos.y, card.userData.targetPos.z);
+        card.rotation.set(card.userData.targetRot.x, card.userData.targetRot.y, card.userData.targetRot.z);
+        card.scale.setScalar(card.userData.targetScale);
+      });
+    },
+
+    updateCardTargets() {
+      const active = this.activeIndex;
+      this.cards.forEach((card, idx) => {
+        const u = card.userData;
+        if (idx === active) {
+          // Center Stage
+          u.targetPos = { x: 0, y: 0.02, z: 0.65 };
+          u.targetRot = { x: 0, y: 0, z: 0 };
+          u.targetScale = 1.05;
+        } else {
+          let offset = idx - active;
+          if (offset < -1) offset += 3;
+          if (offset > 1) offset -= 3;
+
+          if (offset < 0) {
+            u.targetPos = { x: -1.82, y: 0.1, z: -0.18 };
+            u.targetRot = { x: 0.02, y: 0.30, z: 0.02 };
+            u.targetScale = 0.88;
+          } else {
+            u.targetPos = { x: 1.82, y: -0.1, z: -0.18 };
+            u.targetRot = { x: -0.02, y: -0.30, z: -0.02 };
+            u.targetScale = 0.88;
+          }
+        }
+      });
+    },
+
+    setActiveUniversity(index) {
+      if (index < 0 || index >= this.universities.length || index === this.activeIndex) return;
+      this.activeIndex = index;
+      this.updateCardTargets();
+      this.syncSelectorTabs();
+    },
+
+    syncSelectorTabs() {
+      const tabs = document.querySelectorAll('.scholar-3d-tab');
+      tabs.forEach((tab) => {
+        const idx = parseInt(tab.getAttribute('data-univ-index'), 10);
+        if (idx === this.activeIndex) {
+          tab.classList.add('active');
+          tab.setAttribute('aria-selected', 'true');
+        } else {
+          tab.classList.remove('active');
+          tab.setAttribute('aria-selected', 'false');
+        }
+      });
     },
 
     createParticles() {
-      const count = 75;
+      const count = 60;
       const positions = new Float32Array(count * 3);
       for (let i = 0; i < count; i++) {
         positions[i * 3] = (Math.random() - 0.5) * 8;
@@ -1206,10 +1194,10 @@
       const geom = new THREE.BufferGeometry();
       geom.setAttribute('position', new THREE.BufferAttribute(positions, 3));
       const mat = new THREE.PointsMaterial({
-        color: 0x93c5fd,
-        size: 0.055,
+        color: 0xC5A059,
+        size: 0.045,
         transparent: true,
-        opacity: 0.7,
+        opacity: 0.55,
         blending: THREE.AdditiveBlending
       });
       this.particles = new THREE.Points(geom, mat);
@@ -1217,19 +1205,71 @@
     },
 
     bindEvents() {
+      let isDragging = false;
+      let startX = 0;
+      let startY = 0;
+      let deltaX = 0;
+      let deltaY = 0;
+
+      const onPointerDown = (e) => {
+        isDragging = true;
+        const pt = e.touches ? e.touches[0] : e;
+        startX = pt.clientX;
+        startY = pt.clientY;
+        deltaX = 0;
+        deltaY = 0;
+      };
+
       const onPointerMove = (e) => {
         const rect = this.container.getBoundingClientRect();
         if (rect.width === 0 || rect.height === 0) return;
-        const clientX = e.clientX || (e.touches && e.touches[0].clientX) || rect.left + rect.width / 2;
-        const clientY = e.clientY || (e.touches && e.touches[0].clientY) || rect.top + rect.height / 2;
+        const pt = e.touches ? e.touches[0] : e;
+        const clientX = pt.clientX;
+        const clientY = pt.clientY;
+
         this.pointer.targetX = ((clientX - rect.left) / rect.width) * 2 - 1;
         this.pointer.targetY = -(((clientY - rect.top) / rect.height) * 2 - 1);
         this.mouseVec.x = this.pointer.targetX;
         this.mouseVec.y = this.pointer.targetY;
+
+        if (isDragging) {
+          deltaX = clientX - startX;
+          deltaY = clientY - startY;
+        }
       };
 
+      const onPointerUp = () => {
+        if (!isDragging) return;
+        isDragging = false;
+
+        // Slide Gesture Detection: Drag threshold > 40px
+        if (Math.abs(deltaX) > 40) {
+          if (deltaX > 0) {
+            // Drag right -> previous card
+            const prevIndex = (this.activeIndex + 2) % 3;
+            this.setActiveUniversity(prevIndex);
+          } else {
+            // Drag left -> next card
+            const nextIndex = (this.activeIndex + 1) % 3;
+            this.setActiveUniversity(nextIndex);
+          }
+        } else if (Math.hypot(deltaX, deltaY) < 14) {
+          // Tap / Click Gesture
+          if (this.hoveredIndex >= 0 && this.hoveredIndex !== this.activeIndex) {
+            this.setActiveUniversity(this.hoveredIndex);
+          }
+        }
+        deltaX = 0;
+        deltaY = 0;
+      };
+
+      this.container.addEventListener('mousedown', onPointerDown);
       this.container.addEventListener('mousemove', onPointerMove, { passive: true });
+      window.addEventListener('mouseup', onPointerUp);
+
+      this.container.addEventListener('touchstart', onPointerDown, { passive: true });
       this.container.addEventListener('touchmove', onPointerMove, { passive: true });
+      this.container.addEventListener('touchend', onPointerUp, { passive: true });
 
       this.container.addEventListener('mouseleave', () => {
         this.pointer.targetX = 0;
@@ -1239,10 +1279,16 @@
         this.hoveredIndex = -1;
       });
 
-      this.container.addEventListener('click', () => {
-        if (this.hoveredIndex >= 0) {
-          this.cycleCardToFront(this.hoveredIndex);
-        }
+      // Bind Selector Tabs
+      const tabs = document.querySelectorAll('.scholar-3d-tab');
+      tabs.forEach(tab => {
+        tab.addEventListener('click', (e) => {
+          e.preventDefault();
+          const idx = parseInt(tab.getAttribute('data-univ-index'), 10);
+          if (!isNaN(idx)) {
+            this.setActiveUniversity(idx);
+          }
+        });
       });
 
       window.addEventListener('resize', () => {
@@ -1266,25 +1312,6 @@
       }
     },
 
-    cycleCardToFront(clickedIndex) {
-      if (clickedIndex < 0 || clickedIndex >= this.cards.length) return;
-      const card = this.cards[clickedIndex];
-      card.userData.targetZ = 0.8;
-      card.userData.targetScale = 1.05;
-      this.cards.forEach((c, idx) => {
-        if (idx !== clickedIndex) {
-          c.userData.targetZ = c.userData.basePos.z - 0.25;
-          c.userData.targetScale = 0.95;
-        }
-      });
-      setTimeout(() => {
-        this.cards.forEach(c => {
-          c.userData.targetZ = c.userData.basePos.z;
-          c.userData.targetScale = 1.0;
-        });
-      }, 2600);
-    },
-
     updateLanguage(lang) {
       this.currentLang = lang;
       if (this.cards.length > 0) {
@@ -1302,8 +1329,8 @@
       this.pointer.y += (this.pointer.targetY - this.pointer.y) * 0.045;
 
       if (this.cardGroup) {
-        this.cardGroup.rotation.y = this.pointer.x * 0.28;
-        this.cardGroup.rotation.x = -this.pointer.y * 0.2;
+        this.cardGroup.rotation.y = this.pointer.x * 0.22;
+        this.cardGroup.rotation.x = -this.pointer.y * 0.15;
       }
 
       if (this.raycaster && this.cards.length > 0 && this.mouseVec.x > -100) {
@@ -1318,28 +1345,33 @@
 
       this.cards.forEach((card, idx) => {
         const u = card.userData;
-        const isHovered = this.hoveredIndex === idx;
+        const isHovered = this.hoveredIndex === idx && idx !== this.activeIndex;
+        const isActive = this.activeIndex === idx;
 
-        const floatY = Math.sin(elapsed * 1.5 + u.phase) * 0.07;
-        const floatZ = Math.cos(elapsed * 1.2 + u.phase) * 0.03;
-        const floatRotZ = Math.sin(elapsed * 1.0 + u.phase) * 0.015;
+        const floatY = Math.sin(elapsed * 1.5 + u.phase) * (isActive ? 0.04 : 0.06);
+        const floatZ = Math.cos(elapsed * 1.2 + u.phase) * (isActive ? 0.02 : 0.03);
 
-        const goalZ = (isHovered ? u.basePos.z + 0.35 : u.targetZ) + floatZ;
-        const goalY = u.basePos.y + floatY;
-        const goalScale = isHovered ? 1.04 : u.targetScale;
+        const goalX = u.targetPos.x;
+        const goalY = u.targetPos.y + floatY;
+        const goalZ = u.targetPos.z + floatZ + (isHovered ? 0.22 : 0);
+        const goalScale = (isHovered ? u.targetScale * 1.03 : u.targetScale);
 
-        card.position.z += (goalZ - card.position.z) * 0.06;
-        card.position.y += (goalY - card.position.y) * 0.06;
-        card.rotation.z = u.baseRot.z + floatRotZ;
+        card.position.x += (goalX - card.position.x) * 0.085;
+        card.position.y += (goalY - card.position.y) * 0.085;
+        card.position.z += (goalZ - card.position.z) * 0.085;
 
-        card.scale.x += (goalScale - card.scale.x) * 0.08;
-        card.scale.y += (goalScale - card.scale.y) * 0.08;
-        card.scale.z += (goalScale - card.scale.z) * 0.08;
+        card.rotation.x += (u.targetRot.x - card.rotation.x) * 0.085;
+        card.rotation.y += (u.targetRot.y - card.rotation.y) * 0.085;
+        card.rotation.z += (u.targetRot.z - card.rotation.z) * 0.085;
+
+        card.scale.x += (goalScale - card.scale.x) * 0.085;
+        card.scale.y += (goalScale - card.scale.y) * 0.085;
+        card.scale.z += (goalScale - card.scale.z) * 0.085;
       });
 
       if (this.particles) {
-        this.particles.rotation.y = elapsed * 0.03;
-        this.particles.rotation.x = elapsed * 0.015;
+        this.particles.rotation.y = elapsed * 0.025;
+        this.particles.rotation.x = elapsed * 0.012;
       }
 
       this.renderer.render(this.scene, this.camera);

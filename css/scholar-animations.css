@@ -294,10 +294,10 @@ html[dir="ltr"] .ink-marquee-track {
 
 @keyframes planetAtmosphereGlow {
   0%, 100% {
-    filter: drop-shadow(0 0 4px rgba(59, 130, 246, 0.45));
+    opacity: 0.9;
   }
   50% {
-    filter: drop-shadow(0 0 14px rgba(37, 99, 235, 0.85)) drop-shadow(0 0 22px rgba(96, 165, 250, 0.5));
+    opacity: 1;
   }
 }
 
