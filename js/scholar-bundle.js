@@ -57,6 +57,11 @@
         hero_sub: 'فريق متخصص في إعداد وتنسيق بحوث تخرج البكالوريوس، رسائل الماجستير، والتقارير الأكاديمية بدقة عالية وسرعة تسليم متميزة مع متابعة مستمرة لكافة الملاحظات.',
         hero_btn_order: 'تحويل طلبك مباشرة إلى واتساب',
         hero_btn_about: 'تعرف على فريقنا وضماناتنا',
+        trust_iraq: 'دليل الجامعات العراقية',
+        trust_speed: 'تسليم سريع وضمان دقة',
+        trust_docs: 'صيغتي Word & PDF',
+        three_caption: 'صروح أكاديمية معتمدة • جامعة بغداد • المستنصرية • بابل',
+        three_hint: 'حرّك الماوس للتفاعل 3D',
         services_title_bold: 'خدماتنا',
         services_desc: 'فريقنا مختص وسريع الاستجابة، يقدم دعما عمليا وموثوقا في كتابة وتطوير الأبحاث، إعداد الرسائل الجامعية، ومراجعة وتنسيق المتطلبات بدقة عالية.',
         guarantees_title_thin: 'ضمانات',
@@ -139,6 +144,11 @@
         hero_sub: 'A specialized team dedicated to preparing and formatting Bachelor graduation research, Master theses, and academic reports with high precision, rapid turnaround, and continuous revision.',
         hero_btn_order: 'Transfer Request via WhatsApp',
         hero_btn_about: 'Meet Our Team & Guarantees',
+        trust_iraq: 'Iraqi Universities Standards',
+        trust_speed: 'Rapid Turnaround & Rigor',
+        trust_docs: 'Word & PDF Formats Included',
+        three_caption: 'Accredited Iraqi Universities • Baghdad • Mustansiriyah • Babylon',
+        three_hint: 'Move cursor to interact in 3D',
         services_title_bold: 'Services',
         services_desc: 'Our specialized, fast-response team of experts provides reliable academic support in research writing, thesis development, and meticulous formatting conforming to high standards.',
         guarantees_title_thin: 'Our Work',
@@ -300,6 +310,11 @@
       // Update live preview in matching language
       if (typeof ScholarReferral !== 'undefined' && ScholarReferral.updateLivePreview) {
         ScholarReferral.updateLivePreview();
+      }
+
+      // Update 3D Universities cards in matching language
+      if (typeof ScholarUniversities3D !== 'undefined' && ScholarUniversities3D.updateLanguage) {
+        ScholarUniversities3D.updateLanguage(lang);
       }
     }
   };
@@ -596,7 +611,622 @@
   };
 
   /* --------------------------------------------------------------------------
-     8. SKELETON VIEW CONTROLLER (Smooth Shimmer & Seamless Dismissal)
+     8. SCHOLAR UNIVERSITIES 3D EXPERIENCE (THREE.JS BESPOKE CARDS)
+     -------------------------------------------------------------------------- */
+  const ScholarUniversities3D = {
+    canvas: null,
+    container: null,
+    scene: null,
+    camera: null,
+    renderer: null,
+    cardGroup: null,
+    cards: [],
+    particles: null,
+    animFrameId: null,
+    clock: null,
+    isVisible: true,
+    pointer: { x: 0, y: 0, targetX: 0, targetY: 0 },
+    currentLang: 'ar',
+    raycaster: null,
+    mouseVec: null,
+    hoveredIndex: -1,
+
+    universities: [
+      {
+        id: 'baghdad',
+        nameAr: 'جامعة بغداد',
+        nameEn: 'University of Baghdad',
+        titleAr: 'أم الجامعات العراقية',
+        titleEn: 'Mother of Iraqi Universities',
+        yearAr: 'تأسست ١٩٥٧ م',
+        yearEn: 'Established 1957',
+        badgeAr: 'الريادة والاعتماد الأكاديمي الشامل',
+        badgeEn: 'Pioneering Comprehensive Accreditation',
+        statsAr: '٢٤ كلية و٤ معاهد عليا متخصصة',
+        statsEn: '24 Colleges & 4 Specialized Institutes',
+        primary: '#132C54',
+        secondary: '#C5A059',
+        accent: '#93C5FD',
+        basePos: { x: 0.12, y: 0.05, z: 0.55 },
+        baseRot: { x: 0.03, y: -0.14, z: -0.01 },
+        iconType: 'tower'
+      },
+      {
+        id: 'mustansiriyah',
+        nameAr: 'الجامعة المستنصرية',
+        nameEn: 'Mustansiriyah University',
+        titleAr: 'إرث الحضارة والتاريخ',
+        titleEn: 'Heritage of Civilization & History',
+        yearAr: 'تأسست ١٢٢٧ م',
+        yearEn: 'Established 1227 AD',
+        badgeAr: 'أعرق الصروح العلمية التاريخية',
+        badgeEn: 'Historic Anchor of Academic Excellence',
+        statsAr: '١٣ كلية ومراكز بحثية عريقة',
+        statsEn: '13 Colleges & Historical Research Centers',
+        primary: '#092E42',
+        secondary: '#2DD4BF',
+        accent: '#67E8F9',
+        basePos: { x: -1.78, y: 0.38, z: -0.15 },
+        baseRot: { x: 0.02, y: 0.28, z: 0.02 },
+        iconType: 'arch'
+      },
+      {
+        id: 'babylon',
+        nameAr: 'جامعة بابل',
+        nameEn: 'University of Babylon',
+        titleAr: 'درة الفرات الأوسط',
+        titleEn: 'Pearl of Middle Euphrates',
+        yearAr: 'تأسست ١٩٩١ م',
+        yearEn: 'Established 1991',
+        badgeAr: 'صدارة التصنيفات العالمية للبحث',
+        badgeEn: 'Leading Global Research Rankings',
+        statsAr: '٢٠ كلية وبرامج دراسات عليا رصينة',
+        statsEn: '20 Colleges & Rigorous Graduate Programs',
+        primary: '#14253F',
+        secondary: '#F59E0B',
+        accent: '#FDE68A',
+        basePos: { x: 1.88, y: -0.36, z: -0.38 },
+        baseRot: { x: -0.03, y: -0.32, z: -0.02 },
+        iconType: 'gate'
+      }
+    ],
+
+    init() {
+      this.canvas = document.getElementById('scholarHeroCanvas3D');
+      this.container = document.getElementById('scholarHeroCanvasWrap');
+      if (!this.canvas || !this.container) return;
+
+      if (typeof THREE === 'undefined') {
+        setTimeout(() => this.init(), 120);
+        return;
+      }
+
+      this.currentLang = document.documentElement.getAttribute('lang') || 'ar';
+      this.clock = new THREE.Clock();
+      this.raycaster = new THREE.Raycaster();
+      this.mouseVec = new THREE.Vector2(-999, -999);
+
+      this.setupScene();
+      this.createCards();
+      this.createParticles();
+      this.bindEvents();
+      this.animate();
+    },
+
+    setupScene() {
+      const width = this.container.clientWidth || 580;
+      const height = this.container.clientHeight || 500;
+
+      this.scene = new THREE.Scene();
+      this.camera = new THREE.PerspectiveCamera(40, width / height, 0.1, 100);
+      this.updateCameraDistance(width);
+
+      this.renderer = new THREE.WebGLRenderer({
+        canvas: this.canvas,
+        alpha: true,
+        antialias: true,
+        powerPreference: 'high-performance'
+      });
+      this.renderer.setSize(width, height);
+      this.renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+      if (THREE.ACESFilmicToneMapping) {
+        this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        this.renderer.toneMappingExposure = 1.15;
+      }
+
+      // Lights
+      const ambient = new THREE.AmbientLight(0xdbeafe, 0.85);
+      this.scene.add(ambient);
+
+      const dirLight = new THREE.DirectionalLight(0xffffff, 1.4);
+      dirLight.position.set(4, 6, 5);
+      this.scene.add(dirLight);
+
+      const sapphireLight = new THREE.PointLight(0x2563eb, 2.4, 18);
+      sapphireLight.position.set(-3.5, -1, 3);
+      this.scene.add(sapphireLight);
+
+      const goldLight = new THREE.PointLight(0xc5a059, 1.8, 16);
+      goldLight.position.set(3, -2, 3);
+      this.scene.add(goldLight);
+
+      this.cardGroup = new THREE.Group();
+      this.scene.add(this.cardGroup);
+    },
+
+    updateCameraDistance(width) {
+      if (!this.camera) return;
+      if (width < 480) {
+        this.camera.position.set(0, 0, 6.4);
+      } else if (width < 768) {
+        this.camera.position.set(0, 0, 5.8);
+      } else {
+        this.camera.position.set(0, 0, 5.2);
+      }
+    },
+
+    drawRoundRectPath(ctx, x, y, w, h, r) {
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.lineTo(x + w - r, y);
+      ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+      ctx.lineTo(x + w, y + h - r);
+      ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+      ctx.lineTo(x + r, y + h);
+      ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+      ctx.lineTo(x, y + r);
+      ctx.quadraticCurveTo(x, y, x + r, y);
+      ctx.closePath();
+    },
+
+    createCardTexture(univ, lang) {
+      const w = 768;
+      const h = 1080;
+      const canvas = document.createElement('canvas');
+      canvas.width = w;
+      canvas.height = h;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return null;
+
+      ctx.clearRect(0, 0, w, h);
+
+      // Card body with luxury glassmorphic gradient
+      const bgGrad = ctx.createLinearGradient(0, 0, w, h);
+      bgGrad.addColorStop(0, univ.primary);
+      bgGrad.addColorStop(0.5, '#0B172E');
+      bgGrad.addColorStop(1, '#050A14');
+      ctx.fillStyle = bgGrad;
+      this.drawRoundRectPath(ctx, 24, 24, w - 48, h - 48, 54);
+      ctx.fill();
+
+      // Dual metallic rim
+      ctx.lineWidth = 4;
+      ctx.strokeStyle = univ.secondary;
+      this.drawRoundRectPath(ctx, 24, 24, w - 48, h - 48, 54);
+      ctx.stroke();
+
+      ctx.lineWidth = 1.5;
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.28)';
+      this.drawRoundRectPath(ctx, 36, 36, w - 72, h - 72, 44);
+      ctx.stroke();
+
+      // Subtle radial inner glow
+      const innerGlow = ctx.createRadialGradient(w / 2, 280, 40, w / 2, 280, 360);
+      innerGlow.addColorStop(0, 'rgba(37, 99, 235, 0.22)');
+      innerGlow.addColorStop(1, 'transparent');
+      ctx.fillStyle = innerGlow;
+      this.drawRoundRectPath(ctx, 38, 38, w - 76, h - 76, 42);
+      ctx.fill();
+
+      // Top Republic Ribbon
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.08)';
+      this.drawRoundRectPath(ctx, 80, 60, w - 160, 48, 24);
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.16)';
+      ctx.lineWidth = 1;
+      this.drawRoundRectPath(ctx, 80, 60, w - 160, 48, 24);
+      ctx.stroke();
+
+      ctx.fillStyle = '#E2E8F0';
+      ctx.font = '600 20px Alexandria, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText(lang === 'en' ? 'REPUBLIC OF IRAQ • MINISTRY OF HIGHER EDUCATION' : 'جمهورية العراق • وزارة التعليم العالي والبحث العلمي', w / 2, 92);
+
+      // Central University Crest / Architectural Icon
+      ctx.save();
+      ctx.translate(w / 2, 300);
+
+      // Crest Halo
+      const halo = ctx.createRadialGradient(0, 0, 10, 0, 0, 140);
+      halo.addColorStop(0, 'rgba(197, 160, 89, 0.3)');
+      halo.addColorStop(1, 'transparent');
+      ctx.fillStyle = halo;
+      ctx.beginPath();
+      ctx.arc(0, 0, 140, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Crest Circle
+      ctx.strokeStyle = univ.secondary;
+      ctx.lineWidth = 3.5;
+      ctx.beginPath();
+      ctx.arc(0, 0, 105, 0, Math.PI * 2);
+      ctx.stroke();
+
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.arc(0, 0, 94, 0, Math.PI * 2);
+      ctx.stroke();
+
+      // Architectural Vector Insignia
+      ctx.strokeStyle = '#FFFFFF';
+      ctx.fillStyle = univ.secondary;
+      ctx.lineWidth = 3.5;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+
+      if (univ.iconType === 'tower') {
+        // Baghdad University Iconic Tower & Spire
+        ctx.beginPath();
+        ctx.moveTo(-50, 45);
+        ctx.quadraticCurveTo(0, 55, 50, 45);
+        ctx.lineTo(45, 62);
+        ctx.quadraticCurveTo(0, 72, -45, 62);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(-24, 45);
+        ctx.lineTo(-14, -25);
+        ctx.lineTo(14, -25);
+        ctx.lineTo(24, 45);
+        ctx.closePath();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(0, 0, 10, 0, Math.PI * 2);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(-22, -25);
+        ctx.lineTo(-34, -48);
+        ctx.lineTo(34, -48);
+        ctx.lineTo(22, -25);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(0, -48);
+        ctx.lineTo(0, -82);
+        ctx.stroke();
+      } else if (univ.iconType === 'arch') {
+        // Mustansiriyah Historic Arched Iwan & Sunburst
+        ctx.beginPath();
+        ctx.moveTo(-45, 60);
+        ctx.lineTo(-45, 0);
+        ctx.arc(0, 0, 45, Math.PI, 0);
+        ctx.lineTo(45, 60);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(-28, 60);
+        ctx.lineTo(-28, 8);
+        ctx.arc(0, 8, 28, Math.PI, 0);
+        ctx.lineTo(28, 60);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+
+        for (let a = 0; a < 7; a++) {
+          const angle = Math.PI + (a * Math.PI) / 6;
+          const r1 = 54;
+          const r2 = 72;
+          ctx.beginPath();
+          ctx.moveTo(Math.cos(angle) * r1, Math.sin(angle) * r1);
+          ctx.lineTo(Math.cos(angle) * r2, Math.sin(angle) * r2);
+          ctx.stroke();
+        }
+      } else {
+        // Babylon Historic Ishtar Gate & Compass
+        ctx.beginPath();
+        ctx.moveTo(-50, 60);
+        ctx.lineTo(-50, -40);
+        ctx.lineTo(-30, -40);
+        ctx.lineTo(-30, -10);
+        ctx.lineTo(30, -10);
+        ctx.lineTo(30, -40);
+        ctx.lineTo(50, -40);
+        ctx.lineTo(50, 60);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(-22, 60);
+        ctx.lineTo(-22, 10);
+        ctx.arc(0, 10, 22, Math.PI, 0);
+        ctx.lineTo(22, 60);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(0, -32, 14, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+
+      ctx.restore();
+
+      // University Primary Name
+      ctx.textAlign = 'center';
+      ctx.fillStyle = '#FFFFFF';
+      ctx.font = '800 52px Alexandria, Cairo, sans-serif';
+      const mainName = lang === 'en' ? univ.nameEn : univ.nameAr;
+      ctx.fillText(mainName, w / 2, 540);
+
+      // Subtitle
+      ctx.fillStyle = univ.secondary;
+      ctx.font = '600 25px Alexandria, Outfit, sans-serif';
+      const subName = lang === 'en' ? univ.nameAr : univ.nameEn;
+      ctx.fillText(subName, w / 2, 590);
+
+      // Golden Badge Pill
+      ctx.fillStyle = 'rgba(197, 160, 89, 0.16)';
+      this.drawRoundRectPath(ctx, 70, 640, w - 140, 62, 31);
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(197, 160, 89, 0.45)';
+      ctx.lineWidth = 1.5;
+      this.drawRoundRectPath(ctx, 70, 640, w - 140, 62, 31);
+      ctx.stroke();
+
+      ctx.fillStyle = '#FEF08A';
+      ctx.font = '700 24px Alexandria, Cairo, sans-serif';
+      ctx.fillText(lang === 'en' ? univ.titleEn : univ.titleAr, w / 2, 679);
+
+      // Detailed Academic Scope
+      ctx.fillStyle = '#CBD5E1';
+      ctx.font = '500 22px Alexandria, IBM Plex Sans Arabic, sans-serif';
+      ctx.fillText(lang === 'en' ? univ.badgeEn : univ.badgeAr, w / 2, 755);
+
+      // Stats Pill
+      ctx.fillStyle = '#94A3B8';
+      ctx.font = '600 21px Alexandria, Outfit, sans-serif';
+      ctx.fillText(lang === 'en' ? univ.statsEn : univ.statsAr, w / 2, 805);
+
+      // Five Star Academic Rigor
+      ctx.fillStyle = univ.secondary;
+      ctx.font = '26px sans-serif';
+      ctx.fillText('★ ★ ★ ★ ★', w / 2, 860);
+
+      // Bottom Accreditation Seal
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.06)';
+      this.drawRoundRectPath(ctx, 90, 915, w - 180, 80, 24);
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.15)';
+      ctx.lineWidth = 1;
+      this.drawRoundRectPath(ctx, 90, 915, w - 180, 80, 24);
+      ctx.stroke();
+
+      ctx.fillStyle = '#93C5FD';
+      ctx.font = '700 20px Alexandria, sans-serif';
+      ctx.fillText(lang === 'en' ? 'ACCREDITED ACADEMIC THESIS REPOSITORY' : 'رصانة أكاديمية معتمدة وفق دليل الجامعات', w / 2, 950);
+
+      ctx.fillStyle = '#64748B';
+      ctx.font = '500 17px Outfit, sans-serif';
+      ctx.fillText(lang === 'en' ? univ.yearEn : univ.yearAr, w / 2, 978);
+
+      const texture = new THREE.CanvasTexture(canvas);
+      texture.needsUpdate = true;
+      if (this.renderer && this.renderer.capabilities) {
+        texture.anisotropy = Math.min(this.renderer.capabilities.getMaxAnisotropy(), 8);
+      }
+      return texture;
+    },
+
+    createCards() {
+      while (this.cardGroup.children.length > 0) {
+        const obj = this.cardGroup.children[0];
+        this.cardGroup.remove(obj);
+      }
+      this.cards = [];
+
+      const geom = new THREE.BoxGeometry(2.2, 3.1, 0.07);
+
+      this.universities.forEach((univ, idx) => {
+        const frontTex = this.createCardTexture(univ, this.currentLang);
+
+        const edgeMat = new THREE.MeshStandardMaterial({
+          color: 0x11233f,
+          metalness: 0.88,
+          roughness: 0.28
+        });
+
+        const backMat = new THREE.MeshStandardMaterial({
+          color: 0x081220,
+          metalness: 0.65,
+          roughness: 0.42
+        });
+
+        const frontMat = new THREE.MeshStandardMaterial({
+          map: frontTex,
+          metalness: 0.12,
+          roughness: 0.32
+        });
+
+        const materials = [edgeMat, edgeMat, edgeMat, edgeMat, frontMat, backMat];
+
+        const cardMesh = new THREE.Mesh(geom, materials);
+        cardMesh.position.set(univ.basePos.x, univ.basePos.y, univ.basePos.z);
+        cardMesh.rotation.set(univ.baseRot.x, univ.baseRot.y, univ.baseRot.z);
+        cardMesh.userData = {
+          index: idx,
+          univId: univ.id,
+          basePos: { ...univ.basePos },
+          baseRot: { ...univ.baseRot },
+          targetZ: univ.basePos.z,
+          targetY: univ.basePos.y,
+          targetScale: 1.0,
+          phase: idx * 2.1
+        };
+
+        this.cardGroup.add(cardMesh);
+        this.cards.push(cardMesh);
+      });
+    },
+
+    createParticles() {
+      const count = 75;
+      const positions = new Float32Array(count * 3);
+      for (let i = 0; i < count; i++) {
+        positions[i * 3] = (Math.random() - 0.5) * 8;
+        positions[i * 3 + 1] = (Math.random() - 0.5) * 6;
+        positions[i * 3 + 2] = (Math.random() - 0.5) * 4;
+      }
+      const geom = new THREE.BufferGeometry();
+      geom.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+      const mat = new THREE.PointsMaterial({
+        color: 0x93c5fd,
+        size: 0.055,
+        transparent: true,
+        opacity: 0.7,
+        blending: THREE.AdditiveBlending
+      });
+      this.particles = new THREE.Points(geom, mat);
+      this.scene.add(this.particles);
+    },
+
+    bindEvents() {
+      const onPointerMove = (e) => {
+        const rect = this.container.getBoundingClientRect();
+        if (rect.width === 0 || rect.height === 0) return;
+        const clientX = e.clientX || (e.touches && e.touches[0].clientX) || rect.left + rect.width / 2;
+        const clientY = e.clientY || (e.touches && e.touches[0].clientY) || rect.top + rect.height / 2;
+        this.pointer.targetX = ((clientX - rect.left) / rect.width) * 2 - 1;
+        this.pointer.targetY = -(((clientY - rect.top) / rect.height) * 2 - 1);
+        this.mouseVec.x = this.pointer.targetX;
+        this.mouseVec.y = this.pointer.targetY;
+      };
+
+      this.container.addEventListener('mousemove', onPointerMove, { passive: true });
+      this.container.addEventListener('touchmove', onPointerMove, { passive: true });
+
+      this.container.addEventListener('mouseleave', () => {
+        this.pointer.targetX = 0;
+        this.pointer.targetY = 0;
+        this.mouseVec.x = -999;
+        this.mouseVec.y = -999;
+        this.hoveredIndex = -1;
+      });
+
+      this.container.addEventListener('click', () => {
+        if (this.hoveredIndex >= 0) {
+          this.cycleCardToFront(this.hoveredIndex);
+        }
+      });
+
+      window.addEventListener('resize', () => {
+        if (!this.container || !this.renderer || !this.camera) return;
+        const w = this.container.clientWidth;
+        const h = this.container.clientHeight;
+        if (w === 0 || h === 0) return;
+        this.camera.aspect = w / h;
+        this.updateCameraDistance(w);
+        this.camera.updateProjectionMatrix();
+        this.renderer.setSize(w, h);
+      });
+
+      if ('IntersectionObserver' in window) {
+        const obs = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            this.isVisible = entry.isIntersecting;
+          });
+        }, { threshold: 0.1 });
+        obs.observe(this.container);
+      }
+    },
+
+    cycleCardToFront(clickedIndex) {
+      if (clickedIndex < 0 || clickedIndex >= this.cards.length) return;
+      const card = this.cards[clickedIndex];
+      card.userData.targetZ = 0.8;
+      card.userData.targetScale = 1.05;
+      this.cards.forEach((c, idx) => {
+        if (idx !== clickedIndex) {
+          c.userData.targetZ = c.userData.basePos.z - 0.25;
+          c.userData.targetScale = 0.95;
+        }
+      });
+      setTimeout(() => {
+        this.cards.forEach(c => {
+          c.userData.targetZ = c.userData.basePos.z;
+          c.userData.targetScale = 1.0;
+        });
+      }, 2600);
+    },
+
+    updateLanguage(lang) {
+      this.currentLang = lang;
+      if (this.cards.length > 0) {
+        this.createCards();
+      }
+    },
+
+    animate() {
+      this.animFrameId = requestAnimationFrame(() => this.animate());
+      if (!this.isVisible || !this.renderer || !this.scene || !this.camera) return;
+
+      const elapsed = this.clock.getElapsedTime();
+
+      this.pointer.x += (this.pointer.targetX - this.pointer.x) * 0.045;
+      this.pointer.y += (this.pointer.targetY - this.pointer.y) * 0.045;
+
+      if (this.cardGroup) {
+        this.cardGroup.rotation.y = this.pointer.x * 0.28;
+        this.cardGroup.rotation.x = -this.pointer.y * 0.2;
+      }
+
+      if (this.raycaster && this.cards.length > 0 && this.mouseVec.x > -100) {
+        this.raycaster.setFromCamera(this.mouseVec, this.camera);
+        const intersects = this.raycaster.intersectObjects(this.cards);
+        if (intersects.length > 0) {
+          this.hoveredIndex = intersects[0].object.userData.index;
+        } else {
+          this.hoveredIndex = -1;
+        }
+      }
+
+      this.cards.forEach((card, idx) => {
+        const u = card.userData;
+        const isHovered = this.hoveredIndex === idx;
+
+        const floatY = Math.sin(elapsed * 1.5 + u.phase) * 0.07;
+        const floatZ = Math.cos(elapsed * 1.2 + u.phase) * 0.03;
+        const floatRotZ = Math.sin(elapsed * 1.0 + u.phase) * 0.015;
+
+        const goalZ = (isHovered ? u.basePos.z + 0.35 : u.targetZ) + floatZ;
+        const goalY = u.basePos.y + floatY;
+        const goalScale = isHovered ? 1.04 : u.targetScale;
+
+        card.position.z += (goalZ - card.position.z) * 0.06;
+        card.position.y += (goalY - card.position.y) * 0.06;
+        card.rotation.z = u.baseRot.z + floatRotZ;
+
+        card.scale.x += (goalScale - card.scale.x) * 0.08;
+        card.scale.y += (goalScale - card.scale.y) * 0.08;
+        card.scale.z += (goalScale - card.scale.z) * 0.08;
+      });
+
+      if (this.particles) {
+        this.particles.rotation.y = elapsed * 0.03;
+        this.particles.rotation.x = elapsed * 0.015;
+      }
+
+      this.renderer.render(this.scene, this.camera);
+    }
+  };
+
+  /* --------------------------------------------------------------------------
+     9. SKELETON VIEW CONTROLLER (Smooth Shimmer & Seamless Dismissal)
      -------------------------------------------------------------------------- */
   const ScholarSkeleton = {
     init() {
@@ -620,19 +1250,20 @@
   };
 
   /* --------------------------------------------------------------------------
-     9. DOM INITIALIZATION
+     10. DOM INITIALIZATION
      -------------------------------------------------------------------------- */
   document.addEventListener('DOMContentLoaded', () => {
     ScholarSkeleton.init();
     ScholarStore.init();
     ScholarI18n.init();
+    ScholarUniversities3D.init();
     ScholarMobileMenu.init();
     ScholarMarquee.init();
     ScholarReferral.init();
     ScholarFaq.init();
     ScholarFloatingBar.init();
     ScholarMotion.init();
-    console.log('[Scholar Academic Library - مكتبة سكولار الأكاديمية] Fully initialized with LTR/RTL Logo Swap, Infinite Marquee, and Solid Navy Design.');
+    console.log('[Scholar Academic Library - مكتبة سكولار الأكاديمية] Fully initialized with Alexandria Font, 3D Iraqi Universities, and Atmospheric Royal Navy.');
   });
 
 })();

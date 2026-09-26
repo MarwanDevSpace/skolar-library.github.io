@@ -18,7 +18,7 @@
   <!-- Curated Luxury Google Fonts with Display Swap & Fallback Parity -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Cairo:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800;900&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Cairo:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/scholar-tokens.css">
@@ -26,7 +26,8 @@
   <link rel="stylesheet" href="css/scholar-components.css">
   <link rel="stylesheet" href="css/scholar-animations.css">
 
-  <!-- Universal Script Bundle -->
+  <!-- 3D Graphics Engine & Universal Script Bundle -->
+  <script src="js/three.min.js" defer></script>
   <script src="js/scholar-bundle.js" defer></script>
 </head>
 <body class="ink-editorial-body">
@@ -126,38 +127,91 @@
 
   <main>
     <!-- ====================================================================
-         2. HERO SECTION (SOLID ROYAL NAVY WITH ARCHITECTURAL GLOW)
+         2. HERO SECTION (ATMOSPHERIC DEEP SAPPHIRE WITH 3D IRAQI UNIVERSITIES)
          ==================================================================== -->
     <section class="ink-editorial-hero" id="hero">
-      <div class="ink-hero-overlay"></div>
+      <!-- Dynamic Atmospheric Background & Aura Lights -->
+      <div class="scholar-hero-bg-lights" aria-hidden="true">
+        <div class="scholar-light-orb scholar-orb-1"></div>
+        <div class="scholar-light-orb scholar-orb-2"></div>
+        <div class="scholar-light-orb scholar-orb-3"></div>
+      </div>
+      <div class="scholar-hero-grid-pattern" aria-hidden="true"></div>
+      <div class="ink-hero-overlay" aria-hidden="true"></div>
 
-      <div class="ink-hero-inner scholar-reveal-fast">
-        <div class="ink-hero-est">
-          <span class="ink-hero-est-line"></span>
-          <span data-i18n="hero_est">خدمات أكاديمية متخصصة • للجامعات والمعاهد والدراسات العليا</span>
-          <span class="ink-hero-est-line"></span>
+      <!-- Asymmetric Editorial 2-Column Container -->
+      <div class="scholar-hero-container">
+        <!-- 1. RIGHT COLUMN (in RTL): Right-Aligned Majestic Typography & CTAs -->
+        <div class="scholar-hero-text-col scholar-reveal-fast">
+          <!-- Kicker Badge with Pulsing Sapphire Dot -->
+          <div class="scholar-hero-badge">
+            <span class="scholar-badge-dot" aria-hidden="true"></span>
+            <span class="scholar-badge-text" data-i18n="hero_est">خدمات أكاديمية متخصصة • للجامعات والمعاهد والدراسات العليا</span>
+          </div>
+
+          <!-- Grand Brand Title (Alexandria Modern Display) -->
+          <h1 class="scholar-hero-main-title">
+            <span class="scholar-title-line-1" data-i18n="hero_title_1">مكتبة سكولار</span>
+            <span class="scholar-title-line-2" data-i18n="hero_title_2">الأكاديمية</span>
+          </h1>
+
+          <!-- Distinctive Service Subtitle Tag -->
+          <div class="scholar-hero-service-tag">
+            <span class="scholar-tag-icon" aria-hidden="true">✦</span>
+            <span class="scholar-tag-text" data-i18n="hero_sub_heading">لإنشاء البحوث والرسائل والتقارير الأكاديمية</span>
+          </div>
+
+          <!-- Editorial Paragraph (Right Aligned in RTL, High Legibility) -->
+          <p class="scholar-hero-desc" data-i18n="hero_sub">
+            فريق متخصص في إعداد وتنسيق بحوث تخرج البكالوريوس، رسائل الماجستير، والتقارير الأكاديمية بدقة عالية وسرعة تسليم متميزة وفق دليل الجامعات العراقية مع متابعة مستمرة لكافة الملاحظات.
+          </p>
+
+          <!-- Verified Academic Trust Pillars -->
+          <div class="scholar-hero-trust-bar">
+            <div class="scholar-trust-item">
+              <span class="scholar-trust-bullet" aria-hidden="true">✓</span>
+              <span data-i18n="trust_iraq">دليل الجامعات العراقية</span>
+            </div>
+            <div class="scholar-trust-item">
+              <span class="scholar-trust-bullet" aria-hidden="true">✓</span>
+              <span data-i18n="trust_speed">تسليم سريع وضمان دقة</span>
+            </div>
+            <div class="scholar-trust-item">
+              <span class="scholar-trust-bullet" aria-hidden="true">✓</span>
+              <span data-i18n="trust_docs">صيغتي Word & PDF</span>
+            </div>
+          </div>
+
+          <!-- Action Buttons Row (Right Aligned in RTL) -->
+          <div class="scholar-hero-actions">
+            <a href="#order" class="ink-hero-pill-btn scholar-glow-btn">
+              <span data-i18n="hero_btn_order">تحويل طلبك مباشرة إلى واتساب</span>
+              <svg class="ink-svg ink-svg-sm ink-svg-flip" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+            </a>
+            <a href="#about" class="scholar-hero-secondary-btn">
+              <span data-i18n="hero_btn_about">تعرف على فريقنا وضماناتنا</span>
+            </a>
+          </div>
         </div>
 
-        <h1 class="ink-hero-editorial-title">
-          <span class="scholar-fw-thin" data-i18n="hero_title_1">مكتبة سكولار</span>
-          <span class="scholar-fw-bold" data-i18n="hero_title_2">الأكاديمية</span>
-          <span class="scholar-hero-sub-title" style="display: block; font-size: 0.52em; margin-top: 0.6rem; letter-spacing: 0.02em;" data-i18n="hero_sub_heading">
-            <span class="scholar-fw-bold">لإنشاء البحوث والرسائل والتقارير</span>
-          </span>
-        </h1>
+        <!-- 2. LEFT COLUMN (in RTL): Interactive 3D Three.js Iraqi Universities Stage -->
+        <div class="scholar-hero-3d-col">
+          <div class="scholar-3d-canvas-wrap" id="scholarHeroCanvasWrap">
+            <!-- 3D Three.js Canvas -->
+            <canvas id="scholarHeroCanvas3D" class="scholar-3d-canvas" aria-label="عرض ثلاثي الأبعاد تفاعلي للجامعات العراقية المعتمدة"></canvas>
+            
+            <!-- Atmospheric Depth Ring -->
+            <div class="scholar-3d-glow-ring" aria-hidden="true"></div>
 
-        <p class="ink-hero-editorial-sub" data-i18n="hero_sub">
-          فريق متخصص في إعداد وتنسيق بحوث تخرج البكالوريوس، رسائل الماجستير، والتقارير الأكاديمية بدقة عالية وسرعة تسليم متميزة مع متابعة مستمرة لكافة الملاحظات.
-        </p>
-
-        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-          <a href="#order" class="ink-hero-pill-btn">
-            <span data-i18n="hero_btn_order">تحويل طلبك مباشرة إلى واتساب</span>
-            <svg class="ink-svg ink-svg-sm ink-svg-flip" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
-          </a>
-          <a href="#about" class="ink-btn-pill ink-btn-pill-white" style="background: rgba(255,255,255,0.12); color: #fff; border-color: rgba(255,255,255,0.3); backdrop-filter: blur(8px);">
-            <span data-i18n="hero_btn_about">تعرف على فريقنا وضماناتنا</span>
-          </a>
+            <!-- Floating 3D Interaction Caption -->
+            <div class="scholar-3d-caption-bar">
+              <div class="scholar-3d-caption-brand">
+                <span class="scholar-3d-caption-icon" aria-hidden="true">🏛️</span>
+                <span class="scholar-3d-caption-text" data-i18n="three_caption">صروح أكاديمية معتمدة • جامعة بغداد • المستنصرية • بابل</span>
+              </div>
+              <span class="scholar-3d-hint" data-i18n="three_hint">حرّك الماوس للتفاعل 3D</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -54,6 +54,13 @@
   --scholar-font-editorial-heading: 'Playfair Display', 'Cairo', serif;
   --scholar-font-sans-clean: 'Outfit', 'IBM Plex Sans Arabic', -apple-system, sans-serif;
   --scholar-font-arabic-body: 'IBM Plex Sans Arabic', 'Cairo', sans-serif;
+  --scholar-font-display-modern: 'Alexandria', 'Cairo', sans-serif;
+
+  /* Atmospheric Hero Tokens */
+  --scholar-hero-bg-deep: #060B17;
+  --scholar-hero-bg-surface: #0B172E;
+  --scholar-hero-glow-sapphire: rgba(37, 99, 235, 0.45);
+  --scholar-hero-glow-gold: rgba(197, 160, 89, 0.35);
 
   /* Editorial Contrast Weights */
   --scholar-weight-thin: 300;
