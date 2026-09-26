@@ -13,6 +13,7 @@
 html {
   scroll-behavior: smooth;
   text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
 body.ink-editorial-body {
@@ -353,26 +354,24 @@ html[dir="ltr"] body.ink-editorial-body {
   text-align: start;
 }
 
-/* Kicker Badge with Sapphire Pulse */
-.scholar-hero-badge {
+/* Borderless Typography Kicker with Sapphire Pulsing Dot */
+.scholar-hero-kicker {
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
-  background: rgba(29, 68, 134, 0.22);
-  border: 1px solid rgba(147, 197, 253, 0.32);
-  border-radius: var(--scholar-radius-pill);
-  padding: 0.38rem 1.1rem;
-  margin-bottom: 1.25rem;
-  backdrop-filter: blur(12px);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin-bottom: 1.15rem;
 }
 
-.scholar-badge-dot {
+.scholar-kicker-dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
   background: #38BDF8;
-  box-shadow: 0 0 10px #38BDF8;
+  box-shadow: 0 0 10px #38BDF8, 0 0 16px rgba(56, 189, 248, 0.7);
+  flex-shrink: 0;
   animation: scholarDotPulse 2s infinite ease-in-out;
 }
 
@@ -388,12 +387,12 @@ html[dir="ltr"] body.ink-editorial-body {
   }
 }
 
-.scholar-badge-text {
+.scholar-kicker-text {
   font-family: var(--scholar-font-sans-clean);
-  font-size: clamp(0.78rem, 0.72rem + 0.18vw, 0.88rem);
+  font-size: clamp(0.82rem, 0.75rem + 0.22vw, 0.96rem);
   font-weight: 600;
-  letter-spacing: 0.04em;
-  color: #E0F2FE;
+  letter-spacing: 0.03em;
+  color: #BAE6FD;
 }
 
 /* Grand Brand Title - Alexandria Modern Font */
@@ -402,7 +401,7 @@ html[dir="ltr"] body.ink-editorial-body {
   font-size: clamp(2.4rem, 2.0rem + 2.8vw, 4.4rem);
   line-height: 1.18;
   letter-spacing: -0.015em;
-  margin: 0 0 1.15rem 0;
+  margin: 0 0 1.25rem 0;
   color: #FFFFFF;
 }
 
@@ -423,28 +422,6 @@ html[dir="ltr"] body.ink-editorial-body {
   filter: drop-shadow(0 4px 20px rgba(37, 99, 235, 0.35));
 }
 
-/* Service Pill Tag */
-.scholar-hero-service-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  background: rgba(37, 99, 235, 0.15);
-  border: 1px solid rgba(147, 197, 253, 0.3);
-  padding: 0.4rem 1.15rem;
-  border-radius: var(--scholar-radius-pill);
-  font-family: var(--scholar-font-display-modern, 'Alexandria', sans-serif);
-  font-size: clamp(0.88rem, 0.82rem + 0.16vw, 1.02rem);
-  font-weight: 600;
-  color: #BAE6FD;
-  margin-bottom: 1.35rem;
-  backdrop-filter: blur(12px);
-}
-
-.scholar-tag-icon {
-  color: var(--scholar-accent-gold, #C5A059);
-  font-size: 0.95em;
-}
-
 /* Editorial Body */
 .scholar-hero-desc {
   font-family: var(--scholar-font-arabic-body, 'IBM Plex Sans Arabic', sans-serif);
@@ -453,46 +430,8 @@ html[dir="ltr"] body.ink-editorial-body {
   line-height: 1.85;
   color: rgba(226, 232, 240, 0.92);
   max-width: 620px;
-  margin: 0 0 1.6rem 0;
+  margin: 0 0 2.2rem 0;
   text-align: start;
-}
-
-/* Trust Pillars Mini Bar */
-.scholar-hero-trust-bar {
-  display: flex;
-  align-items: center;
-  gap: clamp(0.8rem, 1.5vw, 1.5rem);
-  flex-wrap: wrap;
-  margin-bottom: 2.2rem;
-  padding-block: 0.6rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  width: 100%;
-  max-width: 620px;
-}
-
-.scholar-trust-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  font-family: var(--scholar-font-sans-clean);
-  font-size: clamp(0.8rem, 0.76rem + 0.12vw, 0.9rem);
-  font-weight: 500;
-  color: rgba(248, 250, 252, 0.88);
-}
-
-.scholar-trust-bullet {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: rgba(37, 99, 235, 0.25);
-  border: 1px solid rgba(147, 197, 253, 0.4);
-  color: #60A5FA;
-  font-size: 0.7rem;
-  font-weight: 700;
 }
 
 /* Action Buttons Container */
@@ -503,24 +442,62 @@ html[dir="ltr"] body.ink-editorial-body {
   flex-wrap: wrap;
 }
 
-.scholar-glow-btn {
-  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
-  color: #FFFFFF !important;
-  box-shadow: 0 10px 28px -4px rgba(37, 99, 235, 0.55), 0 0 18px rgba(37, 99, 235, 0.35);
-  border: 1.5px solid rgba(147, 197, 253, 0.45);
+/* Luxury White WhatsApp CTA Button with Physical Tactile Depth */
+.scholar-hero-white-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.0rem 2.2rem;
+  border-radius: var(--ink-radius-pill);
+  font-family: var(--scholar-font-display-modern, 'Alexandria', sans-serif);
+  font-size: 1.02rem;
+  font-weight: 700;
+  text-decoration: none;
+  background: #FFFFFF;
+  color: #0B172E !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 
+    0 4px 16px rgba(0, 0, 0, 0.16),
+    0 12px 32px rgba(11, 23, 46, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
 }
 
-.scholar-glow-btn:hover {
-  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
-  box-shadow: 0 14px 36px -4px rgba(37, 99, 235, 0.7), 0 0 24px rgba(59, 130, 246, 0.45);
+.scholar-hero-white-btn .scholar-btn-wa-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scholar-hero-white-btn:hover {
+  background: #F8FAFC;
+  color: #050B14 !important;
   transform: translateY(-3px) scale(1.02);
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.18),
+    0 18px 40px rgba(37, 99, 235, 0.32),
+    0 0 0 3px rgba(255, 255, 255, 0.4);
+}
+
+.scholar-hero-white-btn:hover .scholar-btn-wa-icon {
+  transform: scale(1.18) rotate(6deg);
+}
+
+.scholar-hero-white-btn:active {
+  transform: translateY(-1px) scale(0.99);
 }
 
 .scholar-hero-secondary-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1.05rem 2.2rem;
+  padding: 1.0rem 2.2rem;
   border-radius: var(--ink-radius-pill);
   font-family: var(--ink-font-sans-clean);
   font-size: 0.98rem;
@@ -582,58 +559,6 @@ html[dir="ltr"] body.ink-editorial-body {
   background: radial-gradient(circle, rgba(37, 99, 235, 0.28) 0%, rgba(29, 68, 134, 0.08) 60%, transparent 75%);
   pointer-events: none;
   z-index: 0;
-  filter: blur(40px);
-}
-
-/* 3D Interaction Caption Bar */
-.scholar-3d-caption-bar {
-  position: absolute;
-  bottom: 0.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(92%, 460px);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  background: rgba(11, 21, 40, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(147, 197, 253, 0.22);
-  border-radius: var(--scholar-radius-pill);
-  padding: 0.45rem 1.15rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-  pointer-events: auto;
-  z-index: 3;
-}
-
-.scholar-3d-caption-brand {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.scholar-3d-caption-icon {
-  font-size: 1.05rem;
-}
-
-.scholar-3d-caption-text {
-  font-family: var(--scholar-font-sans-clean);
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: #E2E8F0;
-  white-space: nowrap;
-}
-
-.scholar-3d-hint {
-  font-family: var(--scholar-font-sans-clean);
-  font-size: 0.72rem;
-  font-weight: 500;
-  color: #93C5FD;
-  background: rgba(37, 99, 235, 0.22);
-  padding: 0.2rem 0.65rem;
-  border-radius: var(--scholar-radius-pill);
-  white-space: nowrap;
 }
 
 .ink-hero-tagline {
@@ -1379,16 +1304,6 @@ html[dir="ltr"] .ink-mobile-drawer-link:active {
     height: 380px;
     min-height: 340px;
   }
-  .scholar-3d-caption-bar {
-    width: 95%;
-    padding: 0.38rem 0.85rem;
-  }
-  .scholar-3d-caption-text {
-    font-size: 0.72rem;
-  }
-  .scholar-3d-hint {
-    display: none;
-  }
 }
 
 @media (max-width: 480px) {
@@ -1400,7 +1315,7 @@ html[dir="ltr"] .ink-mobile-drawer-link:active {
     flex-direction: column;
     width: 100%;
   }
-  .scholar-glow-btn,
+  .scholar-hero-white-btn,
   .scholar-hero-secondary-btn {
     width: 100%;
     justify-content: center;

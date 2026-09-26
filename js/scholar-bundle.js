@@ -125,7 +125,13 @@
         footer_brand_sub: 'Scholar Academic Library • دعم بحوث التخرج والدراسات العليا في العراق',
         footer_rights: '© 2026 مكتبة سكولار الأكاديمية (Scholar Academic Library). جميع الحقوق محفوظة لطلبة وباحثي الجامعات العراقية.',
         footer_compliance: 'التزام كامل بضوابط وتعليمات وزارة التعليم العالي والبحث العلمي',
-        footer_wa: 'تواصل واتساب'
+        footer_wa: 'تواصل واتساب',
+        footer_tg: 'تليغرام: @MarwanAIDev',
+        modal_badge: 'معاينة نموذج من دراساتنا',
+        modal_default_title: 'عنوان البحث',
+        mq_masters: '<span class="scholar-fw-bold">رسائل</span> <span class="scholar-fw-thin">ماجستير</span>',
+        mq_bachelor: '<span class="scholar-fw-bold">بحوث</span> <span class="scholar-fw-thin">بكالوريوس</span>',
+        mq_reports: '<span class="scholar-fw-bold">تقارير</span> <span class="scholar-fw-thin">وملخصات</span>'
       },
       en: {
         page_title: 'Scholar Academic Library | Research Writing, Master Theses & Academic Reports',
@@ -212,7 +218,13 @@
         footer_brand_sub: 'Scholar Academic Library • Undergraduate & Graduate Research Support',
         footer_rights: '© 2026 Scholar Academic Library. All rights reserved for Iraqi scholars and university students.',
         footer_compliance: 'Full compliance with institutional and higher education research standards',
-        footer_wa: 'Contact via WhatsApp'
+        footer_wa: 'Contact via WhatsApp',
+        footer_tg: 'Telegram: @MarwanAIDev',
+        modal_badge: 'Sample Study Inspection',
+        modal_default_title: 'Research Title',
+        mq_masters: '<span class="scholar-fw-bold">Master\'s</span> <span class="scholar-fw-thin">Theses</span>',
+        mq_bachelor: '<span class="scholar-fw-bold">Bachelor\'s</span> <span class="scholar-fw-thin">Research</span>',
+        mq_reports: '<span class="scholar-fw-bold">Reports &</span> <span class="scholar-fw-thin">Summaries</span>'
       }
     },
 
@@ -305,6 +317,40 @@
       for (const [id, val] of Object.entries(phMap)) {
         const el = document.getElementById(id);
         if (el && val) el.placeholder = val;
+      }
+
+      // Update dynamic tooltips and ARIA accessibility attributes
+      const floatTg = document.getElementById('floatBtnTelegram');
+      if (floatTg) {
+        floatTg.title = lang === 'ar' ? 'محادثة تليغرام @MarwanAIDev' : 'Telegram Chat @MarwanAIDev';
+        floatTg.setAttribute('aria-label', lang === 'ar' ? 'تليغرام' : 'Telegram');
+      }
+
+      const floatWa = document.getElementById('floatBtnWhatsapp');
+      if (floatWa) {
+        floatWa.title = lang === 'ar' ? 'محادثة واتساب' : 'WhatsApp Chat';
+        floatWa.setAttribute('aria-label', lang === 'ar' ? 'واتساب' : 'WhatsApp');
+      }
+
+      const floatTop = document.getElementById('btnScrollTop');
+      if (floatTop) {
+        floatTop.title = lang === 'ar' ? 'العودة لأعلى الصفحة' : 'Back to top';
+        floatTop.setAttribute('aria-label', lang === 'ar' ? 'أعلى الصفحة' : 'Back to top');
+      }
+
+      const modalClose = document.getElementById('inkModalClose');
+      if (modalClose) {
+        modalClose.setAttribute('aria-label', lang === 'ar' ? 'إغلاق النافذة' : 'Close Dialog');
+      }
+
+      const menuToggle = document.getElementById('btnMobileMenuToggle');
+      if (menuToggle) {
+        menuToggle.setAttribute('aria-label', lang === 'ar' ? 'القائمة' : 'Menu');
+      }
+
+      const canvas3D = document.getElementById('scholarHeroCanvas3D');
+      if (canvas3D) {
+        canvas3D.setAttribute('aria-label', lang === 'ar' ? 'عرض ثلاثي الأبعاد تفاعلي للجامعات العراقية المعتمدة' : 'Interactive 3D Stage of Accredited Iraqi Universities');
       }
 
       // Update live preview in matching language
@@ -631,7 +677,29 @@
     mouseVec: null,
     hoveredIndex: -1,
 
+    loadedLogos: {},
+
     universities: [
+      {
+        id: 'tikrit',
+        nameAr: 'جامعة تكريت',
+        nameEn: 'Tikrit University',
+        titleAr: 'صرح وادي دجلة العلمي',
+        titleEn: 'Beacon of Tigris Valley',
+        yearAr: 'تأسست ١٩٨٧ م',
+        yearEn: 'Established 1987',
+        badgeAr: 'التفوق البحثي والأكاديمي الشامل',
+        badgeEn: 'Excellence in Research & Scholarly Rigor',
+        statsAr: '٢٢ كلية ومراكز بحثية متقدمة',
+        statsEn: '22 Colleges & Advanced Research Centers',
+        primary: '#1A2942',
+        secondary: '#F59E0B',
+        accent: '#FDE68A',
+        basePos: { x: -1.78, y: 0.38, z: -0.15 },
+        baseRot: { x: 0.02, y: 0.28, z: 0.02 },
+        logoSrc: 'assets/crest-tikrit.png',
+        iconType: 'tikrit'
+      },
       {
         id: 'baghdad',
         nameAr: 'جامعة بغداد',
@@ -649,47 +717,55 @@
         accent: '#93C5FD',
         basePos: { x: 0.12, y: 0.05, z: 0.55 },
         baseRot: { x: 0.03, y: -0.14, z: -0.01 },
+        logoSrc: 'assets/crest-baghdad.png',
         iconType: 'tower'
       },
       {
-        id: 'mustansiriyah',
-        nameAr: 'الجامعة المستنصرية',
-        nameEn: 'Mustansiriyah University',
-        titleAr: 'إرث الحضارة والتاريخ',
-        titleEn: 'Heritage of Civilization & History',
-        yearAr: 'تأسست ١٢٢٧ م',
-        yearEn: 'Established 1227 AD',
-        badgeAr: 'أعرق الصروح العلمية التاريخية',
-        badgeEn: 'Historic Anchor of Academic Excellence',
-        statsAr: '١٣ كلية ومراكز بحثية عريقة',
-        statsEn: '13 Colleges & Historical Research Centers',
-        primary: '#092E42',
-        secondary: '#2DD4BF',
-        accent: '#67E8F9',
-        basePos: { x: -1.78, y: 0.38, z: -0.15 },
-        baseRot: { x: 0.02, y: 0.28, z: 0.02 },
-        iconType: 'arch'
-      },
-      {
-        id: 'babylon',
-        nameAr: 'جامعة بابل',
-        nameEn: 'University of Babylon',
-        titleAr: 'درة الفرات الأوسط',
-        titleEn: 'Pearl of Middle Euphrates',
-        yearAr: 'تأسست ١٩٩١ م',
-        yearEn: 'Established 1991',
-        badgeAr: 'صدارة التصنيفات العالمية للبحث',
-        badgeEn: 'Leading Global Research Rankings',
-        statsAr: '٢٠ كلية وبرامج دراسات عليا رصينة',
-        statsEn: '20 Colleges & Rigorous Graduate Programs',
-        primary: '#14253F',
-        secondary: '#F59E0B',
-        accent: '#FDE68A',
+        id: 'samarra',
+        nameAr: 'جامعة سامراء',
+        nameEn: 'University of Samarra',
+        titleAr: 'منارة الحضارة والأصالة',
+        titleEn: 'Beacon of Heritage & Civilization',
+        yearAr: 'تأسست ٢٠١٢ م',
+        yearEn: 'Established 2012',
+        badgeAr: 'التطوير الأكاديمي والبحث العلمي',
+        badgeEn: 'Academic Development & Scientific Research',
+        statsAr: 'كليات تخصصية وأبحاث علمية رصينة',
+        statsEn: 'Specialized Faculties & Rigorous Theses',
+        primary: '#0D3830',
+        secondary: '#38BDF8',
+        accent: '#7DD3FC',
         basePos: { x: 1.88, y: -0.36, z: -0.38 },
         baseRot: { x: -0.03, y: -0.32, z: -0.02 },
-        iconType: 'gate'
+        logoSrc: 'assets/crest-samarra.png',
+        iconType: 'malwiya'
       }
     ],
+
+    preloadLogos() {
+      this.universities.forEach(univ => {
+        if (univ.logoSrc) {
+          const img = new Image();
+          img.crossOrigin = 'anonymous';
+          img.onload = () => {
+            this.loadedLogos[univ.id] = img;
+            this.refreshCardTexture(univ.id);
+          };
+          img.src = univ.logoSrc;
+        }
+      });
+    },
+
+    refreshCardTexture(univId) {
+      const idx = this.universities.findIndex(u => u.id === univId);
+      if (idx !== -1 && this.cards[idx]) {
+        const tex = this.createCardTexture(this.universities[idx], this.currentLang);
+        if (this.cards[idx].material && this.cards[idx].material[4]) {
+          this.cards[idx].material[4].map = tex;
+          this.cards[idx].material[4].needsUpdate = true;
+        }
+      }
+    },
 
     init() {
       this.canvas = document.getElementById('scholarHeroCanvas3D');
@@ -702,6 +778,7 @@
       }
 
       this.currentLang = document.documentElement.getAttribute('lang') || 'ar';
+      this.preloadLogos();
       this.clock = new THREE.Clock();
       this.raycaster = new THREE.Raycaster();
       this.mouseVec = new THREE.Vector2(-999, -999);
@@ -756,12 +833,16 @@
 
     updateCameraDistance(width) {
       if (!this.camera) return;
-      if (width < 480) {
-        this.camera.position.set(0, 0, 6.4);
+      if (width < 380) {
+        this.camera.position.set(0, 0, 6.6);
+      } else if (width < 480) {
+        this.camera.position.set(0, 0, 6.1);
       } else if (width < 768) {
-        this.camera.position.set(0, 0, 5.8);
+        this.camera.position.set(0, 0, 5.6);
+      } else if (width < 1024) {
+        this.camera.position.set(0, 0, 5.3);
       } else {
-        this.camera.position.set(0, 0, 5.2);
+        this.camera.position.set(0, 0, 5.0);
       }
     },
 
@@ -832,130 +913,170 @@
       ctx.textAlign = 'center';
       ctx.fillText(lang === 'en' ? 'REPUBLIC OF IRAQ • MINISTRY OF HIGHER EDUCATION' : 'جمهورية العراق • وزارة التعليم العالي والبحث العلمي', w / 2, 92);
 
-      // Central University Crest / Architectural Icon
+      // Central University Crest / Architectural Medallion
       ctx.save();
       ctx.translate(w / 2, 300);
 
       // Crest Halo
       const halo = ctx.createRadialGradient(0, 0, 10, 0, 0, 140);
-      halo.addColorStop(0, 'rgba(197, 160, 89, 0.3)');
+      halo.addColorStop(0, 'rgba(197, 160, 89, 0.35)');
+      halo.addColorStop(0.7, 'rgba(37, 99, 235, 0.15)');
       halo.addColorStop(1, 'transparent');
       ctx.fillStyle = halo;
       ctx.beginPath();
       ctx.arc(0, 0, 140, 0, Math.PI * 2);
       ctx.fill();
 
-      // Crest Circle
+      // Outer Crest Rim
       ctx.strokeStyle = univ.secondary;
       ctx.lineWidth = 3.5;
       ctx.beginPath();
-      ctx.arc(0, 0, 105, 0, Math.PI * 2);
+      ctx.arc(0, 0, 108, 0, Math.PI * 2);
       ctx.stroke();
 
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
+      // Inner Metallic Highlight
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
       ctx.lineWidth = 1.5;
       ctx.beginPath();
-      ctx.arc(0, 0, 94, 0, Math.PI * 2);
+      ctx.arc(0, 0, 98, 0, Math.PI * 2);
       ctx.stroke();
 
-      // Architectural Vector Insignia
-      ctx.strokeStyle = '#FFFFFF';
-      ctx.fillStyle = univ.secondary;
-      ctx.lineWidth = 3.5;
-      ctx.lineCap = 'round';
-      ctx.lineJoin = 'round';
+      // Circular clipped medallion disc
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(0, 0, 96, 0, Math.PI * 2);
+      ctx.clip();
 
-      if (univ.iconType === 'tower') {
-        // Baghdad University Iconic Tower & Spire
-        ctx.beginPath();
-        ctx.moveTo(-50, 45);
-        ctx.quadraticCurveTo(0, 55, 50, 45);
-        ctx.lineTo(45, 62);
-        ctx.quadraticCurveTo(0, 72, -45, 62);
-        ctx.closePath();
-        ctx.fill();
-        ctx.stroke();
+      // Soft luminous disc backdrop
+      const discBg = ctx.createRadialGradient(0, 0, 10, 0, 0, 96);
+      discBg.addColorStop(0, 'rgba(255, 255, 255, 0.14)');
+      discBg.addColorStop(0.8, 'rgba(11, 23, 46, 0.92)');
+      discBg.addColorStop(1, 'rgba(5, 10, 20, 0.98)');
+      ctx.fillStyle = discBg;
+      ctx.fill();
 
-        ctx.beginPath();
-        ctx.moveTo(-24, 45);
-        ctx.lineTo(-14, -25);
-        ctx.lineTo(14, -25);
-        ctx.lineTo(24, 45);
-        ctx.closePath();
-        ctx.stroke();
+      const logoImg = this.loadedLogos && this.loadedLogos[univ.id];
+      if (logoImg && logoImg.complete && logoImg.naturalWidth > 0) {
+        // High-Resolution Official University Crest
+        ctx.drawImage(logoImg, -80, -80, 160, 160);
+      } else {
+        // High-Craft Vector Architectural Insignia Fallback
+        ctx.strokeStyle = '#FFFFFF';
+        ctx.fillStyle = univ.secondary;
+        ctx.lineWidth = 3.5;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
 
-        ctx.beginPath();
-        ctx.arc(0, 0, 10, 0, Math.PI * 2);
-        ctx.stroke();
-
-        ctx.beginPath();
-        ctx.moveTo(-22, -25);
-        ctx.lineTo(-34, -48);
-        ctx.lineTo(34, -48);
-        ctx.lineTo(22, -25);
-        ctx.closePath();
-        ctx.fill();
-        ctx.stroke();
-
-        ctx.beginPath();
-        ctx.moveTo(0, -48);
-        ctx.lineTo(0, -82);
-        ctx.stroke();
-      } else if (univ.iconType === 'arch') {
-        // Mustansiriyah Historic Arched Iwan & Sunburst
-        ctx.beginPath();
-        ctx.moveTo(-45, 60);
-        ctx.lineTo(-45, 0);
-        ctx.arc(0, 0, 45, Math.PI, 0);
-        ctx.lineTo(45, 60);
-        ctx.stroke();
-
-        ctx.beginPath();
-        ctx.moveTo(-28, 60);
-        ctx.lineTo(-28, 8);
-        ctx.arc(0, 8, 28, Math.PI, 0);
-        ctx.lineTo(28, 60);
-        ctx.closePath();
-        ctx.fill();
-        ctx.stroke();
-
-        for (let a = 0; a < 7; a++) {
-          const angle = Math.PI + (a * Math.PI) / 6;
-          const r1 = 54;
-          const r2 = 72;
+        if (univ.iconType === 'tower') {
+          // Baghdad University Iconic Clock Tower & Spire
           ctx.beginPath();
-          ctx.moveTo(Math.cos(angle) * r1, Math.sin(angle) * r1);
-          ctx.lineTo(Math.cos(angle) * r2, Math.sin(angle) * r2);
+          ctx.moveTo(-50, 45);
+          ctx.quadraticCurveTo(0, 55, 50, 45);
+          ctx.lineTo(45, 62);
+          ctx.quadraticCurveTo(0, 72, -45, 62);
+          ctx.closePath();
+          ctx.fill();
+          ctx.stroke();
+
+          ctx.beginPath();
+          ctx.moveTo(-24, 45);
+          ctx.lineTo(-14, -25);
+          ctx.lineTo(14, -25);
+          ctx.lineTo(24, 45);
+          ctx.closePath();
+          ctx.stroke();
+
+          ctx.beginPath();
+          ctx.arc(0, 0, 10, 0, Math.PI * 2);
+          ctx.stroke();
+
+          ctx.beginPath();
+          ctx.moveTo(-22, -25);
+          ctx.lineTo(-34, -48);
+          ctx.lineTo(34, -48);
+          ctx.lineTo(22, -25);
+          ctx.closePath();
+          ctx.fill();
+          ctx.stroke();
+
+          ctx.beginPath();
+          ctx.moveTo(0, -48);
+          ctx.lineTo(0, -82);
+          ctx.stroke();
+        } else if (univ.iconType === 'tikrit') {
+          // Tikrit University Historic Citadel & Rivers of Knowledge
+          ctx.beginPath();
+          ctx.moveTo(-48, 50);
+          ctx.lineTo(-48, -10);
+          ctx.lineTo(-32, -10);
+          ctx.lineTo(-32, 0);
+          ctx.lineTo(-16, 0);
+          ctx.lineTo(-16, -20);
+          ctx.lineTo(16, -20);
+          ctx.lineTo(16, 0);
+          ctx.lineTo(32, 0);
+          ctx.lineTo(32, -10);
+          ctx.lineTo(48, -10);
+          ctx.lineTo(48, 50);
+          ctx.closePath();
+          ctx.fill();
+          ctx.stroke();
+
+          // Torch & Book
+          ctx.beginPath();
+          ctx.arc(0, -38, 14, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.stroke();
+
+          ctx.beginPath();
+          ctx.moveTo(-28, 50);
+          ctx.quadraticCurveTo(0, 68, 28, 50);
+          ctx.stroke();
+        } else {
+          // Samarra University Iconic Spiral Minaret (Malwiya)
+          ctx.beginPath();
+          ctx.moveTo(-52, 60);
+          ctx.lineTo(52, 60);
+          ctx.lineTo(44, 38);
+          ctx.lineTo(-44, 38);
+          ctx.closePath();
+          ctx.fill();
+          ctx.stroke();
+
+          ctx.beginPath();
+          ctx.moveTo(-38, 38);
+          ctx.lineTo(38, 38);
+          ctx.lineTo(30, 16);
+          ctx.lineTo(-30, 16);
+          ctx.closePath();
+          ctx.stroke();
+
+          ctx.beginPath();
+          ctx.moveTo(-24, 16);
+          ctx.lineTo(24, 16);
+          ctx.lineTo(16, -8);
+          ctx.lineTo(-16, -8);
+          ctx.closePath();
+          ctx.fill();
+          ctx.stroke();
+
+          ctx.beginPath();
+          ctx.moveTo(-10, -8);
+          ctx.lineTo(10, -8);
+          ctx.lineTo(6, -32);
+          ctx.lineTo(-6, -32);
+          ctx.closePath();
+          ctx.stroke();
+
+          ctx.beginPath();
+          ctx.moveTo(0, -32);
+          ctx.lineTo(0, -68);
           ctx.stroke();
         }
-      } else {
-        // Babylon Historic Ishtar Gate & Compass
-        ctx.beginPath();
-        ctx.moveTo(-50, 60);
-        ctx.lineTo(-50, -40);
-        ctx.lineTo(-30, -40);
-        ctx.lineTo(-30, -10);
-        ctx.lineTo(30, -10);
-        ctx.lineTo(30, -40);
-        ctx.lineTo(50, -40);
-        ctx.lineTo(50, 60);
-        ctx.stroke();
-
-        ctx.beginPath();
-        ctx.moveTo(-22, 60);
-        ctx.lineTo(-22, 10);
-        ctx.arc(0, 10, 22, Math.PI, 0);
-        ctx.lineTo(22, 60);
-        ctx.closePath();
-        ctx.fill();
-        ctx.stroke();
-
-        ctx.beginPath();
-        ctx.arc(0, -32, 14, 0, Math.PI * 2);
-        ctx.stroke();
       }
 
-      ctx.restore();
+      ctx.restore(); // restore clip
+      ctx.restore(); // restore translate
 
       // University Primary Name
       ctx.textAlign = 'center';
