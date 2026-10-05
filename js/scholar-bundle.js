@@ -762,7 +762,7 @@
         scopeEn: 'Full Alignment with Official University Guidelines',
         statsAr: 'جاهزية كاملة بصيغتي Word و PDF للمناقشة',
         statsEn: 'Delivered in Word & PDF Ready for Review',
-        primary: '#091A36',
+        primary: '#0D1C34',
         secondary: '#C5A059',
         accent: '#10B981',
         iconType: 'thesis'
@@ -779,7 +779,7 @@
         scopeEn: 'Curating Verified Scholarly Papers Across Disciplines',
         statsAr: 'مصادر حديثة وموثقة بروابطها المعتمدة',
         statsEn: 'Up-to-Date Sources with Official DOI Links',
-        primary: '#0B1C30',
+        primary: '#0A182C',
         secondary: '#C5A059',
         accent: '#38BDF8',
         iconType: 'sources'
@@ -796,7 +796,7 @@
         scopeEn: 'Expert Translation for Research Papers & Abstracts',
         statsAr: 'خالية تماماً من الركاكة والترجمة الآلية',
         statsEn: 'Zero AI-Slop • Rigorous Human Review',
-        primary: '#08221B',
+        primary: '#091A2A',
         secondary: '#C5A059',
         accent: '#F59E0B',
         iconType: 'translation'
@@ -900,19 +900,8 @@
       const ctx = canvas.getContext('2d');
       if (!ctx) return null;
 
-      // 1. FILL ROOT CANVAS COMPLETELY EDGE-TO-EDGE
-      const bgGrad = ctx.createLinearGradient(0, 0, w, h);
-      bgGrad.addColorStop(0, service.primary);
-      bgGrad.addColorStop(0.48, '#0C1628');
-      bgGrad.addColorStop(1, '#050A14');
-      ctx.fillStyle = bgGrad;
-      ctx.fillRect(0, 0, w, h);
-
-      // Subtle atmospheric vignette
-      const radialVignette = ctx.createRadialGradient(w / 2, h / 2, 220, w / 2, h / 2, 780);
-      radialVignette.addColorStop(0, 'rgba(255, 255, 255, 0.035)');
-      radialVignette.addColorStop(1, 'rgba(0, 0, 0, 0.52)');
-      ctx.fillStyle = radialVignette;
+      // 1. FILL ROOT CANVAS COMPLETELY WITH SOLID LUXURY COLOR MATCHING THE SITE
+      ctx.fillStyle = service.primary;
       ctx.fillRect(0, 0, w, h);
 
       // 2. PRESTIGIOUS CHAMPAGNE GOLD DOUBLE FRAME INSET
@@ -927,10 +916,10 @@
       ctx.stroke();
 
       // Top Ribbon
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.07)';
+      ctx.fillStyle = '#142542';
       this.drawRoundRectPath(ctx, 110, 80, w - 220, 56, 28);
       ctx.fill();
-      ctx.strokeStyle = 'rgba(197, 160, 89, 0.35)';
+      ctx.strokeStyle = '#223E6C';
       ctx.lineWidth = 1.5;
       this.drawRoundRectPath(ctx, 110, 80, w - 220, 56, 28);
       ctx.stroke();
@@ -958,12 +947,8 @@
       ctx.arc(0, 0, 120, 0, Math.PI * 2);
       ctx.stroke();
 
-      // Circular disc backdrop
-      const discBg = ctx.createRadialGradient(0, 0, 15, 0, 0, 118);
-      discBg.addColorStop(0, 'rgba(255, 255, 255, 0.12)');
-      discBg.addColorStop(0.7, '#0E1A30');
-      discBg.addColorStop(1, '#070D18');
-      ctx.fillStyle = discBg;
+      // Circular disc backdrop (Solid Luxury Royal Navy)
+      ctx.fillStyle = '#081220';
       ctx.beginPath();
       ctx.arc(0, 0, 118, 0, Math.PI * 2);
       ctx.fill();

@@ -457,13 +457,11 @@ html[dir="ltr"] body.ink-editorial-body {
 
 .scholar-charter-card {
   position: relative;
-  background: radial-gradient(circle at 50% 0%, rgba(197, 160, 89, 0.08) 0%, rgba(9, 20, 38, 0.94) 70%);
-  border: 1.5px solid rgba(197, 160, 89, 0.35);
+  background: #0E1B30;
+  border: 1.5px solid #203B64;
   border-radius: var(--ink-radius-lg);
   padding: clamp(1.75rem, 4vw, 3rem);
-  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.45);
 }
 
 .scholar-charter-header {
@@ -474,15 +472,15 @@ html[dir="ltr"] body.ink-editorial-body {
   gap: 1rem;
   margin-bottom: 2rem;
   padding-bottom: 1.25rem;
-  border-bottom: 1px solid rgba(197, 160, 89, 0.22);
+  border-bottom: 1px solid #1C355E;
 }
 
 .scholar-charter-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(197, 160, 89, 0.14);
-  border: 1px solid rgba(197, 160, 89, 0.4);
+  background: #132440;
+  border: 1px solid #223F6E;
   color: #F7E7B4;
   padding: 0.4rem 1.1rem;
   border-radius: var(--ink-radius-pill);
@@ -495,8 +493,8 @@ html[dir="ltr"] body.ink-editorial-body {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  background: rgba(16, 185, 129, 0.12);
-  border: 1px solid rgba(16, 185, 129, 0.35);
+  background: #0C261F;
+  border: 1px solid #14533D;
   color: #34D399;
   padding: 0.35rem 0.9rem;
   border-radius: var(--ink-radius-pill);
@@ -505,22 +503,29 @@ html[dir="ltr"] body.ink-editorial-body {
 }
 
 .scholar-charter-quote-box {
-  background: rgba(0, 0, 0, 0.28);
-  border: 1px solid rgba(197, 160, 89, 0.25);
+  background: #0A1526;
+  border: 1.5px solid #203A63;
   border-inline-start: 4px solid #C5A059;
   border-radius: var(--ink-radius-sm);
   padding: 1.5rem 1.75rem;
   margin-bottom: 2rem;
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.35);
 }
 
 .scholar-hadith-badge {
-  display: inline-block;
-  font-size: 0.8rem;
-  color: #C5A059;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.82rem;
+  color: #F3CA68;
+  background: #11223C;
+  border: 1px solid #22426E;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--ink-radius-pill);
   font-weight: 700;
   margin-bottom: 0.85rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
 }
 
 .scholar-hadith-text {
@@ -538,7 +543,7 @@ html[dir="ltr"] body.ink-editorial-body {
 .scholar-hadith-text-second {
   margin-top: 1.25rem;
   padding-top: 1rem;
-  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+  border-top: 1px dashed #1E3860;
 }
 
 .scholar-hadith-source {
@@ -585,17 +590,17 @@ html[dir="ltr"] body.ink-editorial-body {
   display: flex;
   align-items: flex-start;
   gap: 1rem;
-  background: rgba(255, 255, 255, 0.035);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #142440;
+  border: 1.5px solid #223C66;
   border-radius: var(--ink-radius-sm);
   padding: 1.25rem;
-  transition: transform 0.25s ease, border-color 0.25s ease;
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
 }
 
 .scholar-charter-pillar:hover {
   transform: translateY(-2px);
-  border-color: rgba(197, 160, 89, 0.4);
-  background: rgba(255, 255, 255, 0.055);
+  border-color: #C5A059;
+  background: #192D4E;
 }
 
 .scholar-pillar-icon {
@@ -803,10 +808,8 @@ html[dir="ltr"] .scholar-marquee-track {
 
 .scholar-guarantee-card {
   position: relative;
-  background: rgba(22, 39, 70, 0.58);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  background: #101E36;
+  border: 1.5px solid #203B66;
   border-radius: 28px;
   padding: clamp(2.2rem, 3.5vw, 3.2rem) clamp(1.5rem, 2.2vw, 2.2rem);
   display: flex;
@@ -818,6 +821,7 @@ html[dir="ltr"] .scholar-marquee-track {
               border-color 0.3s ease,
               background 0.3s ease;
   overflow: hidden;
+  box-shadow: 0 12px 30px -6px rgba(0, 0, 0, 0.35);
 }
 
 .scholar-guarantee-card::before {
@@ -834,8 +838,8 @@ html[dir="ltr"] .scholar-marquee-track {
 
 .scholar-guarantee-card:hover {
   transform: translateY(-8px);
-  background: rgba(22, 39, 70, 0.88);
-  border-color: rgba(37, 99, 235, 0.6);
+  background: #162847;
+  border-color: var(--scholar-sapphire-bright);
 }
 
 .scholar-guarantee-card:hover::before {
@@ -849,8 +853,8 @@ html[dir="ltr"] .scholar-marquee-track {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.22) 0%, rgba(29, 68, 134, 0.15) 100%);
-  border: 1.5px solid rgba(59, 130, 246, 0.45);
+  background: #182E54;
+  border: 1.5px solid #2B66CC;
   color: #ffffff;
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
               background 0.3s ease,
