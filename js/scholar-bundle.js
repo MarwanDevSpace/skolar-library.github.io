@@ -41,7 +41,8 @@
 
     translations: {
       ar: {
-        page_title: 'مكتبة سكولار الأكاديمية | Scholar Academic Library — لإنشاء البحوث والرسائل والتقارير',
+        page_title: 'مكتبة سكولار الأكاديمية | إعداد وتنسيق البحوث والرسائل المكتوبة وجمع المصادر والترجمة',
+        nav_charter: 'ميثاق الأمانة',
         nav_about: 'من نحن',
         nav_services: 'خدماتنا',
         nav_guarantees: 'ضمانات العمل',
@@ -50,22 +51,38 @@
         nav_cta: 'تحويل طلب سريع',
         lang_btn_text: 'English',
         lang_btn_title: 'التبديل إلى English',
-        univ_tikrit: 'جامعة تكريت',
-        univ_baghdad: 'جامعة بغداد',
-        univ_samarra: 'جامعة سامراء',
         hero_title_1: 'مكتبة سكولار',
         hero_title_2: 'الأكاديمية',
-        hero_sub_heading: '<span class="scholar-fw-bold">لإنشاء البحوث والرسائل والتقارير</span>',
-        hero_sub: 'فريق متخصص في إعداد وتنسيق بحوث تخرج البكالوريوس، رسائل الماجستير، والتقارير الأكاديمية بدقة عالية وسرعة تسليم متميزة مع متابعة مستمرة لكافة الملاحظات.',
+        hero_sub: 'فريق متخصص في إعداد وتنسيق بحوث تخرج البكالوريوس ورسائل الماجستير المكتوبة، جمع وتوثيق المصادر لجميع التخصصات، وترجمة المستندات والأبحاث العلمية بدقة عالية وسرعة تسليم متميزة وفق دليل الجامعات المعتمد مع متابعة مستمرة لكافة الملاحظات.',
         hero_btn_order: 'تحويل طلبك مباشرة إلى واتساب',
         hero_btn_about: 'تعرف على فريقنا وضماناتنا',
-        trust_iraq: 'دليل الجامعات العراقية',
+        trust_iraq: 'دليل الجامعات المعتمد',
         trust_speed: 'تسليم سريع وضمان دقة',
         trust_docs: 'صيغتي Word & PDF',
-        three_caption: 'صروح أكاديمية معتمدة • جامعة بغداد • المستنصرية • بابل',
-        three_hint: 'حرّك الماوس للتفاعل 3D',
+        three_caption: 'خدمات أكاديمية معتمدة • تنسيق البحوث والرسائل • جمع المصادر • الترجمة التخصصية',
+        three_hint: 'اسحب للتنقل بين الخدمات ثلاثية الأبعاد أو انقر للاختيار',
+        charter_badge: 'ميثاق الأمانة والنزاهة الأكاديمية • Academic Integrity Charter',
+        charter_seal: 'تعهد رسمي معتمد',
+        hadith_label: 'من هدي النبوة الشريفة في تحريم انتحال الأعمال والزور',
+        hadith_1: 'قال رسول الله ﷺ: «المُتَشَبِّعُ بِمَا لَمْ يُعْطَ كَلَابِسِ ثَوْبَيْ زُورٍ»',
+        hadith_1_source: '(متفق عليه: رواه البخاري برقم 5219، ومسلم برقم 2129)',
+        hadith_2: 'وقال عليه الصلاة والسلام: «مَنْ غَشَّ فَلَيْسَ مِنَّا»',
+        hadith_2_source: '(صحيح مسلم برقم 101)',
+        charter_title: 'إعلان براءة الذمة: لا نعمل في البحوث الجاهزة إطلاقاً',
+        charter_desc: 'انطلاقاً من النهي النبوي الصريح وحفاظاً على قدسية العلم وأمانته؛ نؤكد في مكتبة سكولار الأكاديمية أننا لا نعمل في البحوث والرسائل الجاهزة إطلاقاً ولا نبيعها ولا نشتريها، ولا ننتحل جهد الطالب. إنما ينحصر دورنا في إعداد وتنسيق الأعمال المكتوبة بيد الطالب، جمع وتوثيق المصادر لكافة التخصصات، والترجمة العلمية المتخصصة.',
+        charter_p1_title: 'إعداد وتنسيق المكتوب',
+        charter_p1_desc: 'تنسيق وتدقيق بحوث البكالوريوس ورسائل الماجستير المكتوبة بيد الطالب وضبط الهوامش والفهارس وفق دليل جامعته.',
+        charter_p2_title: 'جمع وتوثيق المصادر',
+        charter_p2_desc: 'جمع وتوثيق المصادر والمراجع الرصينة لجميع التخصصات وتوثيقها رسمياً بأنظمة التوثيق العالمية (APA / IEEE).',
+        charter_p3_title: 'الترجمة الأكاديمية',
+        charter_p3_desc: 'ترجمة علمية متخصصة ودقيقة لأي مستند أو بحث أو ملخص علمي مع الحفاظ الصارم على المصطلحات الأكاديمية.',
         services_title_bold: 'خدماتنا',
-        services_desc: 'فريقنا مختص وسريع الاستجابة، يقدم دعما عمليا وموثوقا في كتابة وتطوير الأبحاث، إعداد الرسائل الجامعية، ومراجعة وتنسيق المتطلبات بدقة عالية.',
+        services_desc: 'فريقنا مختص وسريع الاستجابة، يقدم دعماً عملياً وموثوقاً في إعداد وتنسيق بحوث ورسائل الباحث المكتوبة، جمع وتوثيق المصادر لجميع التخصصات، وترجمة المستندات والأبحاث العلمية بدقة عالية ومتابعة متواصلة.',
+        mq_formatting_masters: '<span class="scholar-fw-bold">تنسيق</span> <span class="scholar-fw-thin">رسائل الماجستير</span>',
+        mq_formatting_bachelor: '<span class="scholar-fw-bold">تنسيق</span> <span class="scholar-fw-thin">بحوث البكالوريوس</span>',
+        mq_sources: '<span class="scholar-fw-bold">جمع</span> <span class="scholar-fw-thin">المصادر لجميع التخصصات</span>',
+        mq_translation: '<span class="scholar-fw-bold">ترجمة</span> <span class="scholar-fw-thin">المستندات والأبحاث العلمية</span>',
+        mq_proofreading: '<span class="scholar-fw-bold">تدقيق لغوي</span> <span class="scholar-fw-thin">وضبط الفهارس</span>',
         guarantees_title_thin: 'ضمانات',
         guarantees_title_bold: 'العمل',
         guarantees_sub: 'نلتزم بأعلى معايير الإتقان الأكاديمي والسرعة العالية لتسليم أبحاث ورسائل رصينة جاهزة للمناقشة.',
@@ -73,12 +90,12 @@
         g1_sub: 'سرعة في الإنجاز والتسليم',
         g2_title: 'مراجعة مستمرة',
         g2_sub: 'تواصل منتظم وتعديلات مستمرة',
-        g3_title: 'دقة عالية',
-        g3_sub: 'دقة في الكتابة والاستناد على المصادر والبحوث الموثوقة',
+        g3_title: 'دقة وأمانة علمية',
+        g3_sub: 'دقة في التنسيق والمراجعة والاستناد على المصادر والبحوث الموثوقة',
         about_badge: 'من نحن • About Us',
         about_heading_bold: 'فريق أكاديمي',
         about_heading_thin: 'متخصص ومتكامل',
-        about_exact_statement: 'نحن فريق مختص في الخدمات الأكاديمية في الجامعات والمعاهد من انشاء وتعديل ومتابعة للبحوث والرسائل والتقارير، وما يميزنا السرعة في التسليم ومتابعة الملاحظات',
+        about_exact_statement: 'نحن فريق مختص في الخدمات الأكاديمية للجامعات والمعاهد؛ نختص في إعداد وتنسيق ومراجعة بحوث البكالوريوس ورسائل الماجستير المكتوبة، جمع وتوثيق المصادر لجميع التخصصات، والترجمة الأكاديمية التخصصية. نحن لا نعمل في البحوث الجاهزة إطلاقاً التزاماً بالأمانة العلمية وقول النبي ﷺ: «مَنْ غَشَّ فَلَيْسَ مِنَّا»، وما يميزنا السرعة العالية في التسليم ومتابعة الملاحظات.',
         word_desc: 'صيغة محررة بالكامل وقابلة للتعديل مع ضبط الهوامش وأنماط الخطوط المعتمدة لكلية الطالب.',
         pdf_desc: 'نسخة نهائية موثقة وجاهزة للطباعة والمناقشة الفورية مع ثبات الفهارس والجداول والمراجع.',
         docs_seal_text: 'تسليم بصيغتي Word و PDF معاً في كل عمل أكاديمي لضمان الراحة التامة للمناقشة والمراجعة',
@@ -87,23 +104,33 @@
         order_desc: 'املأ المعلومات الأساسية أدناه وسيتم تحويل طلبك مباشرة إلى واتساب أو تليغرام المكتبة للتواصل الفوري مع المستشار الأكاديمي.',
         label_name: 'الاسم أو اللقب (اختياري)',
         ph_name: 'مثال: علي العراقي',
-        label_degree: 'المرحلة / الدرجة العلمية',
+        label_degree: 'الخدمة الأكاديمية المطلوبة',
         chip_quick: 'اختيار سريع:',
-        opt_master: 'رسائل ماجستير',
-        opt_bachelor: 'بحوث بكالوريوس',
-        opt_reports: 'تقارير',
-        opt_other: 'أخرى (ملخص أو خدمة أكاديمية)',
-        chip_master: 'رسائل ماجستير',
-        chip_bachelor: 'بحوث بكالوريوس',
-        chip_reports: 'تقارير',
+        opt_master: 'إعداد وتنسيق رسائل الماجستير المكتوبة',
+        opt_bachelor: 'إعداد وتنسيق بحوث البكالوريوس المكتوبة',
+        opt_sources: 'جمع المصادر لجميع التخصصات',
+        opt_translation: 'ترجمة أي مستند أو بحث علمي',
+        opt_reports: 'تدقيق لغوي وتنسيق تقارير',
+        opt_other: 'أخرى (استشارة أكاديمية مخصصة)',
+        chip_master: 'رسائل ماجستير مكتوبة',
+        chip_bachelor: 'بحوث بكالوريوس مكتوبة',
+        chip_sources: 'جمع المصادر',
+        chip_translation: 'ترجمة علمية',
+        chip_reports: 'تدقيق وتنسيق',
         chip_other: 'أخرى',
         label_univ: 'الجامعة والكلية',
         ph_univ: 'اكتب اسم جامعتك وكليتك (مثال: جامعة بغداد / كلية الإدارة والاقتصاد)',
-        label_topic: 'عنوان الدراسة أو فكرة البحث / الملخص',
-        ph_topic: 'اكتب هنا عنوان دراستك، فكرة البحث، أو ملخص ما تحتاجه بدقة...',
-        label_notes: 'ملاحظات أو موعد التسليم المطلوب',
-        ph_notes: 'مثال: موعد التسليم المطلوب، تفاصيل محددة، أو تعديلات مخصصة...',
-        preview_title: 'معاينة مباشرة للرسالة المجهزة للمستشار الأكاديمي:',
+        label_topic: 'عنوان الدراسة أو تفاصيل المستند / فكرة البحث',
+        ph_topic: 'اكتب هنا عنوان دراستك، فكرة المستند المطلوب تنسيقه، مجال المصادر، أو تفاصيل الترجمة بدقة...',
+        label_notes: 'ملاحظات أو موعد التسليم ونظام التوثيق',
+        ph_notes: 'مثال: موعد التسليم المطلوب، نظام التوثيق (APA/IEEE)، أو متطلبات خاصة...',
+        preview_title: 'معاينة مباشرة لبطاقة التحويل الأكاديمي المجهزة للمستشار',
+        meta_service_label: 'الخدمة المطلوبة',
+        meta_univ_label: 'الجامعة والكلية',
+        meta_student_label: 'اسم الباحث',
+        meta_notes_label: 'الموعد والملاحظات',
+        meta_topic_label: 'موضوع أو تفاصيل المستند المطلوب:',
+        meta_payload_label: 'نص الإرسال التلقائي المجهز للمحادثة:',
         btn_copy: '📋 نسخ نص الرسالة',
         btn_send_wa: 'تحويل مباشر عبر WhatsApp',
         btn_send_tg: 'تحويل عبر Telegram (@MarwanAIDev)',
@@ -112,14 +139,14 @@
         faq_title_thin: 'الأسئلة',
         faq_title_bold: 'الشائعة',
         faq_desc: 'إجابات مباشرة عن أهم الأسئلة والضوابط التي تهم الباحثين وطلبة الدراسات العليا والأولية في الجامعات العراقية.',
-        faq_q1: 'ما هي المدة المستغرقة لإنجاز وتسليم البحث أو الرسالة؟',
-        faq_a1: 'نتميز بالسرعة العالية في التنفيذ والالتزام الصارم بالمواعيد المتفق عليها، مع توفير إمكانية التسليم العاجل للتقارير والبحوث، وتسليم فصلي متدرج لرسائل الماجستير يتيح لك مراجعتها مع المشرف خطوة بخطوة.',
+        faq_q1: 'هل تعملون في بيع أو إعداد البحوث والرسائل الجاهزة؟',
+        faq_a1: 'لا نعمل في البحوث الجاهزة نهائياً ولا نبيعها ولا نشتريها، التزاماً بأمانة البحث العلمي وامتثالاً للنهي النبوي الشريف: «المُتَشَبِّعُ بِمَا لَمْ يُعْطَ كَلَابِسِ ثَوْبَيْ زُورٍ» و«مَنْ غَشَّ فَلَيْسَ مِنَّا». يقتصر دورنا على الإعداد والتنسيق الشكلي لأعمال الطالب المكتوبة، جمع وتوثيق المصادر لكافة التخصصات، والترجمة العلمية المتخصصة.',
         faq_q2: 'هل تلتزمون بدليل كتابة الرسائل والأطاريح المعتمد في كليتي وجامعتي؟',
         faq_a2: 'نعم، التزاما تاما. نطبق هوامش الصفحات، قياسات الخطوط المعتمدة، ترقيم الأبواب والفصول، وأنظمة التوثيق الرسمية بدقة مطابقة لدليل جامعتك وكليتك دون أي خلل شكلي.',
         faq_q3: 'هل تشمل الخدمة مراجعة وتعديلات مستمرة بعد التسليم؟',
         faq_a3: 'نعم بالتأكيد، نقدم مراجعة وتعديلات مستمرة على العمل حتى بعد تسليمه لتطبيق كافة توجيهات الأستاذ المشرف وملاحظات القسم دون أي تأخير أو تعقيد.',
-        faq_q4: 'ما هي نوعية الأعمال والخدمات الأكاديمية المتاحة لديكم؟',
-        faq_a4: 'نوفر إعداد وتنسيق رسائل الماجستير، بحوث تخرج البكالوريوس، التقارير والواجبات الدراسية، إعداد وتلخيص المواد العلمية، والتحليل الإحصائي لمختلف التخصصات العلمية والإنسانية.',
+        faq_q4: 'ما هي نوعية الخدمات الأكاديمية المتاحة لديكم؟',
+        faq_a4: 'نوفر إعداد وتنسيق رسائل الماجستير وبحوث البكالوريوس المكتوبة وفق دليل جامعتك، جمع وتوثيق المصادر والمراجع لكافة التخصصات بنظم التوثيق العالمية (APA / IEEE)، والترجمة الأكاديمية التخصصية للمستندات والأوراق العلمية، بالإضافة إلى التدقيق اللغوي وضبط الهوامش والفهارس.',
         faq_q5: 'كيف يتم التواصل والتعامل المالي في العراق؟',
         faq_a5: 'التواصل فوري ومباشر عبر تليغرام (@MarwanAIDev) أو عبر WhatsApp. والتعاملات المالية متوفرة بأقساط مرحلية ميسرة عبر المحافظ الإلكترونية أو الحوالات المحلية، بما يلائم جميع الطلبة والباحثين في كافة المحافظات العراقية.',
         footer_brand_title_thin: 'مكتبة سكولار',
@@ -130,13 +157,11 @@
         footer_wa: 'تواصل واتساب',
         footer_tg: 'تليغرام: @MarwanAIDev',
         modal_badge: 'معاينة نموذج من دراساتنا',
-        modal_default_title: 'عنوان البحث',
-        mq_masters: '<span class="scholar-fw-bold">رسائل</span> <span class="scholar-fw-thin">ماجستير</span>',
-        mq_bachelor: '<span class="scholar-fw-bold">بحوث</span> <span class="scholar-fw-thin">بكالوريوس</span>',
-        mq_reports: '<span class="scholar-fw-bold">تقارير</span> <span class="scholar-fw-thin">وملخصات</span>'
+        modal_default_title: 'عنوان البحث'
       },
       en: {
-        page_title: 'Scholar Academic Library | Research Writing, Master Theses & Academic Reports',
+        page_title: 'Scholar Academic Library | Manuscript Formatting, Scholarly Sources & Academic Translation',
+        nav_charter: 'Integrity Pledge',
         nav_about: 'About Us',
         nav_services: 'Services',
         nav_guarantees: 'Guarantees',
@@ -145,35 +170,51 @@
         nav_cta: 'Quick Referral',
         lang_btn_text: 'العربية',
         lang_btn_title: 'Switch to Arabic',
-        univ_tikrit: 'Tikrit University',
-        univ_baghdad: 'Univ. of Baghdad',
-        univ_samarra: 'Univ. of Samarra',
         hero_title_1: 'Scholar',
         hero_title_2: 'Academic Library',
-        hero_sub_heading: '<span class="scholar-fw-bold">Researches, Theses & Academic Reports</span>',
-        hero_sub: 'A specialized team dedicated to preparing and formatting Bachelor graduation research, Master theses, and academic reports with high precision, rapid turnaround, and continuous revision.',
+        hero_sub: 'A specialized team dedicated to preparing and formatting written Bachelor research and Master theses, gathering peer-reviewed sources across all disciplines, and translating academic documents according to accredited university standards with continuous follow-up.',
         hero_btn_order: 'Transfer Request via WhatsApp',
         hero_btn_about: 'Meet Our Team & Guarantees',
-        trust_iraq: 'Iraqi Universities Standards',
+        trust_iraq: 'Accredited University Standards',
         trust_speed: 'Rapid Turnaround & Rigor',
         trust_docs: 'Word & PDF Formats Included',
-        three_caption: 'Accredited Iraqi Universities • Baghdad • Mustansiriyah • Babylon',
-        three_hint: 'Move cursor to interact in 3D',
+        three_caption: 'Accredited Academic Services • Manuscript Layout • Scholarly Sources • Academic Translation',
+        three_hint: 'Swipe to navigate 3D service cards or click to select',
+        charter_badge: 'Academic Integrity & Scholarly Charter',
+        charter_seal: 'Official Verification',
+        hadith_label: 'From Prophetic Teachings Condemning Fraud and False Attribution',
+        hadith_1: 'The Prophet ﷺ said: "He who pretends to have what he has not been given is like one wearing two garments of falsehood."',
+        hadith_1_source: '(Agreed upon: Sahih al-Bukhari #5219, Sahih Muslim #2129)',
+        hadith_2: 'The Prophet ﷺ also said: "Whoever deceives is not of us."',
+        hadith_2_source: '(Sahih Muslim #101)',
+        charter_title: 'Declaration of Academic Integrity: Zero Ready-Made Researches',
+        charter_desc: 'Grounding ourselves in genuine scholarly integrity and authentic Prophetic instruction, we at Scholar Academic Library firmly declare that we NEVER author, buy, or sell ready-made dissertations or pre-fabricated research. Our accredited atelier exclusively assists students with manuscript formatting of their own writing, peer-reviewed source curation, and precision scientific translation.',
+        charter_p1_title: 'Manuscript Formatting',
+        charter_p1_desc: 'Formatting and proofreading written Master theses and Bachelor research manuscripts, setting margins and indices per official manual.',
+        charter_p2_title: 'Scholarly Sources',
+        charter_p2_desc: 'Curating and referencing authentic peer-reviewed papers and indexed studies across all disciplines (APA / IEEE).',
+        charter_p3_title: 'Academic Translation',
+        charter_p3_desc: 'Specialized scientific translation for research papers, theses, and scholarly abstracts with strict terminological rigor.',
         services_title_bold: 'Services',
-        services_desc: 'Our specialized, fast-response team of experts provides reliable academic support in research writing, thesis development, and meticulous formatting conforming to high standards.',
+        services_desc: 'Our specialized, fast-response team provides dependable academic assistance focusing on formatting written manuscripts, curating peer-reviewed sources, and precision translation.',
+        mq_formatting_masters: '<span class="scholar-fw-bold">Master\'s</span> <span class="scholar-fw-thin">Thesis Layout</span>',
+        mq_formatting_bachelor: '<span class="scholar-fw-bold">Bachelor\'s</span> <span class="scholar-fw-thin">Research Layout</span>',
+        mq_sources: '<span class="scholar-fw-bold">Sources</span> <span class="scholar-fw-thin">Across All Disciplines</span>',
+        mq_translation: '<span class="scholar-fw-bold">Scientific</span> <span class="scholar-fw-thin">& Academic Translation</span>',
+        mq_proofreading: '<span class="scholar-fw-bold">Proofreading</span> <span class="scholar-fw-thin">& Layout Indexing</span>',
         guarantees_title_thin: 'Our Work',
         guarantees_title_bold: 'Guarantees',
-        guarantees_sub: 'We adhere to rigorous academic standards and rapid execution to deliver well-researched, defense-ready dissertations and projects.',
+        guarantees_sub: 'We adhere to rigorous academic standards and rapid execution to deliver defense-ready formatted manuscripts and verified references.',
         g1_title: 'High-Speed Delivery',
         g1_sub: 'Rapid execution and timely completion',
         g2_title: 'Continuous Revision',
-        g2_sub: 'Regular communication and seamless edits',
-        g3_title: 'High Precision',
-        g3_sub: 'Meticulous writing grounded in reliable scholarly sources',
+        g2_sub: 'Regular communication and seamless supervisor edits',
+        g3_title: 'Rigor & Integrity',
+        g3_sub: 'Meticulous formatting grounded in authentic peer-reviewed sources',
         about_badge: 'About Us • Mission',
         about_heading_bold: 'Dedicated Academic',
         about_heading_thin: 'Team & Mentors',
-        about_exact_statement: 'We are a specialized team in academic services across universities and institutes, dedicated to creating, revising, and following up on research, theses, and reports. What distinguishes us is our rapid delivery and meticulous response to advisor feedback.',
+        about_exact_statement: 'We are a specialized team in academic support for universities and institutes, dedicated to formatting, reviewing, and proofreading written Bachelor research and Master theses, gathering scholarly sources across all disciplines, and translating academic documents. We strictly do not engage in ready-made research sales adhering to the Prophetic teaching: "Whoever deceives is not of us", and what distinguishes us is prompt delivery and attentive follow-up.',
         word_desc: 'Fully editable format with custom margins, typography, and citation styles tailored to your college manual.',
         pdf_desc: 'Print-ready, fixed-layout document ideal for immediate defense, preserving tables, charts, and indices.',
         docs_seal_text: 'Both Word and PDF formats are delivered together for every academic project for effortless review and defense',
@@ -182,23 +223,33 @@
         order_desc: 'Enter your project parameters to generate a pre-formatted, structured request sent directly to your consultant on WhatsApp or Telegram.',
         label_name: 'Researcher Name / Pseudonym (Optional)',
         ph_name: 'e.g. Ali Al-Iraqi',
-        label_degree: 'Academic Degree / Level',
+        label_degree: 'Requested Academic Service',
         chip_quick: 'Quick Select:',
-        opt_master: "Master's Thesis",
-        opt_bachelor: "Bachelor's Research",
-        opt_reports: 'Academic Reports',
-        opt_other: 'Other (Summary or Scholarly Service)',
-        chip_master: "Master's Theses",
-        chip_bachelor: "Bachelor's",
-        chip_reports: 'Reports',
+        opt_master: 'Written Master Thesis Formatting',
+        opt_bachelor: 'Written Bachelor Research Formatting',
+        opt_sources: 'Scholarly Sources Across All Disciplines',
+        opt_translation: 'Scientific & Academic Translation',
+        opt_reports: 'Proofreading & Reports Layout',
+        opt_other: 'Other (Custom Academic Consultation)',
+        chip_master: 'Master Theses',
+        chip_bachelor: 'Bachelor Research',
+        chip_sources: 'Sources Gathering',
+        chip_translation: 'Academic Translation',
+        chip_reports: 'Proofreading & Layout',
         chip_other: 'Other',
         label_univ: 'University & College',
         ph_univ: 'Enter your university and college (e.g. University of Baghdad / Business)',
-        label_topic: 'Study Title, Research Idea, or Project Summary',
-        ph_topic: 'Type your research topic, study concept, or project requirements...',
-        label_notes: 'Notes & Expected Delivery Date',
-        ph_notes: 'e.g. Deadline in 2 weeks, specific guidelines, or milestone checks...',
-        preview_title: 'Live Preview of Message to Academic Consultant:',
+        label_topic: 'Study Title or Document Details / Research Scope',
+        ph_topic: 'Type your study title, document requirements, source discipline, or translation details...',
+        label_notes: 'Notes, Deadline & Citation System',
+        ph_notes: 'e.g. Deadline in 2 weeks, APA or IEEE citation system, or specific supervisor notes...',
+        preview_title: 'Live Preview of Official Academic Dispatch Dossier:',
+        meta_service_label: 'Requested Service',
+        meta_univ_label: 'University & College',
+        meta_student_label: 'Researcher Name',
+        meta_notes_label: 'Deadline & Notes',
+        meta_topic_label: 'Study Title or Document Details:',
+        meta_payload_label: 'Compiled Dispatch Payload for Instant Messaging:',
         btn_copy: '📋 Copy Message Text',
         btn_send_wa: 'Direct Transfer via WhatsApp',
         btn_send_tg: 'Direct Transfer via Telegram (@MarwanAIDev)',
@@ -207,14 +258,14 @@
         faq_title_thin: 'Frequently Asked',
         faq_title_bold: 'Questions',
         faq_desc: 'Direct, clear answers regarding academic regulations, turnaround times, revisions, and coordination in Iraq.',
-        faq_q1: 'What is the turnaround time for completing and delivering research or a thesis?',
-        faq_a1: 'We pride ourselves on high-speed execution and strict adherence to agreed deadlines, offering expedited turnaround for urgent reports and papers, as well as milestone chapter-by-chapter submissions for Master theses to facilitate step-by-step review with your supervisor.',
+        faq_q1: 'Do you sell or author ready-made researches or theses?',
+        faq_a1: 'We strictly do NOT engage in ready-made research sales or ghostwriting under any circumstances, adhering to academic research ethics and the Prophetic guidance: "He who pretends to have what he has not been given is like one wearing two garments of falsehood" and "Whoever deceives is not of us". Our role is exclusively restricted to manuscript layout and proofreading of the student\'s own written work, curating verified peer-reviewed sources across all disciplines, and scientific translation.',
         faq_q2: 'Do you strictly follow the thesis manual and formatting guidelines approved by my university and college?',
         faq_a2: 'Yes, with 100% compliance. We rigorously format page margins, official university font sizes, chapter headings, and approved reference documentation styles matching your university and college guidelines without any discrepancy.',
         faq_q3: 'Does the service include continuous revisions and modifications after initial delivery?',
         faq_a3: 'Yes, absolutely. We provide comprehensive continuous revisions and edits on the work even after delivery to implement all directives from your supervising professor and departmental committee without delay.',
-        faq_q4: 'What types of academic research works and services are available?',
-        faq_a4: 'We offer comprehensive writing, editing, and formatting of Master theses, Bachelor graduation projects, term reports, literature summaries, and SPSS statistical analysis across scientific, engineering, medical, legal, and humanities disciplines.',
+        faq_q4: 'What types of academic services are available?',
+        faq_a4: 'We provide manuscript formatting and structural layout for written Master theses and Bachelor graduation research according to your university guide, gathering and cataloging peer-reviewed literature across all disciplines in international citation styles (APA / IEEE), specialized academic translation, and comprehensive linguistic proofreading.',
         faq_q5: 'How is coordination and financial payment handled in Iraq?',
         faq_a5: 'Communication is direct and immediate via Telegram (@MarwanAIDev) or WhatsApp. Financial transactions are available in convenient milestone installments through e-wallets or local bank transfers across all Iraqi governorates.',
         footer_brand_title_thin: 'Scholar',
@@ -225,10 +276,7 @@
         footer_wa: 'Contact via WhatsApp',
         footer_tg: 'Telegram: @MarwanAIDev',
         modal_badge: 'Sample Study Inspection',
-        modal_default_title: 'Research Title',
-        mq_masters: '<span class="scholar-fw-bold">Master\'s</span> <span class="scholar-fw-thin">Theses</span>',
-        mq_bachelor: '<span class="scholar-fw-bold">Bachelor\'s</span> <span class="scholar-fw-thin">Research</span>',
-        mq_reports: '<span class="scholar-fw-bold">Reports &</span> <span class="scholar-fw-thin">Summaries</span>'
+        modal_default_title: 'Research Title'
       }
     },
 
@@ -512,10 +560,10 @@
       const isEn = ScholarI18n.currentLang === 'en';
       const studentName = document.getElementById('refStudentName')?.value.trim() || (isEn ? 'Respected Scholar' : 'باحث كريم');
       const degEl = document.getElementById('refDegree');
-      const degree = degEl ? degEl.options[degEl.selectedIndex]?.text : (isEn ? "Master's Theses" : 'رسائل ماجستير');
-      const university = document.getElementById('refUniversity')?.value.trim() || (isEn ? 'University / College' : 'جامعة / كلية');
-      const topic = document.getElementById('refTopic')?.value.trim() || (isEn ? 'Requesting research consultation & proposal' : 'طلب إعداد / استشارة أكاديمية');
-      const notes = document.getElementById('refNotes')?.value.trim() || (isEn ? 'Please provide the milestones and turnaround time' : 'يرجى تزويدي بالتفاصيل وموعد الإنجاز المتاح');
+      const degree = degEl ? degEl.options[degEl.selectedIndex]?.text : (isEn ? 'Written Master Thesis Formatting' : 'إعداد وتنسيق رسائل الماجستير المكتوبة');
+      const university = document.getElementById('refUniversity')?.value.trim() || (isEn ? 'University / Faculty' : 'جامعة / كلية الطالب');
+      const topic = document.getElementById('refTopic')?.value.trim() || (isEn ? 'Requesting manuscript formatting & scholarly sources' : 'طلب إعداد وتنسيق / استشارة أكاديمية ومصادر');
+      const notes = document.getElementById('refNotes')?.value.trim() || (isEn ? 'According to Schedule' : 'وفق الجدول الزمني المطلوب');
 
       return { studentName, degree, university, topic, notes };
     },
@@ -525,33 +573,49 @@
       if (isEn) {
         return (
           `Hello,\n` +
-          `I would like to inquire and coordinate an academic project with Scholar Electronic Library:\n\n` +
-          `🎓 *Project Type / Level:* ${data.degree}\n` +
-          `🏛️ *University & College:* ${data.university}\n` +
-          `📖 *Topic / Project Summary:* ${data.topic}\n` +
-          `📝 *Notes & Expected Delivery:* ${data.notes}\n` +
-          `👤 *Researcher Name:* ${data.studentName}\n\n` +
-          `Please provide me with available milestones and details. Thank you.`
+          `I would like to coordinate an academic service with Scholar Library:\n\n` +
+          `📋 *Requested Service:* ${data.degree}\n` +
+          `🏛️ *University & Faculty:* ${data.university}\n` +
+          `👤 *Researcher:* ${data.studentName}\n` +
+          `📖 *Topic / Document Details:* ${data.topic}\n` +
+          `⏳ *Deadline & Notes:* ${data.notes}\n\n` +
+          `(Note: Adhering to academic integrity, services are for manuscript layout of written work, verified sources & academic translation)\n` +
+          `Please provide the workflow details and turnaround time. Thank you.`
         );
       } else {
         return (
-          `السلام عليكم ورحمة الله،\n` +
-          `أود التنسيق والاستفسار بخصوص عمل أكاديمي لدى مكتبة سكولار الإلكترونية:\n\n` +
-          `🎓 *نوع العمل / الدرجة:* ${data.degree}\n` +
+          `السلام عليكم ورحمة الله وبركاته،\n` +
+          `أود الاستفسار والتنسيق بخصوص خدمة أكاديمية لدى مكتبة سكولار:\n\n` +
+          `📋 *الخدمة المطلوبة:* ${data.degree}\n` +
           `🏛️ *الجامعة والكلية:* ${data.university}\n` +
-          `📖 *عنوان أو فكرة البحث / الملخص:* ${data.topic}\n` +
-          `📝 *ملاحظات وموعد التسليم:* ${data.notes}\n` +
-          `👤 *اسم الباحث:* ${data.studentName}\n\n` +
-          `يرجى موافاتي بالتفاصيل والمسار المتاح للمتابعة، مع جزيل الشكر والتقدير.`
+          `👤 *اسم الباحث:* ${data.studentName}\n` +
+          `📖 *تفاصيل الموضوع / المستند:* ${data.topic}\n` +
+          `⏳ *الموعد والملاحظات:* ${data.notes}\n\n` +
+          `(ملاحظة: العمل خاص بالأعمال المكتوبة وتنسيقها ومصادرها وترجمتها التزاماً بالأمانة العلمية)\n` +
+          `يرجى موافاتي بالمسار والوقت المتاح للبدء. شكراً لكم.`
         );
       }
     },
 
     updateLivePreview() {
-      const previewBox = document.getElementById('liveMessagePreview');
-      if (!previewBox) return;
       const data = this.getFormData();
-      previewBox.textContent = this.formatMessage(data);
+      const previewBox = document.getElementById('liveMessagePreview');
+      if (previewBox) {
+        previewBox.textContent = this.formatMessage(data);
+      }
+
+      // Live update structured dossier card fields
+      const serviceEl = document.getElementById('dossierValService');
+      const univEl = document.getElementById('dossierValUniv');
+      const studentEl = document.getElementById('dossierValStudent');
+      const notesEl = document.getElementById('dossierValNotes');
+      const topicEl = document.getElementById('dossierValTopic');
+
+      if (serviceEl) serviceEl.textContent = data.degree;
+      if (univEl) univEl.textContent = data.university;
+      if (studentEl) studentEl.textContent = data.studentName;
+      if (notesEl) notesEl.textContent = data.notes;
+      if (topicEl) topicEl.textContent = data.topic;
     },
 
     copyPreview(btn) {
@@ -559,17 +623,19 @@
       const data = this.getFormData();
       const msg = this.formatMessage(data);
       navigator.clipboard.writeText(msg).then(() => {
-        const originalText = btn.textContent;
-        btn.textContent = isEn ? '✓ Copied to Clipboard!' : '✓ تم النسخ للحافظة!';
-        btn.style.color = 'var(--scholar-royal-blue)';
-        btn.style.borderColor = 'var(--scholar-royal-blue)';
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = isEn ? '<span>✓ Copied to Clipboard!</span>' : '<span>✓ تم النسخ بنجاح!</span>';
+        btn.style.background = '#10B981';
+        btn.style.color = '#FFFFFF';
+        btn.style.borderColor = '#10B981';
         setTimeout(() => {
-          btn.textContent = originalText;
+          btn.innerHTML = originalHTML;
+          btn.style.background = '';
           btn.style.color = '';
           btn.style.borderColor = '';
-        }, 2000);
+        }, 2200);
       }).catch(() => {
-        btn.textContent = isEn ? '✓ Copied!' : '✓ نُسخ!';
+        btn.innerHTML = isEn ? '<span>✓ Copied!</span>' : '<span>✓ نُسخ!</span>';
       });
     },
 
@@ -661,9 +727,10 @@
   };
 
   /* --------------------------------------------------------------------------
-     8. SCHOLAR UNIVERSITIES 3D EXPERIENCE (THREE.JS BESPOKE CARDS)
+     8. SCHOLAR SERVICES 3D EXPERIENCE (THREE.JS BESPOKE CARDS)
+     Showcasing 3 Core Academic Services in High-Craft 3D without Clunky Buttons
      -------------------------------------------------------------------------- */
-  const ScholarUniversities3D = {
+  const ScholarServices3D = {
     canvas: null,
     container: null,
     scene: null,
@@ -680,91 +747,61 @@
     raycaster: null,
     mouseVec: null,
     hoveredIndex: -1,
-    activeIndex: 1, // Baghdad in Center Stage by default
+    activeIndex: 1, // Sources in Center Stage by default
 
-    loadedLogos: {},
-
-    universities: [
+    services: [
       {
-        id: 'tikrit',
-        nameAr: 'جامعة تكريت',
-        nameEn: 'Tikrit University',
-        titleAr: 'صرح وادي دجلة العلمي',
-        titleEn: 'Beacon of Tigris Valley',
-        yearAr: 'تأسست ١٩٨٧ م',
-        yearEn: 'Established 1987',
-        badgeAr: 'التفوق البحثي والأكاديمي الشامل',
-        badgeEn: 'Excellence in Research & Scholarly Rigor',
-        statsAr: '٢٢ كلية ومراكز بحثية متقدمة',
-        statsEn: '22 Colleges & Advanced Research Centers',
-        primary: '#0C2024',
+        id: 'formatting',
+        nameAr: 'إعداد وتنسيق البحوث والرسائل',
+        nameEn: 'Research & Thesis Layout',
+        subAr: 'للبكالوريوس والماجستير المكتوبة',
+        subEn: 'For Written Bachelor & Master Manuscripts',
+        badgeAr: 'تنسيق شكلي • ضبط هوامش • تدقيق لغوي',
+        badgeEn: 'Manuscript Layout • Margins • Proofreading',
+        scopeAr: 'مواءمة تامة مع دليل كتابة الرسائل الجامعي المعتمد',
+        scopeEn: 'Full Alignment with Official University Guidelines',
+        statsAr: 'جاهزية كاملة بصيغتي Word و PDF للمناقشة',
+        statsEn: 'Delivered in Word & PDF Ready for Review',
+        primary: '#091A36',
         secondary: '#C5A059',
         accent: '#10B981',
-        logoSrc: 'assets/crest-tikrit.png',
-        iconType: 'tikrit'
+        iconType: 'thesis'
       },
       {
-        id: 'baghdad',
-        nameAr: 'جامعة بغداد',
-        nameEn: 'University of Baghdad',
-        titleAr: 'أم الجامعات العراقية',
-        titleEn: 'Mother of Iraqi Universities',
-        yearAr: 'تأسست ١٩٥٧ م',
-        yearEn: 'Established 1957',
-        badgeAr: 'الريادة والاعتماد الأكاديمي الشامل',
-        badgeEn: 'Pioneering Comprehensive Accreditation',
-        statsAr: '٢٤ كلية و٤ معاهد عليا متخصصة',
-        statsEn: '24 Colleges & 4 Specialized Institutes',
-        primary: '#0F1D38',
-        secondary: '#C5A059',
-        accent: '#F4E2B2',
-        logoSrc: 'assets/crest-baghdad.png',
-        iconType: 'tower'
-      },
-      {
-        id: 'samarra',
-        nameAr: 'جامعة سامراء',
-        nameEn: 'University of Samarra',
-        titleAr: 'منارة الحضارة والأصالة',
-        titleEn: 'Beacon of Heritage & Civilization',
-        yearAr: 'تأسست ٢٠١٢ م',
-        yearEn: 'Established 2012',
-        badgeAr: 'التطوير الأكاديمي والبحث العلمي',
-        badgeEn: 'Academic Development & Scientific Research',
-        statsAr: 'كليات تخصصية وأبحاث علمية رصينة',
-        statsEn: 'Specialized Faculties & Rigorous Theses',
-        primary: '#0F1C30',
+        id: 'sources',
+        nameAr: 'جمع المصادر لجميع التخصصات',
+        nameEn: 'Scholarly Sources Gathering',
+        subAr: 'أبحاث ومراجع رصينة ومحكمة',
+        subEn: 'Peer-Reviewed & Indexed Literature',
+        badgeAr: 'فهرسة وتوثيق • DOI • أنظمة APA و IEEE',
+        badgeEn: 'Indexing & Citation • DOI • APA & IEEE',
+        scopeAr: 'استخراج وتوثيق أحدث الدراسات والمراجع لكافة الكليات',
+        scopeEn: 'Curating Verified Scholarly Papers Across Disciplines',
+        statsAr: 'مصادر حديثة وموثقة بروابطها المعتمدة',
+        statsEn: 'Up-to-Date Sources with Official DOI Links',
+        primary: '#0B1C30',
         secondary: '#C5A059',
         accent: '#38BDF8',
-        logoSrc: 'assets/crest-samarra.png',
-        iconType: 'malwiya'
+        iconType: 'sources'
+      },
+      {
+        id: 'translation',
+        nameAr: 'الترجمة الأكاديمية المتخصصة',
+        nameEn: 'Scientific & Academic Translation',
+        subAr: 'ترجمة تخصصية دقيقة ومعتمدة',
+        subEn: 'Precision Academic & Paper Translation',
+        badgeAr: 'دقة المصطلحات • صياغة لغوية رصينة',
+        badgeEn: 'Terminological Rigor • Human Scholarly Tone',
+        scopeAr: 'ترجمة متخصصة للأوراق العلمية والملخصات والمستندات',
+        scopeEn: 'Expert Translation for Research Papers & Abstracts',
+        statsAr: 'خالية تماماً من الركاكة والترجمة الآلية',
+        statsEn: 'Zero AI-Slop • Rigorous Human Review',
+        primary: '#08221B',
+        secondary: '#C5A059',
+        accent: '#F59E0B',
+        iconType: 'translation'
       }
     ],
-
-    preloadLogos() {
-      this.universities.forEach(univ => {
-        if (univ.logoSrc) {
-          const img = new Image();
-          img.crossOrigin = 'anonymous';
-          img.onload = () => {
-            this.loadedLogos[univ.id] = img;
-            this.refreshCardTexture(univ.id);
-          };
-          img.src = univ.logoSrc;
-        }
-      });
-    },
-
-    refreshCardTexture(univId) {
-      const idx = this.universities.findIndex(u => u.id === univId);
-      if (idx !== -1 && this.cards[idx]) {
-        const tex = this.createCardTexture(this.universities[idx], this.currentLang);
-        if (this.cards[idx].material && this.cards[idx].material[4]) {
-          this.cards[idx].material[4].map = tex;
-          this.cards[idx].material[4].needsUpdate = true;
-        }
-      }
-    },
 
     init() {
       this.canvas = document.getElementById('scholarHeroCanvas3D');
@@ -777,7 +814,6 @@
       }
 
       this.currentLang = document.documentElement.getAttribute('lang') || 'ar';
-      this.preloadLogos();
       this.clock = new THREE.Clock();
       this.raycaster = new THREE.Raycaster();
       this.mouseVec = new THREE.Vector2(-999, -999);
@@ -786,7 +822,6 @@
       this.createCards();
       this.createParticles();
       this.bindEvents();
-      this.syncSelectorTabs();
       this.animate();
     },
 
@@ -811,15 +846,15 @@
         this.renderer.toneMappingExposure = 1.0;
       }
 
-      // Photographic High-Fidelity Studio Lighting (No harsh washed-out glare)
-      const ambient = new THREE.AmbientLight(0xffffff, 0.92);
+      // Photographic High-Fidelity Studio Lighting
+      const ambient = new THREE.AmbientLight(0xffffff, 0.95);
       this.scene.add(ambient);
 
-      const keyLight = new THREE.DirectionalLight(0xffffff, 0.65);
+      const keyLight = new THREE.DirectionalLight(0xffffff, 0.72);
       keyLight.position.set(2, 5, 5);
       this.scene.add(keyLight);
 
-      const warmRimLight = new THREE.PointLight(0xd4af37, 0.55, 14);
+      const warmRimLight = new THREE.PointLight(0xd4af37, 0.6, 14);
       warmRimLight.position.set(3.5, -2, 2.5);
       this.scene.add(warmRimLight);
 
@@ -856,7 +891,7 @@
       ctx.closePath();
     },
 
-    createCardTexture(univ, lang) {
+    createCardTexture(service, lang) {
       const w = 1024;
       const h = 1440;
       const canvas = document.createElement('canvas');
@@ -865,9 +900,9 @@
       const ctx = canvas.getContext('2d');
       if (!ctx) return null;
 
-      // 1. FILL ROOT CANVAS COMPLETELY EDGE-TO-EDGE (ELIMINATES BLACK EDGES)
+      // 1. FILL ROOT CANVAS COMPLETELY EDGE-TO-EDGE
       const bgGrad = ctx.createLinearGradient(0, 0, w, h);
-      bgGrad.addColorStop(0, univ.primary);
+      bgGrad.addColorStop(0, service.primary);
       bgGrad.addColorStop(0.48, '#0C1628');
       bgGrad.addColorStop(1, '#050A14');
       ctx.fillStyle = bgGrad;
@@ -875,7 +910,7 @@
 
       // Subtle atmospheric vignette
       const radialVignette = ctx.createRadialGradient(w / 2, h / 2, 220, w / 2, h / 2, 780);
-      radialVignette.addColorStop(0, 'rgba(255, 255, 255, 0.025)');
+      radialVignette.addColorStop(0, 'rgba(255, 255, 255, 0.035)');
       radialVignette.addColorStop(1, 'rgba(0, 0, 0, 0.52)');
       ctx.fillStyle = radialVignette;
       ctx.fillRect(0, 0, w, h);
@@ -891,7 +926,7 @@
       this.drawRoundRectPath(ctx, 48, 48, w - 96, h - 96, 36);
       ctx.stroke();
 
-      // Top Republic Ribbon
+      // Top Ribbon
       ctx.fillStyle = 'rgba(255, 255, 255, 0.07)';
       this.drawRoundRectPath(ctx, 110, 80, w - 220, 56, 28);
       ctx.fill();
@@ -903,11 +938,11 @@
       ctx.fillStyle = '#E2E8F0';
       ctx.font = '600 24px Alexandria, sans-serif';
       ctx.textAlign = 'center';
-      ctx.fillText(lang === 'en' ? 'REPUBLIC OF IRAQ • MINISTRY OF HIGHER EDUCATION' : 'جمهورية العراق • وزارة التعليم العالي والبحث العلمي', w / 2, 118);
+      ctx.fillText(lang === 'en' ? 'SCHOLAR ACADEMIC LIBRARY • VERIFIED SERVICES' : 'مكتبة سكولار الأكاديمية • خدمات تخصصية معتمدة', w / 2, 118);
 
-      // Central University Crest Medallion
+      // Central Service Medallion at y: 350
       ctx.save();
-      ctx.translate(w / 2, 360);
+      ctx.translate(w / 2, 350);
 
       // Medallion Gold Outer Rim
       ctx.strokeStyle = '#C5A059';
@@ -933,120 +968,200 @@
       ctx.arc(0, 0, 118, 0, Math.PI * 2);
       ctx.fill();
 
-      // Draw Official High-Resolution Crest
-      const logoImg = this.loadedLogos && this.loadedLogos[univ.id];
-      if (logoImg && logoImg.complete && logoImg.naturalWidth > 0) {
-        ctx.drawImage(logoImg, -95, -95, 190, 190);
-      } else {
-        // High-craft vector fallback insignia
+      // Vector Icon Art
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+
+      if (service.iconType === 'thesis') {
+        // Thesis & Manuscript Layout Art
         ctx.strokeStyle = '#C5A059';
-        ctx.fillStyle = 'rgba(197, 160, 89, 0.2)';
+        ctx.fillStyle = 'rgba(197, 160, 89, 0.18)';
         ctx.lineWidth = 3.5;
-        ctx.lineCap = 'round';
-        ctx.lineJoin = 'round';
-        if (univ.iconType === 'tower') {
-          // Baghdad University
+
+        // Left Book Page
+        ctx.beginPath();
+        ctx.moveTo(0, 48);
+        ctx.quadraticCurveTo(-38, 38, -68, 48);
+        ctx.lineTo(-68, -32);
+        ctx.quadraticCurveTo(-38, -42, 0, -32);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+
+        // Right Book Page
+        ctx.beginPath();
+        ctx.moveTo(0, 48);
+        ctx.quadraticCurveTo(38, 38, 68, 48);
+        ctx.lineTo(68, -32);
+        ctx.quadraticCurveTo(38, -42, 0, -32);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+
+        // Ruling Lines
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.45)';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(-54, -18); ctx.lineTo(-14, -18);
+        ctx.moveTo(-54, -2);  ctx.lineTo(-14, -2);
+        ctx.moveTo(-54, 14);  ctx.lineTo(-24, 14);
+        ctx.moveTo(14, -18); ctx.lineTo(54, -18);
+        ctx.moveTo(14, -2);  ctx.lineTo(54, -2);
+        ctx.moveTo(14, 14);  ctx.lineTo(44, 14);
+        ctx.stroke();
+
+        // Golden Feather Quill
+        ctx.strokeStyle = '#FEF08A';
+        ctx.fillStyle = '#C5A059';
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.moveTo(22, 38);
+        ctx.quadraticCurveTo(32, -15, 62, -62);
+        ctx.quadraticCurveTo(45, -45, 18, -12);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+
+      } else if (service.iconType === 'sources') {
+        // Scholarly Sources Globe & Citation Network
+        ctx.strokeStyle = '#38BDF8';
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.arc(0, 0, 56, 0, Math.PI * 2);
+        ctx.stroke();
+
+        ctx.strokeStyle = 'rgba(56, 189, 248, 0.45)';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.ellipse(0, 0, 24, 56, 0, 0, Math.PI * 2);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(-56, 0); ctx.lineTo(56, 0);
+        ctx.moveTo(-48, -26); ctx.lineTo(48, -26);
+        ctx.moveTo(-48, 26);  ctx.lineTo(48, 26);
+        ctx.stroke();
+
+        // Orbital Ring with Nodes
+        ctx.strokeStyle = '#C5A059';
+        ctx.lineWidth = 2.5;
+        ctx.beginPath();
+        ctx.ellipse(0, 0, 78, 30, Math.PI / 6, 0, Math.PI * 2);
+        ctx.stroke();
+
+        const nodes = [
+          { x: -52, y: -22 },
+          { x: 48, y: 24 },
+          { x: -28, y: 44 },
+          { x: 38, y: -40 }
+        ];
+        nodes.forEach(c => {
+          ctx.fillStyle = '#FEF08A';
           ctx.beginPath();
-          ctx.moveTo(-45, 55);
-          ctx.quadraticCurveTo(0, 68, 45, 55);
-          ctx.lineTo(40, 72);
-          ctx.quadraticCurveTo(0, 82, -40, 72);
-          ctx.closePath();
+          ctx.arc(c.x, c.y, 5, 0, Math.PI * 2);
           ctx.fill();
-          ctx.stroke();
-          ctx.beginPath();
-          ctx.moveTo(-22, 55);
-          ctx.lineTo(-12, -28);
-          ctx.lineTo(12, -28);
-          ctx.lineTo(22, 55);
-          ctx.closePath();
-          ctx.stroke();
-          ctx.beginPath();
-          ctx.arc(0, 5, 12, 0, Math.PI * 2);
-          ctx.stroke();
-        } else if (univ.iconType === 'tikrit') {
-          // Tikrit University Historic Arch & Shield
-          ctx.beginPath();
-          ctx.moveTo(-50, -20);
-          ctx.quadraticCurveTo(0, -65, 50, -20);
-          ctx.lineTo(50, 40);
-          ctx.quadraticCurveTo(0, 75, -50, 40);
-          ctx.closePath();
-          ctx.fill();
-          ctx.stroke();
-          ctx.beginPath();
-          ctx.arc(0, -10, 16, 0, Math.PI * 2);
-          ctx.stroke();
-        } else {
-          // Samarra Malwiya Minaret
-          ctx.beginPath();
-          ctx.moveTo(-55, 65);
-          ctx.lineTo(55, 65);
-          ctx.lineTo(45, 40);
-          ctx.lineTo(-45, 40);
-          ctx.closePath();
-          ctx.fill();
-          ctx.stroke();
-          ctx.beginPath();
-          ctx.moveTo(-40, 40);
-          ctx.lineTo(40, 40);
-          ctx.lineTo(30, 15);
-          ctx.lineTo(-30, 15);
-          ctx.closePath();
-          ctx.stroke();
-          ctx.beginPath();
-          ctx.moveTo(-25, 15);
-          ctx.lineTo(25, 15);
-          ctx.lineTo(16, -10);
-          ctx.lineTo(-16, -10);
-          ctx.closePath();
-          ctx.stroke();
-          ctx.beginPath();
-          ctx.moveTo(0, -10);
-          ctx.lineTo(0, -55);
-          ctx.stroke();
-        }
+        });
+
+        // DOI Center Badge
+        ctx.fillStyle = '#10B981';
+        ctx.beginPath();
+        ctx.arc(0, 0, 16, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.strokeStyle = '#FFFFFF';
+        ctx.lineWidth = 2.5;
+        ctx.beginPath();
+        ctx.moveTo(-6, 0); ctx.lineTo(-2, 5); ctx.lineTo(7, -4);
+        ctx.stroke();
+
+      } else {
+        // Scientific & Academic Translation
+        // Twin Heraldic Shields & Linguistic Glyphs
+        ctx.strokeStyle = '#C5A059';
+        ctx.fillStyle = 'rgba(197, 160, 89, 0.22)';
+        ctx.lineWidth = 3;
+
+        // Right Shield (Arabic Dad 'ض')
+        ctx.beginPath();
+        ctx.moveTo(12, -42);
+        ctx.lineTo(56, -42);
+        ctx.lineTo(56, 8);
+        ctx.quadraticCurveTo(56, 44, 12, 58);
+        ctx.quadraticCurveTo(12, 44, 12, 8);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+
+        // Left Shield (Latin 'A')
+        ctx.beginPath();
+        ctx.moveTo(-12, -42);
+        ctx.lineTo(-56, -42);
+        ctx.lineTo(-56, 8);
+        ctx.quadraticCurveTo(-56, 44, -12, 58);
+        ctx.quadraticCurveTo(-12, 44, -12, 8);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+
+        // Arabic 'ض' letter inside right shield
+        ctx.fillStyle = '#FEF08A';
+        ctx.font = '700 38px Amiri, Cairo, serif';
+        ctx.textAlign = 'center';
+        ctx.fillText('ض', 35, 18);
+
+        // Latin 'A' letter inside left shield
+        ctx.font = '700 34px Alexandria, Outfit, sans-serif';
+        ctx.fillText('A', -34, 14);
+
+        // Laurel Wreath branches at base
+        ctx.strokeStyle = '#C5A059';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.arc(-26, 42, 28, Math.PI * 0.4, Math.PI * 0.95);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.arc(26, 42, 28, Math.PI * 0.05, Math.PI * 0.6);
+        ctx.stroke();
       }
 
-      ctx.restore(); // restore translate
+      ctx.restore();
 
-      // University Primary Name
+      // Primary Title
       ctx.textAlign = 'center';
       ctx.fillStyle = '#FFFFFF';
-      ctx.font = '800 62px Alexandria, Cairo, sans-serif';
-      const mainName = lang === 'en' ? univ.nameEn : univ.nameAr;
+      ctx.font = '800 54px Alexandria, Cairo, sans-serif';
+      const mainName = lang === 'en' ? service.nameEn : service.nameAr;
       ctx.fillText(mainName, w / 2, 630);
 
       // Subtitle in Champagne Gold
       ctx.fillStyle = '#C5A059';
-      ctx.font = '600 30px Alexandria, Outfit, sans-serif';
-      const subName = lang === 'en' ? univ.nameAr : univ.nameEn;
+      ctx.font = '600 28px Alexandria, Outfit, sans-serif';
+      const subName = lang === 'en' ? service.subEn : service.subAr;
       ctx.fillText(subName, w / 2, 690);
 
       // Golden Badge Pill
       ctx.fillStyle = 'rgba(197, 160, 89, 0.16)';
-      this.drawRoundRectPath(ctx, 100, 750, w - 200, 74, 37);
+      this.drawRoundRectPath(ctx, 80, 750, w - 160, 74, 37);
       ctx.fill();
       ctx.strokeStyle = 'rgba(197, 160, 89, 0.55)';
       ctx.lineWidth = 1.8;
-      this.drawRoundRectPath(ctx, 100, 750, w - 200, 74, 37);
+      this.drawRoundRectPath(ctx, 80, 750, w - 160, 74, 37);
       ctx.stroke();
 
       ctx.fillStyle = '#FEF08A';
-      ctx.font = '700 30px Alexandria, Cairo, sans-serif';
-      ctx.fillText(lang === 'en' ? univ.titleEn : univ.titleAr, w / 2, 798);
+      ctx.font = '700 28px Alexandria, Cairo, sans-serif';
+      ctx.fillText(lang === 'en' ? service.badgeEn : service.badgeAr, w / 2, 798);
 
       // Detailed Academic Scope
       ctx.fillStyle = '#CBD5E1';
-      ctx.font = '500 26px Alexandria, IBM Plex Sans Arabic, sans-serif';
-      ctx.fillText(lang === 'en' ? univ.badgeEn : univ.badgeAr, w / 2, 885);
+      ctx.font = '500 25px Alexandria, sans-serif';
+      ctx.fillText(lang === 'en' ? service.scopeEn : service.scopeAr, w / 2, 885);
 
       // Stats Pill
       ctx.fillStyle = '#94A3B8';
-      ctx.font = '600 24px Alexandria, Outfit, sans-serif';
-      ctx.fillText(lang === 'en' ? univ.statsEn : univ.statsAr, w / 2, 945);
+      ctx.font = '600 23px Alexandria, Outfit, sans-serif';
+      ctx.fillText(lang === 'en' ? service.statsEn : service.statsAr, w / 2, 945);
 
-      // Five Star Academic Rigor in Pure Gold
+      // Five Star Academic Rigor
       ctx.fillStyle = '#C5A059';
       ctx.font = '32px sans-serif';
       ctx.fillText('★ ★ ★ ★ ★', w / 2, 1010);
@@ -1062,11 +1177,11 @@
 
       ctx.fillStyle = '#E2E8F0';
       ctx.font = '700 24px Alexandria, sans-serif';
-      ctx.fillText(lang === 'en' ? 'ACCREDITED ACADEMIC THESIS REPOSITORY' : 'رصانة أكاديمية معتمدة وفق دليل الجامعات', w / 2, 1124);
+      ctx.fillText(lang === 'en' ? 'OFFICIALLY ACCREDITED ACADEMIC SERVICE' : 'خدمة أكاديمية معتمدة وفق دليل الجامعات', w / 2, 1124);
 
       ctx.fillStyle = '#94A3B8';
-      ctx.font = '500 20px Outfit, sans-serif';
-      ctx.fillText(lang === 'en' ? univ.yearEn : univ.yearAr, w / 2, 1158);
+      ctx.font = '500 20px Alexandria, Outfit, sans-serif';
+      ctx.fillText(lang === 'en' ? 'SCHOLARLY RIGOR • RAPID TURNAROUND' : 'أمانة علمية • سرعة تسليم • دقة تامة', w / 2, 1158);
 
       const texture = new THREE.CanvasTexture(canvas);
       texture.generateMipmaps = true;
@@ -1087,7 +1202,7 @@
 
       const geom = new THREE.BoxGeometry(2.2, 3.1, 0.06);
 
-      // Metallic Champagne Gold Edges (Banishes black borders!)
+      // Metallic Champagne Gold Edges (Eliminates black borders!)
       const edgeMat = new THREE.MeshStandardMaterial({
         color: 0xC5A059,
         metalness: 0.92,
@@ -1101,8 +1216,8 @@
         roughness: 0.38
       });
 
-      this.universities.forEach((univ, idx) => {
-        const frontTex = this.createCardTexture(univ, this.currentLang);
+      this.services.forEach((service, idx) => {
+        const frontTex = this.createCardTexture(service, this.currentLang);
 
         const frontMat = new THREE.MeshStandardMaterial({
           map: frontTex,
@@ -1115,7 +1230,7 @@
         const cardMesh = new THREE.Mesh(geom, materials);
         cardMesh.userData = {
           index: idx,
-          univId: univ.id,
+          serviceId: service.id,
           targetPos: { x: 0, y: 0, z: 0 },
           targetRot: { x: 0, y: 0, z: 0 },
           targetScale: 1.0,
@@ -1127,7 +1242,6 @@
       });
 
       this.updateCardTargets();
-      // Instantly position initial placement
       this.cards.forEach(card => {
         card.position.set(card.userData.targetPos.x, card.userData.targetPos.y, card.userData.targetPos.z);
         card.rotation.set(card.userData.targetRot.x, card.userData.targetRot.y, card.userData.targetRot.z);
@@ -1140,7 +1254,7 @@
       this.cards.forEach((card, idx) => {
         const u = card.userData;
         if (idx === active) {
-          // Center Stage
+          // Center Stage Focus
           u.targetPos = { x: 0, y: 0.02, z: 0.65 };
           u.targetRot = { x: 0, y: 0, z: 0 };
           u.targetScale = 1.05;
@@ -1162,25 +1276,14 @@
       });
     },
 
-    setActiveUniversity(index) {
-      if (index < 0 || index >= this.universities.length || index === this.activeIndex) return;
+    setActiveService(index) {
+      if (index < 0 || index >= this.services.length || index === this.activeIndex) return;
       this.activeIndex = index;
       this.updateCardTargets();
-      this.syncSelectorTabs();
     },
 
-    syncSelectorTabs() {
-      const tabs = document.querySelectorAll('.scholar-3d-tab');
-      tabs.forEach((tab) => {
-        const idx = parseInt(tab.getAttribute('data-univ-index'), 10);
-        if (idx === this.activeIndex) {
-          tab.classList.add('active');
-          tab.setAttribute('aria-selected', 'true');
-        } else {
-          tab.classList.remove('active');
-          tab.setAttribute('aria-selected', 'false');
-        }
-      });
+    setActiveUniversity(index) {
+      this.setActiveService(index);
     },
 
     createParticles() {
@@ -1247,16 +1350,16 @@
           if (deltaX > 0) {
             // Drag right -> previous card
             const prevIndex = (this.activeIndex + 2) % 3;
-            this.setActiveUniversity(prevIndex);
+            this.setActiveService(prevIndex);
           } else {
             // Drag left -> next card
             const nextIndex = (this.activeIndex + 1) % 3;
-            this.setActiveUniversity(nextIndex);
+            this.setActiveService(nextIndex);
           }
         } else if (Math.hypot(deltaX, deltaY) < 14) {
-          // Tap / Click Gesture
+          // Tap / Click Gesture on side cards
           if (this.hoveredIndex >= 0 && this.hoveredIndex !== this.activeIndex) {
-            this.setActiveUniversity(this.hoveredIndex);
+            this.setActiveService(this.hoveredIndex);
           }
         }
         deltaX = 0;
@@ -1277,18 +1380,6 @@
         this.mouseVec.x = -999;
         this.mouseVec.y = -999;
         this.hoveredIndex = -1;
-      });
-
-      // Bind Selector Tabs
-      const tabs = document.querySelectorAll('.scholar-3d-tab');
-      tabs.forEach(tab => {
-        tab.addEventListener('click', (e) => {
-          e.preventDefault();
-          const idx = parseInt(tab.getAttribute('data-univ-index'), 10);
-          if (!isNaN(idx)) {
-            this.setActiveUniversity(idx);
-          }
-        });
       });
 
       window.addEventListener('resize', () => {
@@ -1377,6 +1468,9 @@
       this.renderer.render(this.scene, this.camera);
     }
   };
+
+  // Backwards compatibility alias
+  const ScholarUniversities3D = ScholarServices3D;
 
   /* --------------------------------------------------------------------------
      9. SKELETON VIEW CONTROLLER (Smooth Shimmer & Seamless Dismissal)

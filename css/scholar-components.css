@@ -497,8 +497,192 @@
 }
 
 /* --------------------------------------------------------------------------
-   Live Interactive Message Preview
+/* --------------------------------------------------------------------------
+   Live Interactive Academic Dispatch Dossier (المعاينة المباشرة الفاخرة)
    -------------------------------------------------------------------------- */
+.scholar-dispatch-dossier {
+  background: #0B1628;
+  border: 1.5px solid rgba(197, 160, 89, 0.4);
+  border-radius: var(--ink-radius-md);
+  box-shadow: 0 14px 34px -8px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  margin-top: 1.25rem;
+}
+
+.scholar-dossier-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  background: #070F1C;
+  padding: 0.85rem 1.35rem;
+  border-bottom: 1px solid rgba(197, 160, 89, 0.25);
+}
+
+.scholar-dossier-headline {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.scholar-dossier-live-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 10px #10B981;
+  animation: scholarPulseDot 2s infinite ease-in-out;
+}
+
+@keyframes scholarPulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.scholar-dossier-title {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: #F8FAFC;
+  font-family: var(--scholar-font-display-modern, 'Alexandria', sans-serif);
+}
+
+.scholar-dossier-ref {
+  font-family: var(--scholar-font-display-modern, monospace);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #C5A059;
+  background: rgba(197, 160, 89, 0.12);
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  padding: 0.15rem 0.55rem;
+  border-radius: 4px;
+}
+
+.scholar-dossier-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  border-radius: var(--ink-radius-pill);
+  padding: 0.35rem 0.95rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #E2E8F0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.scholar-dossier-copy-btn:hover {
+  background: #C5A059;
+  color: #070F1C;
+  border-color: #C5A059;
+}
+
+.scholar-dossier-card {
+  padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.scholar-dossier-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
+}
+
+@media (max-width: 600px) {
+  .scholar-dossier-meta-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.scholar-dossier-meta-item {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--ink-radius-sm);
+  padding: 0.75rem 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.scholar-dossier-meta-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #94A3B8;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.scholar-dossier-meta-val {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.scholar-dossier-topic-box {
+  background: rgba(197, 160, 89, 0.06);
+  border: 1px solid rgba(197, 160, 89, 0.25);
+  border-radius: var(--ink-radius-sm);
+  padding: 0.95rem 1.15rem;
+}
+
+.scholar-dossier-topic-label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #C5A059;
+  margin-bottom: 0.4rem;
+}
+
+.scholar-dossier-topic-text {
+  font-size: 0.94rem;
+  line-height: 1.65;
+  color: #F1F5F9;
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.scholar-dossier-payload-wrap {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 0.95rem;
+}
+
+.scholar-dossier-payload-title {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #94A3B8;
+  margin-bottom: 0.5rem;
+}
+
+.scholar-dossier-payload-code {
+  background: #050B14;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--ink-radius-sm);
+  padding: 0.85rem 1rem;
+  font-family: inherit;
+  font-size: 0.82rem;
+  line-height: 1.75;
+  color: #CBD5E1;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+/* Fallback for legacy message preview */
 .ink-message-preview-box {
   background: var(--ink-cream-surface);
   border: 1.5px dashed var(--ink-cream-border);
