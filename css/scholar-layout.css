@@ -310,7 +310,7 @@ html[dir="ltr"] body.ink-editorial-body {
 .scholar-title-line-2 {
   display: block;
   font-weight: 800;
-  background: linear-gradient(135deg, #FFFFFF 15%, #E6C875 55%, #C5A059 100%);
+  background: linear-gradient(135deg, #FFFFFF 15%, #CFE2FE 45%, #60A5FA 75%, #2563EB 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
