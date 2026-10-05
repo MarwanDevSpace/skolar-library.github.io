@@ -754,7 +754,7 @@
         id: 'formatting',
         nameAr: 'إعداد وتنسيق البحوث والرسائل',
         nameEn: 'Research & Thesis Layout',
-        subAr: 'للبكالوريوس والماجستير المكتوبة',
+        subAr: 'لبحوث البكالوريوس ورسائل الماجستير المكتوبة',
         subEn: 'For Written Bachelor & Master Manuscripts',
         badgeAr: 'تنسيق شكلي • ضبط هوامش • تدقيق لغوي',
         badgeEn: 'Manuscript Layout • Margins • Proofreading',
@@ -762,44 +762,50 @@
         scopeEn: 'Full Alignment with Official University Guidelines',
         statsAr: 'جاهزية كاملة بصيغتي Word و PDF للمناقشة',
         statsEn: 'Delivered in Word & PDF Ready for Review',
+        charterAr: 'خدمة خاصة بالأعمال المكتوبة • لا بحوث جاهزة إطلاقاً',
+        charterEn: 'Exclusively for Written Works • Zero Ghostwriting',
+        tagAr: '// مواصفات الخدمة الأكاديمية • 01',
+        tagEn: '// SPECIFICATION SPEC SHEET • 01',
         primary: '#0D1C34',
-        secondary: '#C5A059',
-        accent: '#10B981',
-        iconType: 'thesis'
+        accent: '#10B981'
       },
       {
         id: 'sources',
-        nameAr: 'جمع المصادر لجميع التخصصات',
+        nameAr: 'جمع وتوثيق المصادر والمراجع',
         nameEn: 'Scholarly Sources Gathering',
-        subAr: 'أبحاث ومراجع رصينة ومحكمة',
+        subAr: 'لكافة التخصصات والكليات الجامعية',
         subEn: 'Peer-Reviewed & Indexed Literature',
         badgeAr: 'فهرسة وتوثيق • DOI • أنظمة APA و IEEE',
         badgeEn: 'Indexing & Citation • DOI • APA & IEEE',
-        scopeAr: 'استخراج وتوثيق أحدث الدراسات والمراجع لكافة الكليات',
+        scopeAr: 'استخراج وتوثيق أحدث الدراسات والمراجع الرصينة والمحكمة',
         scopeEn: 'Curating Verified Scholarly Papers Across Disciplines',
         statsAr: 'مصادر حديثة وموثقة بروابطها المعتمدة',
         statsEn: 'Up-to-Date Sources with Official DOI Links',
+        charterAr: 'توثيق أكاديمي نزيه ومستند لقواعد البيانات العالمية',
+        charterEn: 'Rigorous Citation Standards Indexed in Global DBs',
+        tagAr: '// مواصفات الخدمة الأكاديمية • 02',
+        tagEn: '// SPECIFICATION SPEC SHEET • 02',
         primary: '#0A182C',
-        secondary: '#C5A059',
-        accent: '#38BDF8',
-        iconType: 'sources'
+        accent: '#38BDF8'
       },
       {
         id: 'translation',
         nameAr: 'الترجمة الأكاديمية المتخصصة',
         nameEn: 'Scientific & Academic Translation',
-        subAr: 'ترجمة تخصصية دقيقة ومعتمدة',
+        subAr: 'للأوراق العلمية والملخصات والمستندات',
         subEn: 'Precision Academic & Paper Translation',
         badgeAr: 'دقة المصطلحات • صياغة لغوية رصينة',
         badgeEn: 'Terminological Rigor • Human Scholarly Tone',
-        scopeAr: 'ترجمة متخصصة للأوراق العلمية والملخصات والمستندات',
+        scopeAr: 'ترجمة متخصصة خالية تماماً من الركاكة والترجمة الآلية',
         scopeEn: 'Expert Translation for Research Papers & Abstracts',
-        statsAr: 'خالية تماماً من الركاكة والترجمة الآلية',
-        statsEn: 'Zero AI-Slop • Rigorous Human Review',
+        statsAr: 'تدقيق المصطلحات والمفاهيم العلمية التخصصية',
+        statsEn: 'Zero AI-Slop • Rigorous Human Scholarly Review',
+        charterAr: 'ترجمة بشرية احترافية تضمن سلامة المعنى العلمي',
+        charterEn: 'Professional Human Translation Preserving Scholarly Rigor',
+        tagAr: '// مواصفات الخدمة الأكاديمية • 03',
+        tagEn: '// SPECIFICATION SPEC SHEET • 03',
         primary: '#091A2A',
-        secondary: '#C5A059',
-        accent: '#F59E0B',
-        iconType: 'translation'
+        accent: '#A78BFA'
       }
     ],
 
@@ -823,6 +829,13 @@
       this.createParticles();
       this.bindEvents();
       this.animate();
+
+      // Signal canvas ready and transition skeleton grid smoothly
+      this.canvas.classList.add('is-ready');
+      const sk = document.getElementById('scholarHeroSkeleton');
+      if (sk) {
+        sk.classList.add('is-hidden');
+      }
     },
 
     setupScene() {
@@ -900,273 +913,175 @@
       const ctx = canvas.getContext('2d');
       if (!ctx) return null;
 
-      // 1. FILL ROOT CANVAS COMPLETELY WITH SOLID LUXURY COLOR MATCHING THE SITE
+      // 1. SOLID LUXURY ROYAL NAVY BASE
       ctx.fillStyle = service.primary;
       ctx.fillRect(0, 0, w, h);
 
       // 2. PRESTIGIOUS CHAMPAGNE GOLD DOUBLE FRAME INSET
       ctx.lineWidth = 4;
       ctx.strokeStyle = '#C5A059';
-      this.drawRoundRectPath(ctx, 32, 32, w - 64, h - 64, 46);
+      this.drawRoundRectPath(ctx, 36, 36, w - 72, h - 72, 48);
       ctx.stroke();
 
       ctx.lineWidth = 1.5;
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.22)';
-      this.drawRoundRectPath(ctx, 48, 48, w - 96, h - 96, 36);
+      ctx.strokeStyle = '#223E6C';
+      this.drawRoundRectPath(ctx, 52, 52, w - 104, h - 104, 38);
       ctx.stroke();
 
-      // Top Ribbon
+      // Four Corner Accents
+      const corners = [
+        { x: 56, y: 56 },
+        { x: w - 56, y: 56 },
+        { x: 56, y: h - 56 },
+        { x: w - 56, y: h - 56 }
+      ];
+      ctx.fillStyle = '#C5A059';
+      corners.forEach(c => {
+        ctx.beginPath();
+        ctx.arc(c.x, c.y, 4, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      // 3. TOP RIBBON PILL
+      this.drawRoundRectPath(ctx, 110, 80, w - 220, 58, 29);
       ctx.fillStyle = '#142542';
-      this.drawRoundRectPath(ctx, 110, 80, w - 220, 56, 28);
       ctx.fill();
       ctx.strokeStyle = '#223E6C';
       ctx.lineWidth = 1.5;
-      this.drawRoundRectPath(ctx, 110, 80, w - 220, 56, 28);
       ctx.stroke();
 
       ctx.fillStyle = '#E2E8F0';
-      ctx.font = '600 24px Alexandria, sans-serif';
+      ctx.font = '700 23px Alexandria, sans-serif';
       ctx.textAlign = 'center';
-      ctx.fillText(lang === 'en' ? 'SCHOLAR ACADEMIC LIBRARY • VERIFIED SERVICES' : 'مكتبة سكولار الأكاديمية • خدمات تخصصية معتمدة', w / 2, 118);
+      ctx.fillText(lang === 'en' ? 'SCHOLAR ACADEMIC LIBRARY • OFFICIAL SERVICE' : 'مكتبة سكولار الأكاديمية • خدمة رسمية معتمدة', w / 2, 117);
 
-      // Central Service Medallion at y: 350
-      ctx.save();
-      ctx.translate(w / 2, 350);
+      // 4. SERVICE NUMBER & SPEC INDEX
+      ctx.font = '700 21px Alexandria, Outfit, sans-serif';
+      ctx.fillStyle = '#C5A059';
+      ctx.textAlign = 'center';
+      ctx.fillText(lang === 'en' ? (service.tagEn || '// ACADEMIC SERVICE SPECIFICATION') : (service.tagAr || '// مواصفات الخدمة الأكاديمية الرسمية'), w / 2, 185);
 
-      // Medallion Gold Outer Rim
-      ctx.strokeStyle = '#C5A059';
-      ctx.lineWidth = 4.5;
-      ctx.beginPath();
-      ctx.arc(0, 0, 130, 0, Math.PI * 2);
-      ctx.stroke();
-
-      // Medallion Inner Rim
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
-      ctx.lineWidth = 1.5;
-      ctx.beginPath();
-      ctx.arc(0, 0, 120, 0, Math.PI * 2);
-      ctx.stroke();
-
-      // Circular disc backdrop (Solid Luxury Royal Navy)
-      ctx.fillStyle = '#081220';
-      ctx.beginPath();
-      ctx.arc(0, 0, 118, 0, Math.PI * 2);
-      ctx.fill();
-
-      // Vector Icon Art
-      ctx.lineCap = 'round';
-      ctx.lineJoin = 'round';
-
-      if (service.iconType === 'thesis') {
-        // Thesis & Manuscript Layout Art
-        ctx.strokeStyle = '#C5A059';
-        ctx.fillStyle = 'rgba(197, 160, 89, 0.18)';
-        ctx.lineWidth = 3.5;
-
-        // Left Book Page
-        ctx.beginPath();
-        ctx.moveTo(0, 48);
-        ctx.quadraticCurveTo(-38, 38, -68, 48);
-        ctx.lineTo(-68, -32);
-        ctx.quadraticCurveTo(-38, -42, 0, -32);
-        ctx.closePath();
-        ctx.fill();
-        ctx.stroke();
-
-        // Right Book Page
-        ctx.beginPath();
-        ctx.moveTo(0, 48);
-        ctx.quadraticCurveTo(38, 38, 68, 48);
-        ctx.lineTo(68, -32);
-        ctx.quadraticCurveTo(38, -42, 0, -32);
-        ctx.closePath();
-        ctx.fill();
-        ctx.stroke();
-
-        // Ruling Lines
-        ctx.strokeStyle = 'rgba(255, 255, 255, 0.45)';
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.moveTo(-54, -18); ctx.lineTo(-14, -18);
-        ctx.moveTo(-54, -2);  ctx.lineTo(-14, -2);
-        ctx.moveTo(-54, 14);  ctx.lineTo(-24, 14);
-        ctx.moveTo(14, -18); ctx.lineTo(54, -18);
-        ctx.moveTo(14, -2);  ctx.lineTo(54, -2);
-        ctx.moveTo(14, 14);  ctx.lineTo(44, 14);
-        ctx.stroke();
-
-        // Golden Feather Quill
-        ctx.strokeStyle = '#FEF08A';
-        ctx.fillStyle = '#C5A059';
-        ctx.lineWidth = 3;
-        ctx.beginPath();
-        ctx.moveTo(22, 38);
-        ctx.quadraticCurveTo(32, -15, 62, -62);
-        ctx.quadraticCurveTo(45, -45, 18, -12);
-        ctx.closePath();
-        ctx.fill();
-        ctx.stroke();
-
-      } else if (service.iconType === 'sources') {
-        // Scholarly Sources Globe & Citation Network
-        ctx.strokeStyle = '#38BDF8';
-        ctx.lineWidth = 3;
-        ctx.beginPath();
-        ctx.arc(0, 0, 56, 0, Math.PI * 2);
-        ctx.stroke();
-
-        ctx.strokeStyle = 'rgba(56, 189, 248, 0.45)';
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.ellipse(0, 0, 24, 56, 0, 0, Math.PI * 2);
-        ctx.stroke();
-
-        ctx.beginPath();
-        ctx.moveTo(-56, 0); ctx.lineTo(56, 0);
-        ctx.moveTo(-48, -26); ctx.lineTo(48, -26);
-        ctx.moveTo(-48, 26);  ctx.lineTo(48, 26);
-        ctx.stroke();
-
-        // Orbital Ring with Nodes
-        ctx.strokeStyle = '#C5A059';
-        ctx.lineWidth = 2.5;
-        ctx.beginPath();
-        ctx.ellipse(0, 0, 78, 30, Math.PI / 6, 0, Math.PI * 2);
-        ctx.stroke();
-
-        const nodes = [
-          { x: -52, y: -22 },
-          { x: 48, y: 24 },
-          { x: -28, y: 44 },
-          { x: 38, y: -40 }
-        ];
-        nodes.forEach(c => {
-          ctx.fillStyle = '#FEF08A';
-          ctx.beginPath();
-          ctx.arc(c.x, c.y, 5, 0, Math.PI * 2);
-          ctx.fill();
-        });
-
-        // DOI Center Badge
-        ctx.fillStyle = '#10B981';
-        ctx.beginPath();
-        ctx.arc(0, 0, 16, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.strokeStyle = '#FFFFFF';
-        ctx.lineWidth = 2.5;
-        ctx.beginPath();
-        ctx.moveTo(-6, 0); ctx.lineTo(-2, 5); ctx.lineTo(7, -4);
-        ctx.stroke();
-
-      } else {
-        // Scientific & Academic Translation
-        // Twin Heraldic Shields & Linguistic Glyphs
-        ctx.strokeStyle = '#C5A059';
-        ctx.fillStyle = 'rgba(197, 160, 89, 0.22)';
-        ctx.lineWidth = 3;
-
-        // Right Shield (Arabic Dad 'ض')
-        ctx.beginPath();
-        ctx.moveTo(12, -42);
-        ctx.lineTo(56, -42);
-        ctx.lineTo(56, 8);
-        ctx.quadraticCurveTo(56, 44, 12, 58);
-        ctx.quadraticCurveTo(12, 44, 12, 8);
-        ctx.closePath();
-        ctx.fill();
-        ctx.stroke();
-
-        // Left Shield (Latin 'A')
-        ctx.beginPath();
-        ctx.moveTo(-12, -42);
-        ctx.lineTo(-56, -42);
-        ctx.lineTo(-56, 8);
-        ctx.quadraticCurveTo(-56, 44, -12, 58);
-        ctx.quadraticCurveTo(-12, 44, -12, 8);
-        ctx.closePath();
-        ctx.fill();
-        ctx.stroke();
-
-        // Arabic 'ض' letter inside right shield
-        ctx.fillStyle = '#FEF08A';
-        ctx.font = '700 38px Amiri, Cairo, serif';
-        ctx.textAlign = 'center';
-        ctx.fillText('ض', 35, 18);
-
-        // Latin 'A' letter inside left shield
-        ctx.font = '700 34px Alexandria, Outfit, sans-serif';
-        ctx.fillText('A', -34, 14);
-
-        // Laurel Wreath branches at base
-        ctx.strokeStyle = '#C5A059';
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.arc(-26, 42, 28, Math.PI * 0.4, Math.PI * 0.95);
-        ctx.stroke();
-        ctx.beginPath();
-        ctx.arc(26, 42, 28, Math.PI * 0.05, Math.PI * 0.6);
-        ctx.stroke();
-      }
-
-      ctx.restore();
-
-      // Primary Title
+      // 5. MAIN SERVICE TITLE (MAJESTIC EDITORIAL TYPOGRAPHY)
       ctx.textAlign = 'center';
       ctx.fillStyle = '#FFFFFF';
-      ctx.font = '800 54px Alexandria, Cairo, sans-serif';
-      const mainName = lang === 'en' ? service.nameEn : service.nameAr;
-      ctx.fillText(mainName, w / 2, 630);
+      ctx.font = '800 48px Alexandria, Cairo, sans-serif';
+      ctx.fillText(lang === 'en' ? service.nameEn : service.nameAr, w / 2, 245);
 
-      // Subtitle in Champagne Gold
+      ctx.fillStyle = '#FEF08A';
+      ctx.font = '600 30px Alexandria, Cairo, sans-serif';
+      ctx.fillText(lang === 'en' ? service.subEn : service.subAr, w / 2, 305);
+
+      // 6. HAIRLINE ACCENT DIVIDER WITH DIAMOND
+      ctx.strokeStyle = '#203B64';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(110, 345);
+      ctx.lineTo(470, 345);
+      ctx.moveTo(554, 345);
+      ctx.lineTo(w - 110, 345);
+      ctx.stroke();
+
+      ctx.font = '22px sans-serif';
       ctx.fillStyle = '#C5A059';
-      ctx.font = '600 28px Alexandria, Outfit, sans-serif';
-      const subName = lang === 'en' ? service.subEn : service.subAr;
-      ctx.fillText(subName, w / 2, 690);
+      ctx.fillText('✦', w / 2, 353);
 
-      // Golden Badge Pill
-      ctx.fillStyle = 'rgba(197, 160, 89, 0.16)';
-      this.drawRoundRectPath(ctx, 80, 750, w - 160, 74, 37);
+      // 7. HIGHLIGHT BADGE PILL
+      this.drawRoundRectPath(ctx, 90, 380, w - 180, 68, 34);
+      ctx.fillStyle = '#102038';
       ctx.fill();
-      ctx.strokeStyle = 'rgba(197, 160, 89, 0.55)';
-      ctx.lineWidth = 1.8;
-      this.drawRoundRectPath(ctx, 80, 750, w - 160, 74, 37);
+      ctx.strokeStyle = '#C5A059';
+      ctx.lineWidth = 1.5;
       ctx.stroke();
 
       ctx.fillStyle = '#FEF08A';
-      ctx.font = '700 28px Alexandria, Cairo, sans-serif';
-      ctx.fillText(lang === 'en' ? service.badgeEn : service.badgeAr, w / 2, 798);
+      ctx.font = '700 26px Alexandria, Cairo, sans-serif';
+      ctx.fillText(lang === 'en' ? service.badgeEn : service.badgeAr, w / 2, 423);
 
-      // Detailed Academic Scope
-      ctx.fillStyle = '#CBD5E1';
-      ctx.font = '500 25px Alexandria, sans-serif';
-      ctx.fillText(lang === 'en' ? service.scopeEn : service.scopeAr, w / 2, 885);
-
-      // Stats Pill
-      ctx.fillStyle = '#94A3B8';
-      ctx.font = '600 23px Alexandria, Outfit, sans-serif';
-      ctx.fillText(lang === 'en' ? service.statsEn : service.statsAr, w / 2, 945);
-
-      // Five Star Academic Rigor
-      ctx.fillStyle = '#C5A059';
-      ctx.font = '32px sans-serif';
-      ctx.fillText('★ ★ ★ ★ ★', w / 2, 1010);
-
-      // Bottom Accreditation Seal
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.06)';
-      this.drawRoundRectPath(ctx, 110, 1080, w - 220, 96, 28);
+      // 8. THREE STRUCTURED SOLID SPECIFICATION BOXES (NO LOGOS, ONLY NOBLE TEXT)
+      // Box 1: Academic Scope
+      this.drawRoundRectPath(ctx, 90, 480, w - 180, 180, 20);
+      ctx.fillStyle = '#0E1B32';
       ctx.fill();
-      ctx.strokeStyle = 'rgba(197, 160, 89, 0.28)';
-      ctx.lineWidth = 1.2;
-      this.drawRoundRectPath(ctx, 110, 1080, w - 220, 96, 28);
+      ctx.strokeStyle = '#203A63';
+      ctx.lineWidth = 1.5;
       ctx.stroke();
 
-      ctx.fillStyle = '#E2E8F0';
-      ctx.font = '700 24px Alexandria, sans-serif';
-      ctx.fillText(lang === 'en' ? 'OFFICIALLY ACCREDITED ACADEMIC SERVICE' : 'خدمة أكاديمية معتمدة وفق دليل الجامعات', w / 2, 1124);
+      ctx.fillStyle = '#C5A059';
+      this.drawRoundRectPath(ctx, 90, 480, 8, 180, 4);
+      ctx.fill();
 
+      ctx.fillStyle = '#C5A059';
+      ctx.font = '700 24px Alexandria, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText(lang === 'en' ? '• ACADEMIC SCOPE & UNIVERSITY GUIDELINES •' : '• نطاق العمل والمواءمة مع دليل الجامعة •', w / 2, 530);
+
+      ctx.fillStyle = '#F1F5F9';
+      ctx.font = '500 25px Alexandria, sans-serif';
+      ctx.fillText(lang === 'en' ? service.scopeEn : service.scopeAr, w / 2, 595);
+
+      // Box 2: Deliverables & Readiness
+      this.drawRoundRectPath(ctx, 90, 690, w - 180, 180, 20);
+      ctx.fillStyle = '#0E1B32';
+      ctx.fill();
+      ctx.strokeStyle = '#203A63';
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+
+      ctx.fillStyle = '#38BDF8';
+      this.drawRoundRectPath(ctx, 90, 690, 8, 180, 4);
+      ctx.fill();
+
+      ctx.fillStyle = '#38BDF8';
+      ctx.font = '700 24px Alexandria, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText(lang === 'en' ? '• DELIVERABLES & FORMAT READINESS •' : '• صيغ التسليم والجاهزية الفورية للمناقشة •', w / 2, 740);
+
+      ctx.fillStyle = '#F1F5F9';
+      ctx.font = '500 25px Alexandria, sans-serif';
+      ctx.fillText(lang === 'en' ? service.statsEn : service.statsAr, w / 2, 805);
+
+      // Box 3: Academic Integrity Charter
+      this.drawRoundRectPath(ctx, 90, 900, w - 180, 180, 20);
+      ctx.fillStyle = '#0E1B32';
+      ctx.fill();
+      ctx.strokeStyle = '#203A63';
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+
+      ctx.fillStyle = '#10B981';
+      this.drawRoundRectPath(ctx, 90, 900, 8, 180, 4);
+      ctx.fill();
+
+      ctx.fillStyle = '#34D399';
+      ctx.font = '700 24px Alexandria, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText(lang === 'en' ? '• SCIENTIFIC INTEGRITY & ETHICAL CHARTER •' : '• ميثاق الأمانة والنزاهة العلمية •', w / 2, 950);
+
+      ctx.fillStyle = '#F1F5F9';
+      ctx.font = '500 25px Alexandria, sans-serif';
+      ctx.fillText(lang === 'en' ? (service.charterEn || 'Customized for researchers • No ready-made research') : (service.charterAr || 'أعمال أصلية موثقة بجهد الباحث • لا بحوث جاهزة إطلاقاً'), w / 2, 1015);
+
+      // 9. BOTTOM VERIFICATION BAR
+      this.drawRoundRectPath(ctx, 90, 1110, w - 180, 130, 26);
+      ctx.fillStyle = '#142542';
+      ctx.fill();
+      ctx.strokeStyle = '#223E6C';
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+
+      ctx.font = '700 26px Alexandria, sans-serif';
+      ctx.fillStyle = '#FFFFFF';
+      ctx.textAlign = 'center';
+      ctx.fillText(lang === 'en' ? 'RAPID TURNAROUND • HIGH PRECISION' : 'سرعة فائقة في الإنجاز • دقة أكاديمية متناهية', w / 2, 1162);
+
+      ctx.font = '500 22px Alexandria, Outfit, sans-serif';
       ctx.fillStyle = '#94A3B8';
-      ctx.font = '500 20px Alexandria, Outfit, sans-serif';
-      ctx.fillText(lang === 'en' ? 'SCHOLARLY RIGOR • RAPID TURNAROUND' : 'أمانة علمية • سرعة تسليم • دقة تامة', w / 2, 1158);
+      ctx.fillText(lang === 'en' ? 'Continuous follow-up until official defense' : 'متابعة وتعديلات مستمرة حتى إقرار العمل والمناقشة', w / 2, 1206);
+
+      // 10. FOOTER MICRO-SEAL
+      ctx.font = '600 20px Alexandria, monospace';
+      ctx.fillStyle = '#64748B';
+      ctx.fillText(lang === 'en' ? 'VERIFIED SCHOLAR SERVICE • READY FOR DISPATCH' : 'خدمة أكاديمية موثقة • جاهزة للتحويل المباشر والمتابعة', w / 2, 1295);
 
       const texture = new THREE.CanvasTexture(canvas);
       texture.generateMipmaps = true;
